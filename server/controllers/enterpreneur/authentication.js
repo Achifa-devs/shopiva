@@ -1,0 +1,191 @@
+
+const { neon_db } = require("../../reusables/db");
+const { IS_EXISTING } = require("../../reusables/db_functions");
+const { errHandler } = require("../../reusables/errHandler");
+const { bcrypt } = require("../../reusables/modules");
+const { uuid } = require('uuidv4');
+
+
+
+async function registration_handler(req,res) {
+
+    let {
+        fname,
+        lname,
+        email,
+        pwd,
+        phone_number,
+        gender,
+    } = req.body;
+
+    let hPwd = await bcrypt.hash(pwd, 10) 
+    let entrepreneur_id = uuid()
+
+
+    try {
+        new Promise((resolve, reject) => {
+            let email_check = IS_EXISTING('entrepreneurs', 'email', email)
+            if(!email_check){
+                resolve({bool: true})
+            }else{
+                reject({bool: false, mssg: 'email exists'})
+            }
+        })
+        .then((result) => {
+            if (result) {
+                let phone_check = IS_EXISTING('entrepreneurs', 'phone_number', phone_number);
+                if(!phone_check){
+                    return ({bool: true})
+                }else{
+                    return ({bool: false, mssg: 'phone_number exists'})
+                }
+            }else{
+                return ({bool: false, mssg: 'database error'})
+            }
+        })
+        .then((result) => {
+            if(result){
+                let response = create_new_entrepreneurs()
+                if(response){
+                    return ({bool: true})
+                }else{
+                    return ({bool: false, mssg: 'error creating new entrepreneur'})
+                }
+            }else{
+                return ({bool: false, mssg: 'database error'})
+            }
+        })
+        .then((result) => {
+            if(result){
+                return ({bool: true})
+            }else{
+                return ({bool: false, mssg: 'database error'})
+            }
+        })
+        .catch(err => {
+            throw err
+        })
+    } catch (error) {
+        errHandler(error)
+    }
+
+
+
+    function create_new_entrepreneurs() {
+        return(
+            neon_db().then((pool) => {
+                pool.query(`
+                    INSERT INTO entrepreneurs (
+                        id,
+                        entrepreneur_id,
+                        fname,
+                        lname,
+                        email,
+                        pwd,
+                        phone_number,
+                        gender,
+                        is_active,
+                        last_seen,
+                        is_email_verified,
+                        is_phone_verified,
+                        is_acct_verified,
+                        created_at,
+                        updated_at
+                    )
+                    VALUES(
+                        DEFAULT,
+                        '${entrepreneur_id}',
+                        '${fname}',
+                        '${lname}',
+                        '${email}',
+                        '${hPwd}',
+                        '${phone_number}',
+                        '${gender}',
+                        '${false}',
+                        '${new Date()}',
+                        '${false}',
+                        '${false}',
+                        '${false}',
+                        '${new Date()}',
+                        '${new Date()}'
+                    )
+                `)
+            
+            }).catch(err => errHandler(err))
+        )
+    }
+}
+
+
+
+async function login_handler(req, res) {
+    let {email,pwd} = req.body;
+ 
+    try {
+        new Promise((resolve, reject) => {
+            neon_db().then(async(pool) => 
+                    
+                pool.query(`select "id" from "entrepreneurs" where "email" = '${email}'`)
+                .then((result) => {
+                    if(result.rows.length > 0){
+                        const id = result.rows[0].id;
+                        resolve(id)
+                    }else{
+                        reject({bool: false, mssg: "Email is not registered..."});
+                    }
+                })
+                .catch(err => {
+                    throw err
+                })
+                
+            );
+        })
+        .then(async(id) => {
+            return(
+                neon_db().then(async(pool) => {
+                    let database_return_value = await pool.query(
+                        `SELECT "entrepreneur_id","email","password","fname","lname" FROM  "entrepreneurs" WHERE "id" = '${id}'`
+                    )
+                    .then(result => result.rows[0])
+                    .catch(err => console.log(err))
+    
+                    return database_return_value
+                })
+                
+            )
+            
+        })
+        .then(async(user) => { 
+            if(user){
+                const auth = await bcrypt.compare(pwd, user.password);
+                if (auth) {
+                    const token = createToken(user.entrepreneur_id);
+                    res.status(200).send({bool: true, id: user.entrepreneur_id, cookie: token});
+        
+                }else{
+                    res.status(400).send({
+                        bool: false,
+                        mssg: "Invalid password"
+                    })
+                }
+            }else{
+                res.status(400).send({
+                    bool: false,
+                    mssg: "Email is not registered"
+                })
+            }
+        })
+        .catch(err => {
+            // console.log(err)
+            res.status(400).send({
+                bool: false,
+                mssg: "Email is not registered"
+            })
+            throw err
+    
+        })
+    } catch (error) {
+        errHandler(error)
+    }
+    
+}
