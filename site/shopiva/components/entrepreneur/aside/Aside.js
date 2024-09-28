@@ -33,6 +33,7 @@ export default function Aside() {
     let [discount_accordion, set_discount_accordion] = useState(false)
 
     function handleLinks(link) {
+        window.location.href = `/entrepreneur/${link}`
         let topLink = [...document.querySelector('.top-links').children];
         let btmLink = [...document.querySelector('.btm-links').children];
 
@@ -51,6 +52,8 @@ export default function Aside() {
     }
 
     function handleSubLinks(e,link) {
+        window.location.href = `/entrepreneur/${link}`
+
         let pElem = e.currentTarget.parentElement;
         console.log(pElem.children)
 
@@ -93,7 +96,9 @@ export default function Aside() {
                         </div>
                     </li>
                     <li >
-                        <div onClick={e => handleLinks('product')} data-link='product' style={{position: 'relative'}}>
+                        <div  onClick={e => {
+                                set_order_accordion(!order_accordion)
+                            }} data-link='order' style={{position: 'relative'}}>
                             <span>
                                 <img src={order_svg.src} style={{height: '20px', width: '20px'}} alt="" />
                             </span>
@@ -101,26 +106,24 @@ export default function Aside() {
                             &nbsp;
                             <span>Orders</span>
 
-                            <span onClick={e => {
-                                set_order_accordion(!order_accordion)
-                            }} style={{position: 'absolute', right: '5px', top: '5px'}}>
+                            <span style={{position: 'absolute', right: '5px', top: '5px'}}>
                                 <img src={arrow_svg.src} style={{height: '20px', width: '20px', rotate: '-90deg'}} alt="" />
                             </span>
                         </div> 
                         {
                             order_accordion
                             ? 
-                            <section style={{position: 'relative', background: 'rgb(219, 219, 219)', width: '100%', padding: '0px 0px 0px 20px', marginLeft: '10px'}}>
+                            <section style={{position: 'relative', display: 'block', background: 'rgb(219, 219, 219)', width: '100%', padding: '0px 0px 0px 20px', marginLeft: '10px'}}>
                                 <div style={{height: '90%', width: 'auto', borderRight: '2px solid #000', background: 'rgb(219, 219, 219)', position: 'absolute', left: '0', top: '0'}}>
 
                                 </div>
-                                <div onClick={e => handleSubLinks(e,'manage-product')} data-link='manage-product' style={{padding: '8px', width: 'auto'}}>
+                                <div onClick={e => handleSubLinks(e,'orders/manage-orders')} data-link='manage-orders' style={{padding: '8px', width: 'auto'}}>
                                     <span></span>
                                     <span>
                                         Manage Orders
                                     </span>
                                 </div>
-                                <div onClick={e => handleSubLinks(e,'create-product')} data-link='create-product' style={{padding: '8px', width: 'auto'}}>
+                                <div onClick={e => handleSubLinks(e,'orders/create-order')} data-link='create-order' style={{padding: '8px', width: 'auto'}}>
                                     <span></span>
                                     <span>
                                         Create Order
@@ -134,7 +137,9 @@ export default function Aside() {
                         }
                     </li>
                     <li >
-                        <div onClick={e => handleLinks('product')} data-link='product' style={{position: 'relative'}}>
+                        <div onClick={e => {
+                                set_product_accordion(!product_accordion)
+                            }} data-link='product' style={{position: 'relative'}}>
                             <span>
                                 <img src={product_svg.src} style={{height: '20px', width: '20px'}} alt="" />
                             </span>
@@ -142,33 +147,31 @@ export default function Aside() {
                             &nbsp;
                             <span>Products</span>
 
-                            <span onClick={e => {
-                                set_product_accordion(!product_accordion)
-                            }} style={{position: 'absolute', right: '5px', top: '5px'}}>
+                            <span style={{position: 'absolute', right: '5px', top: '5px'}}>
                                 <img src={arrow_svg.src} style={{height: '20px', width: '20px', rotate: '-90deg'}} alt="" />
                             </span>
                         </div> 
                         {
                             product_accordion
                             ? 
-                            <section style={{position: 'relative', background: 'rgb(219, 219, 219)', width: '100%', padding: '0px 0px 0px 20px', marginLeft: '10px'}}>
+                            <section style={{position: 'relative', display: 'block', background: 'rgb(219, 219, 219)', width: '100%', padding: '0px 0px 0px 20px', marginLeft: '10px'}}>
                                 <div style={{height: '90%', width: 'auto', borderRight: '2px solid #000', background: 'rgb(219, 219, 219)', position: 'absolute', left: '0', top: '0'}}>
 
                                 </div>
-                                <div onClick={e => handleSubLinks(e,'manage-product')} data-link='manage-product' style={{padding: '8px', width: 'auto'}}>
+                                <div onClick={e => handleSubLinks(e,'product/manage-product')} data-link='manage-product' style={{padding: '8px', width: 'auto'}}>
                                     <span></span>
                                     <span>
                                         Manage Products
                                     </span>
                                 </div>
-                                <div onClick={e => handleSubLinks(e,'create-product')} data-link='create-product' style={{padding: '8px', width: 'auto'}}>
+                                <div onClick={e => handleSubLinks(e,'product/create-product')} data-link='create-product' style={{padding: '8px', width: 'auto'}}>
                                     <span></span>
                                     <span>
                                         Create Products
                                     </span>
                                 </div>
 
-                                <div onClick={e => handleSubLinks(e,'product-reviews')} data-link='product-reviews' style={{padding: '8px', width: 'auto'}}>
+                                <div onClick={e => handleSubLinks(e,'product/product-reviews')} data-link='product-reviews' style={{padding: '8px', width: 'auto'}}>
                                     <span></span>
                                     <span>
                                         Products Reviews
@@ -182,7 +185,7 @@ export default function Aside() {
                         }
                     </li>
                     <li >
-                        <div onClick={e => handleLinks('product')} data-link='product' style={{position: 'relative'}}>
+                        <div onClick={e => handleLinks('customer')} data-link='customer' style={{position: 'relative'}}>
                             <span>
                                 <img src={customer_svg.src} style={{height: '20px', width: '20px'}} alt="" />
                             </span>
@@ -190,36 +193,13 @@ export default function Aside() {
                             &nbsp;
                             <span>Customers</span>
 
-                            <span onClick={e => {
+                            {/* <span onClick={e => {
                                 set_customer_accordion(!customer_accordion)
                             }} style={{position: 'absolute', right: '5px', top: '5px'}}>
                                 <img src={arrow_svg.src} style={{height: '20px', width: '20px', rotate: '-90deg'}} alt="" />
-                            </span>
+                            </span> */}
                         </div> 
-                        {
-                            customer_accordion
-                            ? 
-                            <section style={{position: 'relative', background: 'rgb(219, 219, 219)', width: '100%', padding: '0px 0px 0px 20px', marginLeft: '10px'}}>
-                                <div style={{height: '90%', width: 'auto', borderRight: '2px solid #000', background: 'rgb(219, 219, 219)', position: 'absolute', left: '0', top: '0'}}>
-
-                                </div>
-                                <div onClick={e => handleSubLinks(e,'manage-product')} data-link='manage-product' style={{padding: '8px', width: 'auto'}}>
-                                    <span></span>
-                                    <span>
-                                        Active Customers
-                                    </span>
-                                </div>
-                                <div onClick={e => handleSubLinks(e,'create-product')} data-link='create-product' style={{padding: '8px', width: 'auto'}}>
-                                    <span></span>
-                                    <span>
-                                        Inactive Customers
-                                    </span>
-                                </div>
-
-                            </section>
-                            :
-                            ''
-                        }
+                       
                     </li>
                     
                     <li >
@@ -234,7 +214,7 @@ export default function Aside() {
                     </li>
 
                     <li >
-                        <div onClick={e => handleLinks('inventory')} data-link='inventory'>
+                        <div onClick={e => handleLinks('team')} data-link='team'>
                             <span>
                                 <img src={team_svg.src} style={{height: '20px', width: '20px'}} alt="" />
                             </span>
@@ -267,7 +247,9 @@ export default function Aside() {
                     </li>
 
                     <li >
-                        <div onClick={e => handleLinks('transaction')} data-link='transaction' style={{position: 'relative'}}>
+                        <div onClick={e => {
+                                set_discount_accordion(!discount_accordion)
+                            }}  data-link='discount' style={{position: 'relative'}}>
                             <span>
                                 <img src={discount_svg.src} style={{height: '20px', width: '20px'}} alt="" />
                             </span>
@@ -275,26 +257,24 @@ export default function Aside() {
                             &nbsp;
                             <span>Discount</span>
 
-                            <span onClick={e => {
-                                set_discount_accordion(!discount_accordion)
-                            }} style={{position: 'absolute', right: '5px', top: '5px'}}>
+                            <span style={{position: 'absolute', right: '5px', top: '5px'}}>
                                 <img src={arrow_svg.src} style={{height: '20px', width: '20px', rotate: '-90deg'}} alt="" />
                             </span>
                         </div> 
                         {
                             discount_accordion
                             ? 
-                            <section style={{position: 'relative', background: 'rgb(219, 219, 219)', width: '100%', padding: '0px 0px 0px 20px', marginLeft: '10px'}}>
+                            <section style={{position: 'relative', display: 'block', background: 'rgb(219, 219, 219)', width: '100%', padding: '0px 0px 0px 20px', marginLeft: '10px'}}>
                                 <div style={{height: '90%', width: 'auto', borderRight: '2px solid #000', background: 'rgb(219, 219, 219)', position: 'absolute', left: '0', top: '0'}}>
 
                                 </div>
-                                <div onClick={e => handleSubLinks(e,'manage-product')} data-link='manage-product' style={{padding: '8px', width: 'auto'}}>
+                                <div onClick={e => handleSubLinks(e,'discount/manage-discount')} data-link='manage-discount' style={{padding: '8px', width: 'auto'}}>
                                     <span></span>
                                     <span>
                                         Manage Discount
                                     </span>
                                 </div>
-                                <div onClick={e => handleSubLinks(e,'create-product')} data-link='create-product' style={{padding: '8px', width: 'auto'}}>
+                                <div onClick={e => handleSubLinks(e,'discount/create-discount')} data-link='create-discount' style={{padding: '8px', width: 'auto'}}>
                                     <span></span>
                                     <span>
                                         Bump & Drop
@@ -308,7 +288,9 @@ export default function Aside() {
                     </li>
                     
                     <li >
-                        <div onClick={e => handleLinks('transaction')} data-link='transaction' style={{position: 'relative'}}>
+                        <div onClick={e => {
+                                set_transaction_accordion(!transaction_accordion)
+                            }}  data-link='transaction' style={{position: 'relative'}}>
                             <span>
                                 <img src={transaction_svg.src} style={{height: '20px', width: '20px'}} alt="" />
                             </span>
@@ -316,26 +298,24 @@ export default function Aside() {
                             &nbsp;
                             <span>Transaction</span>
 
-                            <span onClick={e => {
-                                set_transaction_accordion(!transaction_accordion)
-                            }} style={{position: 'absolute', right: '5px', top: '5px'}}>
+                            <span style={{position: 'absolute', right: '5px', top: '5px'}}>
                                 <img src={arrow_svg.src} style={{height: '20px', width: '20px', rotate: '-90deg'}} alt="" />
                             </span>
                         </div> 
                         {
                             transaction_accordion
                             ? 
-                            <section style={{position: 'relative', background: 'rgb(219, 219, 219)', width: '100%', padding: '0px 0px 0px 20px', marginLeft: '10px'}}>
+                            <section style={{position: 'relative', display: 'block', background: 'rgb(219, 219, 219)', width: '100%', padding: '0px 0px 0px 20px', marginLeft: '10px'}}>
                                 <div style={{height: '90%', width: 'auto', borderRight: '2px solid #000', background: 'rgb(219, 219, 219)', position: 'absolute', left: '0', top: '0'}}>
 
                                 </div>
-                                <div onClick={e => handleSubLinks(e,'manage-product')} data-link='manage-product' style={{padding: '8px', width: 'auto'}}>
+                                <div onClick={e => handleSubLinks(e,'transaction/balance')} data-link='transaction' style={{padding: '8px', width: 'auto'}}>
                                     <span></span>
                                     <span>
                                         Balance
                                     </span>
                                 </div>
-                                <div onClick={e => handleSubLinks(e,'create-product')} data-link='create-product' style={{padding: '8px', width: 'auto'}}>
+                                <div onClick={e => handleSubLinks(e,'transaction/wallet')} data-link='transaction' style={{padding: '8px', width: 'auto'}}>
                                     <span></span>
                                     <span>
                                         Wallet
@@ -347,8 +327,11 @@ export default function Aside() {
                             ''
                         }
                     </li>
+
                     <li >
-                        <div onClick={e => handleLinks('product')} data-link='product' style={{position: 'relative'}}>
+                        <div  onClick={e => {
+                                set_report_accordion(!report_accordion)
+                            }}  data-link='report' style={{position: 'relative'}}>
                             <span>
                                 <img src={report_svg.src} style={{height: '20px', width: '20px'}} alt="" />
                             </span>
@@ -356,26 +339,24 @@ export default function Aside() {
                             &nbsp;
                             <span>Reports</span>
 
-                            <span onClick={e => {
-                                set_report_accordion(!report_accordion)
-                            }} style={{position: 'absolute', right: '5px', top: '5px'}}>
+                            <span style={{position: 'absolute', right: '5px', top: '5px'}}>
                                 <img src={arrow_svg.src} style={{height: '20px', width: '20px', rotate: '-90deg'}} alt="" />
                             </span>
                         </div> 
                         {
                             report_accordion
                             ? 
-                            <section style={{position: 'relative', background: 'rgb(219, 219, 219)', width: '100%', padding: '0px 0px 0px 20px', marginLeft: '10px'}}>
+                            <section style={{position: 'relative', display: 'block', background: 'rgb(219, 219, 219)', width: '100%', padding: '0px 0px 0px 20px', marginLeft: '10px'}}>
                                 <div style={{height: '90%', width: 'auto', borderRight: '2px solid #000', background: 'rgb(219, 219, 219)', position: 'absolute', left: '0', top: '0'}}>
 
                                 </div>
-                                <div onClick={e => handleSubLinks(e,'manage-product')} data-link='manage-product' style={{padding: '8px', width: 'auto'}}>
+                                <div onClick={e => handleSubLinks(e,'report/analytics')} data-link='analytics' style={{padding: '8px', width: 'auto'}}>
                                     <span></span>
                                     <span>
                                         Analytics
                                     </span>
                                 </div>
-                                <div onClick={e => handleSubLinks(e,'create-product')} data-link='create-product' style={{padding: '8px', width: 'auto'}}>
+                                <div onClick={e => handleSubLinks(e,'report/sales')} data-link='sales' style={{padding: '8px', width: 'auto'}}>
                                     <span></span>
                                     <span>
                                         Sales
@@ -389,7 +370,9 @@ export default function Aside() {
                     </li>
 
                     <li >
-                        <div onClick={e => handleLinks('setting')} data-link='setting' style={{position: 'relative'}}>
+                        <div onClick={e => {
+                                set_setting_accordion(!setting_accordion)
+                            }}  data-link='setting' style={{position: 'relative'}}>
                             <span>
                                 <img src={settings_svg.src} style={{height: '20px', width: '20px'}} alt="" />
                             </span>
@@ -397,94 +380,92 @@ export default function Aside() {
                             &nbsp;
                             <span>Settings</span>
 
-                            <span onClick={e => {
-                                set_setting_accordion(!setting_accordion)
-                            }} style={{position: 'absolute', right: '5px', top: '5px'}}>
+                            <span style={{position: 'absolute', right: '5px', top: '5px'}}>
                                 <img src={arrow_svg.src} style={{height: '20px', width: '20px', rotate: '-90deg'}} alt="" />
                             </span>
                         </div> 
                         {
                             setting_accordion
                             ? 
-                            <section style={{position: 'relative', background: 'rgb(219, 219, 219)', width: '100%', padding: '0px 0px 0px 20px', marginLeft: '10px'}}>
+                            <section style={{position: 'relative', display: 'block', background: 'rgb(219, 219, 219)', width: '100%', padding: '0px 0px 0px 20px', marginLeft: '10px'}}>
                                 <div style={{height: '98%', width: 'auto', borderRight: '2px solid #000', background: 'rgb(219, 219, 219)', position: 'absolute', left: '0', top: '0'}}>
 
                                 </div>
                                 
-                                <div onClick={e => handleSubLinks(e,'create-product')} data-link='create-product' style={{padding: '8px', width: 'auto'}}>
+                                <div onClick={e => handleSubLinks(e,'settings/shop-details')} data-link='settings' style={{padding: '8px', width: 'auto'}}>
                                     <span></span>
                                     <span>
                                         Shop Details
                                     </span>
                                 </div>
-                                <div onClick={e => handleSubLinks(e,'create-product')} data-link='create-product' style={{padding: '8px', width: 'auto'}}>
+                                <div onClick={e => handleSubLinks(e,'settings/locations')} data-link='settings' style={{padding: '8px', width: 'auto'}}>
                                     <span></span>
                                     <span>
                                         Locations
                                     </span>
                                 </div>
-                                <div onClick={e => handleSubLinks(e,'create-product')} data-link='create-product' style={{padding: '8px', width: 'auto'}}>
+                                <div onClick={e => handleSubLinks(e,'settings/inventory')} data-link='settings' style={{padding: '8px', width: 'auto'}}>
                                     <span></span>
                                     <span>
                                         Inventory
                                     </span>
                                 </div>
-                                <div onClick={e => handleSubLinks(e,'create-product')} data-link='create-product' style={{padding: '8px', width: 'auto'}}>
+                                <div onClick={e => handleSubLinks(e,'settings/orders')} data-link='settings' style={{padding: '8px', width: 'auto'}}>
                                     <span></span>
                                     <span>
                                         Orders
                                     </span>
                                 </div>
-                                <div onClick={e => handleSubLinks(e,'create-product')} data-link='create-product' style={{padding: '8px', width: 'auto'}}>
+                                <div onClick={e => handleSubLinks(e,'settings/social-accounts')} data-link='settings' style={{padding: '8px', width: 'auto'}}>
                                     <span></span>
                                     <span>
                                         Social Accounts
                                     </span>
                                 </div>
-                                <div onClick={e => handleSubLinks(e,'create-product')} data-link='create-product' style={{padding: '8px', width: 'auto'}}>
+                                <div onClick={e => handleSubLinks(e,'settings/currencies')} data-link='settings' style={{padding: '8px', width: 'auto'}}>
                                     <span></span>
                                     <span>
                                         Currencies
                                     </span>
                                 </div>
-                                <div onClick={e => handleSubLinks(e,'create-product')} data-link='create-product' style={{padding: '8px', width: 'auto'}}>
+                                <div onClick={e => handleSubLinks(e,'settings/bank-account')} data-link='settings' style={{padding: '8px', width: 'auto'}}>
                                     <span></span>
                                     <span>
                                         Bank Account
                                     </span>
                                 </div>
-                                <div onClick={e => handleSubLinks(e,'create-product')} data-link='create-product' style={{padding: '8px', width: 'auto'}}>
+                                <div onClick={e => handleSubLinks(e,'settings/policies')} data-link='settings' style={{padding: '8px', width: 'auto'}}>
                                     <span></span>
                                     <span>
                                         Policies
                                     </span>
                                 </div>
-                                <div onClick={e => handleSubLinks(e,'create-product')} data-link='create-product' style={{padding: '8px', width: 'auto'}}>
+                                <div onClick={e => handleSubLinks(e,'settings/shipping-rates')} data-link='settings' style={{padding: '8px', width: 'auto'}}>
                                     <span></span>
                                     <span>
                                         Shipping Rates
                                     </span>
                                 </div>
-                                <div onClick={e => handleSubLinks(e,'create-product')} data-link='create-product' style={{padding: '8px', width: 'auto'}}>
+                                <div onClick={e => handleSubLinks(e,'settings/pickup-points')} data-link='settings' style={{padding: '8px', width: 'auto'}}>
                                     <span></span>
                                     <span>
                                         Pickup Points
                                     </span>
                                 </div>
-                                <div onClick={e => handleSubLinks(e,'create-product')} data-link='create-product' style={{padding: '8px', width: 'auto'}}>
+                                <div onClick={e => handleSubLinks(e,'settings/subscription-billing')} data-link='settings' style={{padding: '8px', width: 'auto'}}>
                                     <span></span>
                                     <span>
                                         Subscription/Billing
                                     </span>
                                 </div>
                                
-                                <div onClick={e => handleSubLinks(e,'create-product')} data-link='create-product' style={{padding: '8px', width: 'auto'}}>
+                                <div onClick={e => handleSubLinks(e,'settings/my-domain')} data-link='settings' style={{padding: '8px', width: 'auto'}}>
                                     <span></span>
                                     <span>
                                         My Domain
                                     </span>
                                 </div>
-                                <div onClick={e => handleSubLinks(e,'create-product')} data-link='create-product' style={{padding: '8px', width: 'auto'}}>
+                                <div onClick={e => handleSubLinks(e,'settings/API-keys')} data-link='settings' style={{padding: '8px', width: 'auto'}}>
                                     <span></span>
                                     <span>
                                         API Keys
@@ -498,7 +479,9 @@ export default function Aside() {
                     </li>
 
                     <li >
-                    <div onClick={e => handleLinks('marketing')} data-link='marketing' style={{position: 'relative'}}>
+                        <div onClick={e => {
+                                set_marketing_accordion(!marketing_accordion)
+                            }} data-link='marketing' style={{position: 'relative'}}>
                             <span>
                                 <img src={marketing_svg.src} style={{height: '20px', width: '20px'}} alt="" />
                             </span>
@@ -506,26 +489,24 @@ export default function Aside() {
                             &nbsp;
                             <span>Marketing</span>
 
-                            <span onClick={e => {
-                                set_marketing_accordion(!marketing_accordion)
-                            }} style={{position: 'absolute', right: '5px', top: '5px'}}>
+                            <span  style={{position: 'absolute', right: '5px', top: '5px'}}>
                                 <img src={arrow_svg.src} style={{height: '20px', width: '20px', rotate: '-90deg'}} alt="" />
                             </span>
                         </div> 
                         {
                             marketing_accordion
                             ? 
-                            <section style={{position: 'relative', background: 'rgb(219, 219, 219)', width: '100%', padding: '0px 0px 0px 20px', marginLeft: '10px'}}>
+                            <section style={{position: 'relative', display: 'block', background: 'rgb(219, 219, 219)', width: '100%', padding: '0px 0px 0px 20px', marginLeft: '10px'}}>
                                 <div style={{height: '90%', width: 'auto', borderRight: '2px solid #000', background: 'rgb(219, 219, 219)', position: 'absolute', left: '0', top: '0'}}>
 
                                 </div>
-                                <div onClick={e => handleSubLinks(e,'manage-product')} data-link='manage-product' style={{padding: '8px', width: 'auto'}}>
+                                <div onClick={e => handleSubLinks(e,'marketing/manage-campaign')} data-link='manage-campaign' style={{padding: '8px', width: 'auto'}}>
                                     <span></span>
                                     <span>
                                         Manage Campaigns
                                     </span>
                                 </div>
-                                <div onClick={e => handleSubLinks(e,'create-product')} data-link='create-product' style={{padding: '8px', width: 'auto'}}>
+                                <div onClick={e => handleSubLinks(e,'marketing/create-campaign')} data-link='create-campaign' style={{padding: '8px', width: 'auto'}}>
                                     <span></span>
                                     <span>
                                         Create Campaigns
