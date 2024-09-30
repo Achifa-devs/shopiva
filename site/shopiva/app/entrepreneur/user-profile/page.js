@@ -5,7 +5,7 @@ import './styles/xxl.css'
 import Link from 'next/link'
 export default function UserProfile() {
 
-    let [active_panel, set_active_panel] = useState(0)
+    let [active_panel, set_active_panel] = useState(1)
   return (
     <>
         <header className='shadow-sm'>
@@ -13,7 +13,7 @@ export default function UserProfile() {
                 <b>Shopiva</b>
             </section>
             <section>
-                <span style={{background: '#07d300', display: 'flex', alignItems: 'center', justifyContent: 'center', height: 'auto', width: 'auto', padding: '5px', borderRadius: '5px', fontSize: 'x-small'}}>A.F</span>
+                <span style={{background: '#000', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', height: 'auto', width: 'auto', padding: '5px', borderRadius: '5px', fontSize: 'x-small'}}>A.F</span>
                 &nbsp;
                 {/* &nbsp; */}
                 <span><small>Akpulu Fabian</small></span>
@@ -80,7 +80,7 @@ function Genenral() {
                 
                     <section>
                         <div style={{display: 'flex', alignItems: 'center', justifyContent: 'flext-start', borderBottom: '1px solid #000', height: 'auto', padding: '10px 0px', marginBottom: '10px'}}>
-                            <span style={{background: '#07d300', display: 'flex', alignItems: 'center', justifyContent: 'center', height: 'auto', width: 'auto', padding: '10px', borderRadius: '5px', fontSize: 'x-small'}}>A.F</span>
+                            <span style={{background: '#000', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', height: 'auto', width: 'auto', padding: '10px', borderRadius: '5px', fontSize: 'x-small'}}>A.F</span>
                             &nbsp;
                             &nbsp;
                             &nbsp;
