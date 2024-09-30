@@ -1,6 +1,11 @@
 "use client"
 import React, { useState } from 'react'
-import './style.css'
+import './assets/xxl.css'
+import './assets/xl.css'
+import './assets/l.css'
+import './assets/s.css'
+import './assets/m.css'
+
 import home_svg from '@/svgs/home-1-svgrepo-com (2).svg'
 import product_svg from '@/svgs/product-service-campaign-svgrepo-com.svg'
 import discount_svg from '@/svgs/discount-svgrepo-com.svg'
@@ -518,17 +523,6 @@ export default function Aside() {
                     </li>
 
                     <li >
-                        <div onClick={e => handleLinks('profile')} data-link='profile'>
-                            <span>
-                                <img src={profile_svg.src} style={{height: '20px', width: '20px'}} alt="" />
-                            </span>
-                            &nbsp;
-                            &nbsp;
-                            <span>User Profile</span>
-                        </div>
-                    </li>
-
-                    <li >
                         <div onClick={e => handleLinks('referral')} data-link='referral'>
                             <span>
                                 <img src={referral_svg.src} style={{height: '20px', width: '20px'}} alt="" />
@@ -544,7 +538,7 @@ export default function Aside() {
                 <div className='btm-links'>
                 <br />
                     <h6>Resources</h6>
-                    <ul style={{overflow: 'auto'}}>
+                    <ul style={{overflow: 'auto', padding: '0'}}>
                     
                         <li >
                             <div onClick={e => handleLinks('referral')} data-link='referral'>

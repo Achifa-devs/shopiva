@@ -34,13 +34,21 @@ export default function App({children}) {
         <Provider store={store}>
           
           {
-            pathname.split('/').splice(-1)[0] === 'entrepreneur'
+            pathname.split('/').splice(1,2)[0] === 'entrepreneur'
             ?
-            <EntrepreneurLayout setCookie={''}>
-              {
-                children
-              }
-            </EntrepreneurLayout>
+              pathname.split('/').splice(1,2)[1] === 'user-profile'
+              ?
+                <>
+                  {
+                    children
+                  }
+                </>
+              :
+              <EntrepreneurLayout setCookie={''}>
+                {
+                  children
+                }
+              </EntrepreneurLayout>
             :
             ''
           }

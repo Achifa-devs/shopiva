@@ -58,7 +58,9 @@ export default function ProfileFloater() {
                     <div style={{marginTop: '-12px', padding: '2px 5px', fontSize: 'x-small'}}>akpulufabian@gmai.com</div>
                 </span>
             </li>
-            <li>
+            <li onClick={e=> {
+                window.open('/entrepreneur/user-profile')
+            }}>
                 <span></span>
                 <span>Manage account</span>
             </li>

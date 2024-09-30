@@ -15,7 +15,7 @@ export function handleAside() {
     }
   }
 
-  export function handleFloater(type) {
+  export function handleFloater(type,position={}) {
     
     let elem = document.querySelector('.entrepreneur-floater-cnt');
     // elem.classList.remove('entrepreneur-floater-cnt-xtra')
@@ -39,6 +39,12 @@ export function handleAside() {
             elem_x.removeAttribute('id')
           }else{
             elem_x.setAttribute('id', 'entrepreneur-floater-cnt')
+            // console.log(position)
+            if(window.innerWidth >= 600){
+              elem_x.style.left = `calc(50% - 50px)`
+            }else{
+              elem_x.style.left = `0px`
+            }
             // elem.classList.add('entrepreneur-floater-cnt-xtra')
         }
     }

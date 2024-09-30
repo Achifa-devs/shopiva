@@ -56,7 +56,7 @@ export default function NotificationFloater() {
                 </div>
                 <div>
                     <p style={{color: '#333333'}}>
-                        Your $1.0 payment for your shopify bill could'nt be processed because of a problem with your payment method.
+                        Your $1.0 payment for your shopify bill could&apos;nt be processed because of a problem with your payment method.
                     </p>
                 </div>
             </li>
@@ -86,7 +86,7 @@ export default function NotificationFloater() {
                 </div>
                 <div>
                     <p style={{color: '#333333'}}>
-                        Your $1.0 payment for your shopify bill could'nt be processed because of a problem with your payment method.
+                        Your $1.0 payment for your shopify bill could&apos;nt be processed because of a problem with your payment method.
                     </p>
                 </div>
             </li>
@@ -116,7 +116,7 @@ export default function NotificationFloater() {
                 </div>
                 <div>
                     <p style={{color: '#333333'}}>
-                        Your $1.0 payment for your shopify bill could'nt be processed because of a problem with your payment method.
+                        Your $1.0 payment for your shopify bill could&apos;nt be processed because of a problem with your payment method.
                     </p>
                 </div>
             </li>
@@ -146,7 +146,7 @@ export default function NotificationFloater() {
                 </div>
                 <div>
                     <p style={{color: '#333333'}}>
-                        Your $1.0 payment for your shopify bill could'nt be processed because of a problem with your payment method.
+                        Your $1.0 payment for your shopify bill could&apos;nt be processed because of a problem with your payment method.
                     </p>
                 </div>
             </li>

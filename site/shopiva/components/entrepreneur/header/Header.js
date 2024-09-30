@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import './style.css'
 import bell_svg from '../../../svgs/notification-svgrepo-com (3).svg'
-import Aside from '../aside/Aside'
 import { handleAside, handleFloater } from '@/reusables/anitmation'
 import menu_svg from '@/svgs/menu-svgrepo-com.svg'
 import { useDispatch, useSelector } from 'react-redux'
 import { set_floater_src } from '@/redux/entrepreneur/floater_src'
-export default function Header({update_search_status}) {
+export default function Header() {
   let [screenWidth, setScreenWidth] = useState(0)
   let dispatch = useDispatch()
   useEffect(() => {
@@ -38,7 +37,12 @@ export default function Header({update_search_status}) {
         <section className='header-section'>
           <input type="search" name="" placeholder='search' onFocus={e=> {
             dispatch(set_floater_src('search'))
-            handleFloater('search')
+            let position = e.currentTarget.parentElement.getBoundingClientRect();
+            let left = position.left;
+            let top = position.top;
+            handleFloater('search', {left,top})
+
+
           }}  id="" />
         </section>
 
