@@ -173,7 +173,7 @@ function Genenral() {
                 <section style={{padding: '10px 10px ', minHeight: '50px', display: 'flex', alignItem: 'center', flexDirection: 'column', justifyContent: 'center'}}>
                     <p><b>Preferred language</b></p>
                     <small>
-                        When you're logged in to Shopify, this is the language you will see. It doesn't affect the language your customers see on your online store.
+                        When you&apos;re logged in to Shopify, this is the language you will see. It doesn&apos;t affect the language your customers see on your online store.
                     </small>
                 </section>
                 <div className="content-cnt">
@@ -299,7 +299,7 @@ function Security() {
                             <p>When you log in to Shopify, you’ll need to:</p>
                             <ol>
                                 <li><small>Enter your email and password</small></li>
-                                <li><small>Complete a second step to prove that it"s you logging in. You can enter a verification code, use a security key, or confirm your login on a trusted device.</small></li>
+                                <li><small>Complete a second step to prove that it&apos;s you logging in. You can enter a verification code, use a security key, or confirm your login on a trusted device.</small></li>
                             </ol>
                             <button>
                                 Turn on two-step
@@ -314,7 +314,7 @@ function Security() {
             <div className='description'>
                 <section style={{padding: '10px 10px ', minHeight: '50px', display: 'flex', alignItem: 'center', flexDirection: 'column', justifyContent: 'center'}}>
                     <p><b>Devices</b></p>
-                    <p><small>You're currently logged in to Shopify on these devices. If you don't recognize a device, log out to keep your account secure.</small></p>
+                    <p><small>You&apos;re currently logged in to Shopify on these devices. If you don&apos;t recognize a device, log out to keep your account secure.</small></p>
                 </section>
                 <div className="content-cnt" >
                     <section>
