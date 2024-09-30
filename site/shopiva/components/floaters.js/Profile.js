@@ -44,10 +44,10 @@ export default function ProfileFloater() {
                 <span></span>
                 <span>Hire a Shopify Partner</span>
             </li>
-            <li>
+            {/* <li>
                 <span></span>
                 <span>Keyboard shortcuts</span>
-            </li>
+            </li> */}
             <hr />
             <li>
                 {/* <span></span> */}

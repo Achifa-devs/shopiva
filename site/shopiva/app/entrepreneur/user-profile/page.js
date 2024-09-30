@@ -9,7 +9,7 @@ export default function UserProfile() {
     <>
         <header className='shadow-sm'>
             <section>
-                Shopiva
+                <b>Shopiva</b>
             </section>
             <section>
                 <span style={{background: '#07d300', display: 'flex', alignItems: 'center', justifyContent: 'center', height: 'auto', width: 'auto', padding: '5px', borderRadius: '5px', fontSize: 'x-small'}}>A.F</span>
@@ -35,7 +35,13 @@ export default function UserProfile() {
             <hr />
 
             <h3 style={{padding: '10px 10px ', minHeight: '50px', borderBottom: '1px solid #000'}}>
-                General
+                {
+                    active_panel
+                    ? 
+                    'Genenral'
+                    :
+                    'Security'
+                }
             </h3>
 
             {/* <hr /> */}
@@ -144,16 +150,16 @@ function Genenral() {
             </div>
  
             <section style={{padding: '10px 10px ', minHeight: '50px', display: 'flex', alignItem: 'center', flexDirection: 'column', justifyContent: 'center'}}>
-                <p><b>Preferred content-cntuage</b></p>
+                <p><b>Preferred language</b></p>
 
                 <small>
-                    When you're logged in to Shopify, this is the content-cntuage you will see. It doesn't affect the content-cntuage your customers see on your online store.
+                    When you're logged in to Shopify, this is the language you will see. It doesn't affect the language your customers see on your online store.
                 </small>
             </section>
             <div className="content-cnt">
                 <section>
                     <div className="input-cnt">
-                        <label htmlFor="">content-cntuage</label>
+                        <label htmlFor="">Language</label>
                         <select name="" id=""></select>
                     </div>
                     <br />
@@ -289,26 +295,47 @@ function Security() {
                 <p><small>You're currently logged in to Shopify on these devices. If you don't recognize a device, log out to keep your account secure.</small></p>
             </section>
 
-            <div className="content-cnt">
+            <div className="content-cnt" >
                 <section>
                     <h6>Logged In</h6>
 
                     <hr />
 
-                    <div style={{width: '100%', height: 'auto'}}>
-                        <div className="left" style={{float: 'left'}}>
-                            <div>
+                    <div style={{width: '100%', background: '#fff', height: '60px', borderBottom: '1px solid #000'}} className='input-cnt'>
+                        <div className="left" style={{width: 'auto',float: 'left'}}>
+                            <div style={{height: 'auto'}}>
                                 <span></span>
-                                <span>Chrome On Windows</span>
-                                <span>THis Device</span>
+                                <span><small>Chrome On Windows</small></span>
+                                &nbsp;
+                                &nbsp;
+                                <span><small>This Device</small></span>
                             </div>
-                            {/* <div>{new Date()}</div> */}
-                            <div>Abuja(FCT), Nigeria</div>
+                            <div style={{height: 'auto'}}></div>
+                            <div style={{height: 'auto'}}><small>Abuja(FCT), Nigeria</small></div>
                         </div>
-                        <div className="right" style={{float: 'right'}}>
-                            <button>Log out</button>
+                        <div className="right" style={{width: 'auto',float: 'right'}}>
+                            <button style={{height: '30px', borderRadius: '5px'}}>Log out</button>
                         </div>
                     </div>
+                    <div style={{width: '100%', background: '#fff', height: '60px', borderBottom: '1px solid #000'}} className='input-cnt'>
+                        <div className="left" style={{width: 'auto',float: 'left'}}>
+                            <div style={{height: 'auto'}}>
+                                <span></span>
+                                <span><small>Chrome On Windows</small></span>
+                                &nbsp;
+                                &nbsp;
+                                <span><small>This Device</small></span>
+                            </div>
+                            <div style={{height: 'auto'}}></div>
+                            <div style={{height: 'auto'}}><small>Abuja(FCT), Nigeria</small></div>
+                        </div>
+                        <div className="right" style={{width: 'auto',float: 'right'}}>
+                            <button style={{height: '30px', borderRadius: '5px'}}>Log out</button>
+                        </div>
+                    </div>
+
+                    
+                    <br />
                     
                 </section>
             </div>
