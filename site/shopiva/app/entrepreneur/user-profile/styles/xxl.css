@@ -1,4 +1,7 @@
-@media screen and (max-width: 480px){
+@media screen and (min-width: 1201px) {
+    div{
+        height: auto;
+    }
     header{
         height: 50px;
         width: 100%;
@@ -16,16 +19,19 @@
     main{
         height: calc(100vh - 50px);
         width: 100%;
-        background-color: #f0f0f0;
-        overflow: auto;
+        background-color: rgb(241, 242, 243);
+        /* overflow: auto; */
+        display: flex;
+        justify-content: space-between;
     }
     
     main nav{
-        height: auto;
-        width: 100%;
+        height: calc(100vh - 50px);
+        width: 200px;
         display: flex;
         justify-content: flex-start;
-        align-items: center;
+        align-items: flex-start;
+        flex-direction: column;
         padding: 10px;
         
     }
@@ -35,11 +41,11 @@
         color: green;
         border-radius: 5px;
         margin: 0px 0px;
-        background-color: #f0f0f0;
+        background-color: rgb(241, 242, 243);
     }
     
     main nav button:last-child{
-        margin-left: 15px;
+        /* margin-left: 15px; */
     }
     
     main nav button:hover{
@@ -50,35 +56,68 @@
     
     
     .content{
-        background-color: #f0f0f0;
+        background-color: rgb(241, 242, 243);
         height: auto;
-        width: 100%;
+        width: calc(100% - 200px);
+        overflow: auto;
         /* padding: 10px; */
     }
     
     
-    .general-cnt{
-    
+    .description{
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .description section{
+        width: 30%
+    }
+    .content-cnt section{
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
     }
     
     .input-cnt{
-        width: 100%;
+        width: 45%;
         height: 40px;
-        margin: 10px 0px;
+        margin: 0px 0px 10px 0px ;
         /* background-color: blue; */
+    }
+
+    .cnt-input{
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    label{
+        font-size: 12px;
+        color: #3a3a3a;
+    }
+
+    .names-cnt{
+        display: flex;
+        width: 100%;
+        margin-bottom: 20px;
+        justify-content: space-between;
     }
     
     input,select{
         height: 100%;
         width: 100%;
+        border-radius: 5px;
         border: 1px solid #000;
     }
     
     .email-section, .phone-section{
+        width: 100%;
         display: flex;
         align-items: center;
+        height: 70px;
         justify-content: space-between;
-        flex-direction: column;
+        flex-direction: row;
     }
     
     .update-btn{
@@ -91,9 +130,10 @@
     
     .content-cnt{
         background-color: #fff;
-        width: 100%;
+        width: 500px;
         height: auto;
-        padding: 10px;
+        border-radius: 2.5px;
+        padding: 15px;
     }
     
     button{
@@ -102,6 +142,7 @@
         border-radius: 10px;
         color: #fff;
         margin: 0px 0px;
+        font-size: small;
         background-color: #000;
     }
     

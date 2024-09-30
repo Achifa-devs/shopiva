@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from 'react'
 import './styles/s.css'
+import './styles/xxl.css'
 import Link from 'next/link'
 export default function UserProfile() {
 
@@ -34,19 +35,20 @@ export default function UserProfile() {
 
             <hr />
 
-            <h3 style={{padding: '10px 10px ', minHeight: '50px', borderBottom: '1px solid #000'}}>
-                {
-                    active_panel
-                    ? 
-                    'Genenral'
-                    :
-                    'Security'
-                }
-            </h3>
+            
 
             {/* <hr /> */}
 
             <div className='content'>
+                <h3 style={{padding: '10px 10px ', minHeight: '50px', borderBottom: '1px solid #000'}}>
+                    {
+                        active_panel
+                        ? 
+                        'Genenral'
+                        :
+                        'Security'
+                    }
+                </h3>
                 {
                     active_panel
                     ? 
@@ -69,123 +71,146 @@ function Genenral() {
 
     return(
         <>
-            <section style={{padding: '10px 10px ', minHeight: '50px', display: 'flex', alignItem: 'center', flexDirection: 'column', justifyContent: 'center'}}>
-                <p><b>Details</b></p>
-                <small>View and updateyour personal details</small>
-            </section>
-
-            <div className="content-cnt">
+            <div className='description'>
+                <section className='description' style={{padding: '10px 10px ', minHeight: '50px', display: 'flex', alignItem: 'center', flexDirection: 'column', justifyContent: 'center'}}>
+                    <p><b>Details</b></p>
+                    <small>View and updateyour personal details</small>
+                </section>
+                <div className="content-cnt">
                 
-                <section>
-                    <div className="input-cnt">
-                        <label htmlFor="">FirstName</label>
-                        <input type="text" name="" id="" placeholder='FirstName' />
-                    </div>
-
-                    <br />
-
-                    <div className="input-cnt">
-                        <label htmlFor="">LastName</label>
-                        <input type="text" name="" id="" placeholder='LastName' />
-                    </div>
-
-
-                    <br />
-
-                    
-                    <div className='email-section'>
-                        <div className="input-cnt">
-                            <label htmlFor="">Email</label>
-                            <input type="email" name="" id="" placeholder='Email' />
+                    <section>
+                        <div style={{display: 'flex', alignItems: 'center', justifyContent: 'flext-start', borderBottom: '1px solid #000', height: 'auto', padding: '10px 0px', marginBottom: '10px'}}>
+                            <span style={{background: '#07d300', display: 'flex', alignItems: 'center', justifyContent: 'center', height: 'auto', width: 'auto', padding: '10px', borderRadius: '5px', fontSize: 'x-small'}}>A.F</span>
+                            &nbsp;
+                            &nbsp;
+                            &nbsp;
+                            <button style={{background: '#fff', border: '1px solid #000', color: '#000', borderRadius: '5px'}}>
+                                Upload photo
+                            </button>
                         </div>
-                        <div className="input-cnt" style={{justifyContent: 'space-between', display: 'flex', padding: '20px 5px', marginTop: '10px'}}>
-                            <span>
-                                Verified
-                            </span>
-                            <span>
-                                <button className='update-btn'>
-                                    Update
-                                </button>
-                            </span>
-                        </div>
-                    </div>
 
-                    <br />
-
-                    <div className='phone-section'>
-                        <div className="input-cnt">
-                            <label htmlFor="">Phone Number</label>
-                            <input type="tel" name="" id="" placeholder='Phone Number' />
+                        {/* <hr /> */}
+                        <br />
+                        <div className='names-cnt'>
+                            <div className="input-cnt">
+                                <label htmlFor="">First name</label>
+                                <input type="text" name="" id="" placeholder='FirstName' />
+                            </div>
+                            <br />
+                            <div className="input-cnt">
+                                <label htmlFor="">Last name</label>
+                                <input type="text" name="" id="" placeholder='LastName' />
+                            </div>
                         </div>
+
+                        <br />
                         
-                        <div className="input-cnt" style={{justifyContent: 'space-between', display: 'flex', padding: '20px 5px', marginTop: '10px'}}>
-                            <span>
-                                Verified
-                            </span>
-                            <span>
-                                <button className='update-btn'>
-                                    Update
-                                </button>
-                            </span>
+                        <br />
+
+                        <div className='email-section'>
+                            <div className="input-cnt">
+                                <label htmlFor="">Email</label>
+                                <input style={{border: 'none', outline: 'none', paddingLeft: '.5px'}} value={'akpulufabian@gmail.com'} type="email" name="" id="" placeholder='Email' />
+                            </div>
+                            <div className="input-cnt" style={{justifyContent: 'space-between', display: 'flex', padding: '20px 5px', marginTop: '10px'}}>
+                                <span style={{color: 'green', height: '25px', display: 'flex', alignItems: 'flex-end', fontSize: 'small'}}>
+                                    Verified
+                                </span>
+                                <span>
+                                    <button className='update-btn'>
+                                        <small>Update</small>
+                                    </button>
+                                </span>
+                            </div>
                         </div>
-                    </div>
 
-                </section>
 
+                        <br />
+                        
+                        <br />
+
+                        <div className='phone-section'>
+                            <div className="input-cnt">
+                                <label htmlFor="">Phone Number</label>
+                                <input style={{border: 'none', outline: 'none', paddingLeft: '.5px'}} value={'08032639894'} type="tel" name="" id="" placeholder='Phone Number' />
+                            </div>
+                            <div className="input-cnt" style={{justifyContent: 'space-between', display: 'flex', padding: '20px 5px', marginTop: '10px'}}>
+                                <span style={{color: 'green', height: '25px', display: 'flex', alignItems: 'flex-end', fontSize: 'small'}}>
+                                    Verified
+                                </span>
+                                <span>
+                                    <button className='update-btn'>
+                                        <small>Update</small>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                    </section>
                 
+                </div>
             </div>
 
-            <section style={{padding: '10px 10px ', minHeight: '50px', display: 'flex', alignItem: 'center', flexDirection: 'column', justifyContent: 'center'}}>
-                <p><b>Stores</b></p>
+            <hr />
 
-                <small>
-                    View and access stores connected to your Shopify account.
-                </small>
-            </section>
-
-            <div className="content-cnt">
-                <section style={{padding: '10px'}}>
-                    <Link href={''}>View all stores</Link>
+            <div className='description'>
+                <section className='description' style={{padding: '10px 10px ', minHeight: '50px', display: 'flex', alignItem: 'center', flexDirection: 'column', justifyContent: 'center'}}>
+                    <p><b>Stores</b></p>
+                    <small>
+                        View and access stores connected to your Shopify account.
+                    </small>
                 </section>
+                <div className="content-cnt">
+                    <section style={{padding: '10px', textAlign: 'left', justifyContent: 'flex-start'}}>
+                        <Link href={''}><small><b>View all stores</b></small></Link>
+                    </section>
+                </div>
             </div>
+
+            <hr />
+
  
-            <section style={{padding: '10px 10px ', minHeight: '50px', display: 'flex', alignItem: 'center', flexDirection: 'column', justifyContent: 'center'}}>
-                <p><b>Preferred language</b></p>
-
-                <small>
-                    When you're logged in to Shopify, this is the language you will see. It doesn't affect the language your customers see on your online store.
-                </small>
-            </section>
-            <div className="content-cnt">
-                <section>
-                    <div className="input-cnt">
-                        <label htmlFor="">Language</label>
-                        <select name="" id=""></select>
-                    </div>
-                    <br />
-                    <hr />
-                    <div>
-                        <h6>Regional Format</h6>
-                        <p><small>Your number, time, date, and currency formats are set for <b>English (Nigeria)</b>. Change regional format</small></p>
-                    </div>
+            <div className='description'>
+                <section className='description' style={{padding: '10px 10px ', minHeight: '50px', display: 'flex', alignItem: 'center', flexDirection: 'column', justifyContent: 'center'}}>
+                    <p><b>Preferred language</b></p>
+                    <small>
+                        When you're logged in to Shopify, this is the language you will see. It doesn't affect the language your customers see on your online store.
+                    </small>
                 </section>
+                <div className="content-cnt">
+                    <section>
+                        <div className="input-cnt cnt-input">
+                            <label htmlFor=""><b>Language</b></label>
+                            <select name="" id=""></select>
+                        </div>
+                        <br />
+                        <hr />
+                        <div>
+                            <h6>Regional Format</h6>
+                            <p><small>Your number, time, date, and currency formats are set for <b>English (Nigeria)</b>. Change regional format</small></p>
+                        </div>
+                    </section>
+                </div>
             </div>
 
+            <hr />
 
-            <section style={{padding: '10px 10px ', minHeight: '50px', display: 'flex', alignItem: 'center', flexDirection: 'column', justifyContent: 'center'}}>
-                <p><b>Timezone</b></p>
-            </section>
-            <div className="content-cnt">
-                <section>
-                    <div className="input-cnt">
-                        <label htmlFor="">Timezone</label>
-                        <select name="" id=""></select>
-                    </div>
-                     <br />
-                    <div>
-                        <p><small>This is the timezone for your account. To set the timezone for your Shopify admin, go to the General section in Settings.</small></p>
-                    </div>
+
+            <div className='description'>
+                <section className='description' style={{padding: '10px 10px ', minHeight: '50px', display: 'flex', alignItem: 'center', flexDirection: 'column', justifyContent: 'center'}}>
+                    <p><b>Timezone</b></p>
                 </section>
+                <div className="content-cnt">
+                    <section>
+                        <div className="input-cnt cnt-input">
+                            <label htmlFor=""><b>Timezone</b></label>
+                            <select name="" id=""></select>
+                        </div>
+                         <br />
+                        <div>
+                            <p><small>This is the timezone for your account. To set the timezone for your Shopify admin, go to the General section in Settings.</small></p>
+                        </div>
+                    </section>
+                </div>
             </div>
 
         </>
@@ -196,7 +221,7 @@ function Security() {
     
     return(
         <>
-            <section style={{padding: '10px 10px ', minHeight: '50px', display: 'flex', alignItem: 'center', flexDirection: 'column', justifyContent: 'center'}}>
+            <section className='description' style={{padding: '10px 10px ', minHeight: '50px', display: 'flex', alignItem: 'center', flexDirection: 'column', justifyContent: 'center'}}>
                 <p><b>Passkeys</b></p>
                 <p>
                     <small>
@@ -220,7 +245,7 @@ function Security() {
                 
             </div>
 
-            <section style={{padding: '10px 10px ', minHeight: '50px', display: 'flex', alignItem: 'center', flexDirection: 'column', justifyContent: 'center'}}>
+            <section className='description' style={{padding: '10px 10px ', minHeight: '50px', display: 'flex', alignItem: 'center', flexDirection: 'column', justifyContent: 'center'}}>
                 <p><b>Password</b></p>
 
                 <small>
@@ -239,7 +264,7 @@ function Security() {
                 </section>
             </div>
  
-            <section style={{padding: '10px 10px ', minHeight: '50px', display: 'flex', alignItem: 'center', flexDirection: 'column', justifyContent: 'center'}}>
+            <section className='description' style={{padding: '10px 10px ', minHeight: '50px', display: 'flex', alignItem: 'center', flexDirection: 'column', justifyContent: 'center'}}>
                 <p><b>Secondary email</b></p>
 
                 <small>
@@ -257,7 +282,7 @@ function Security() {
             </div>
 
 
-            <section style={{padding: '10px 10px ', minHeight: '50px', display: 'flex', alignItem: 'center', flexDirection: 'column', justifyContent: 'center'}}>
+            <section className='description' style={{padding: '10px 10px ', minHeight: '50px', display: 'flex', alignItem: 'center', flexDirection: 'column', justifyContent: 'center'}}>
                 <p><b>Two-step authentication</b></p>
                 <p><small>Learn more about two-step authentication</small></p>
             </section>
@@ -290,7 +315,7 @@ function Security() {
                 </section>
             </div>
 
-            <section style={{padding: '10px 10px ', minHeight: '50px', display: 'flex', alignItem: 'center', flexDirection: 'column', justifyContent: 'center'}}>
+            <section className='description' style={{padding: '10px 10px ', minHeight: '50px', display: 'flex', alignItem: 'center', flexDirection: 'column', justifyContent: 'center'}}>
                 <p><b>Devices</b></p>
                 <p><small>You're currently logged in to Shopify on these devices. If you don't recognize a device, log out to keep your account secure.</small></p>
             </section>
