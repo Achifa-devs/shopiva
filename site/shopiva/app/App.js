@@ -36,7 +36,7 @@ export default function App({children}) {
           {
             pathname.split('/').splice(1,2)[0] === 'entrepreneur'
             ?
-              pathname.split('/').splice(1,2)[1] === 'user-profile'
+              pathname.split('/').splice(1,2)[1] === 'user-profile' || pathname.split('/').splice(1,2)[1] === 'signup'
               ?
                 <>
                   {
