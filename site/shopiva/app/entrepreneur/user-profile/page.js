@@ -1,8 +1,14 @@
 "use client"
 import React, { useState } from 'react'
+import './styles/global.css'
 import './styles/s.css'
+import './styles/m.css'
 import './styles/xxl.css'
+import './styles/xl.css'
+import './styles/l.css'
 import Link from 'next/link'
+
+
 export default function UserProfile() {
 
     let [active_panel, set_active_panel] = useState(1)
@@ -84,7 +90,7 @@ function Genenral() {
                             &nbsp;
                             &nbsp;
                             &nbsp;
-                            <button style={{background: '#fff', border: '1px solid #000', color: '#000', borderRadius: '5px'}}>
+                            <button style={{background: '#eee', padding: '5px', border: '1px solid #000', color: '#000', borderRadius: '2.5px'}}>
                                 Upload photo
                             </button>
                         </div>
@@ -110,7 +116,7 @@ function Genenral() {
                         <div className='email-section'>
                             <div className="input-cnt">
                                 <label htmlFor="">Email</label>
-                                <input style={{border: 'none', outline: 'none', paddingLeft: '.5px'}} value={'akpulufabian@gmail.com'} type="email" name="" id="" placeholder='Email' />
+                                <input style={{border: 'none', outline: 'none', paddingLeft: '.5px', fontSize: 'small'}} value={'akpulufabian@gmail.com'} type="email" name="" id="" placeholder='Email' />
                             </div>
                             <div className="input-cnt" style={{justifyContent: 'space-between', display: 'flex', padding: '20px 5px', marginTop: '10px'}}>
                                 <span style={{color: 'green', height: '25px', display: 'flex', alignItems: 'flex-end', fontSize: 'small'}}>
@@ -132,7 +138,7 @@ function Genenral() {
                         <div className='phone-section'>
                             <div className="input-cnt">
                                 <label htmlFor="">Phone Number</label>
-                                <input style={{border: 'none', outline: 'none', paddingLeft: '.5px'}} value={'08032639894'} type="tel" name="" id="" placeholder='Phone Number' />
+                                <input style={{border: 'none', outline: 'none', paddingLeft: '.5px',  fontSize: 'small'}} value={'08032639894'} type="tel" name="" id="" placeholder='Phone Number' />
                             </div>
                             <div className="input-cnt" style={{justifyContent: 'space-between', display: 'flex', padding: '20px 5px', marginTop: '10px'}}>
                                 <span style={{color: 'green', height: '25px', display: 'flex', alignItems: 'flex-end', fontSize: 'small'}}>
@@ -185,7 +191,8 @@ function Genenral() {
                         <br />
                         <hr />
                         <div>
-                            <h6>Regional Format</h6>
+                            <p><small>Regional Format</small></p>
+                            <br />
                             <p><small>Your number, time, date, and currency formats are set for <b>English (Nigeria)</b>. Change regional format</small></p>
                         </div>
                     </section>
@@ -195,7 +202,7 @@ function Genenral() {
             <hr />
 
 
-            <div classN className='description'ame='description'>
+            <div className='description'>
                 <section style={{padding: '10px 10px ', minHeight: '50px', display: 'flex', alignItem: 'center', flexDirection: 'column', justifyContent: 'center'}}>
                     <p><b>Timezone</b></p>
                 </section>
@@ -286,22 +293,23 @@ function Security() {
                 </section>
                 <div className="content-cnt">
                     <section >
-                        <div className="input-cnt" style={{width: '100%', marginBottom: '50px'}}>
-                            <label htmlFor=""><h6>
+                        <div style={{width: '100%', marginBottom: '10px'}}>
+                            <h4  style={{marginBottom: '20px'}}>
                             Authentication methods
-                            </h6></label>
-                            <p><small>After entering your password, verify your identity with an authentication method.</small></p>
+                            </h4>
+                            <p style={{fontSize: '16px'}}><>After entering your password, verify your identity with an authentication method.</></p>
                         </div>
                        
                        
                         <div>
-                            <h6>How it works</h6>
+                            <h5 style={{marginBottom: '10px'}}>How it works</h5>
                             <p>When you log in to Shopify, you’ll need to:</p>
-                            <ol>
-                                <li><small>Enter your email and password</small></li>
-                                <li><small>Complete a second step to prove that it&apos;s you logging in. You can enter a verification code, use a security key, or confirm your login on a trusted device.</small></li>
-                            </ol>
-                            <button>
+                            <div style={{padding: '10px'}}>
+                                <><p style={{fontSize: '15px'}}><b>1.</b> Enter your email and password</p></>
+                                <br />
+                                <><p style={{fontSize: '15px'}}><b>2.</b> Complete a second step to prove that it&apos;s you logging in. You can enter a verification code, use a security key, or confirm your login on a trusted device.</p></>
+                            </div>
+                            <button style={{borderRadius: '2.5px'}}>
                                 Turn on two-step
                             </button>
                         </div>
@@ -318,8 +326,7 @@ function Security() {
                 </section>
                 <div className="content-cnt" >
                     <section>
-                        <h6 style={{width: '100%'}}>Logged In</h6>
-                        <hr />
+                        <h4 style={{width: '100%', marginBottom: '20px'}}>Logged In</h4>
                         <div style={{width: '100%', background: '#fff', height: '60px', borderBottom: '1px solid #000'}} className='input-cnt'>
                             <div className="left" style={{width: 'auto',float: 'left'}}>
                                 <div style={{height: 'auto'}}>

@@ -19,7 +19,7 @@
     main{
         height: calc(100vh - 50px);
         width: 100%;
-        background-color: rgb(241, 242, 243);
+        background-color: #f7f7f7;
         /* overflow: auto; */
         display: flex;
         justify-content: space-between;
@@ -41,7 +41,7 @@
         color: green;
         border-radius: 5px;
         margin: 0px 0px;
-        background-color: rgb(241, 242, 243);
+        background-color: #f7f7f7;
     }
     
     main nav button:last-child{
@@ -56,7 +56,7 @@
     
     
     .content{
-        background-color: rgb(241, 242, 243);
+        background-color: #f7f7f7;
         height: auto;
         width: calc(100% - 200px);
         overflow: auto;
@@ -107,8 +107,9 @@
     input,select{
         height: 100%;
         width: 100%;
-        border-radius: 5px;
         border: 1px solid #000;
+        margin: 8px 0px;
+        border-radius: 2.5px;
     }
     
     .email-section, .phone-section{
@@ -146,4 +147,14 @@
         background-color: #000;
     }
     
+
+    small{
+        font-size: 15px;
+        margin-top: 10px;
+    }
+
+    button small{
+        margin: 0;
+        font-size: small;
+    }
 }
