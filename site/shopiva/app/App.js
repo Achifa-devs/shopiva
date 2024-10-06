@@ -44,6 +44,16 @@ export default function App({children}) {
                   }
                 </>
               :
+              pathname.split('/').splice(1,2)[1] === 'pre-sale'
+              ?
+              <>
+                <div style={{height: '100vh', width: '100vw', overflow: 'auto', background: '#fff'}}>
+                  {
+                    children
+                  }
+                </div>
+              </>
+              :
               <EntrepreneurLayout setCookie={''}>
                 {
                   children

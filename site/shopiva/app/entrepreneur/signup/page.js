@@ -111,6 +111,16 @@ export default function Signup() {
                             </div>
                         </div> 
 
+                        <div className="input-">
+                            <label htmlFor="">Password</label>
+                            <input type="password" placeholder='Password' name="" id="" />
+                        </div>
+
+                        <div className="input-">
+                            <label htmlFor=""> Confirm Password</label>
+                            <input type="password" placeholder='Confirm Password' name="" id="" />
+                        </div>
+
                         <div className="input-cnt">
                             <button style={{borderRadius: '8px'}}>Register</button>
                         </div>
