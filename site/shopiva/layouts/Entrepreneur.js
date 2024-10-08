@@ -64,7 +64,7 @@ export default function EntrepreneurLayout({children,setCookie}) {
         
       // Example usage:
       const myCookie = getCookie('entrepreneur_secret');
-      fetch('http://localhost:3456/entrepreneur/authentication',
+      fetch('https://shopiva-server.vercel.app/entrepreneur/authentication',
       {
         method: 'GET',
         // credentials: 'include',

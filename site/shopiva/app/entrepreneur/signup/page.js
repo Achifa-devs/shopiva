@@ -15,14 +15,15 @@ export default function Signup() {
     const [countries, setcountries] = useState([])
     let dispatch = useDispatch()
 
-    let [fname, setFname] = useState('')
-    let [lname, setLname] = useState('')
-    let [email, setEmail] = useState('')
-    let [referral_src, set_referral_src] = useState('')
-    let [search_char, set_search_char] = useState('')
-    let [country_code, set_country_code] = useState('')
-    let [phone_number, setPhone_number] = useState('')
-    let [pwd, setPwd] = useState('')
+    let [fname, setFname] = useState('');
+    let [lname, setLname] = useState('');
+    let [email, setEmail] = useState('');
+    let [referral_src, set_referral_src] = useState('');
+    let [search_char, set_search_char] = useState('');
+    let [country_code, set_country_code] = useState('');
+    let [phone_number, setPhone_number] = useState('');
+    let [pwd, setPwd] = useState('');
+
     const validation = useRef(false);
 
     useEffect(() => {
@@ -120,7 +121,7 @@ export default function Signup() {
             if(validation.current){
                
                 e.target.disabled = true;
-                fetch('http://localhost:3456/entrepreneur/registration', {
+                fetch('https://shopiva-server.vercel.app/entrepreneur/registration', {
                     method: 'post',
                     headers: {
                         "Content-Type": "Application/json"

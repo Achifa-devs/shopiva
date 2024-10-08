@@ -85,7 +85,7 @@ export default function Signup() {
             if(validation.current){
                
                 e.target.disabled = true;
-                fetch('http://localhost:3456/entrepreneur/login', {
+                fetch('https://shopiva-server.vercel.app/entrepreneur/login', {
                     method: 'post',
                     headers: {
                         "Content-Type": "Application/json"
