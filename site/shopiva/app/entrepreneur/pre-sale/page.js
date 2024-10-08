@@ -129,7 +129,7 @@ export default function Presale(){
                     </ul>
                 </section>
             </header>
-            <div id='#intro' className='header' style={{height: '100vh', width: '100vw'}}>
+            <div id='intro' className='header' style={{height: '100vh', width: '100vw'}}>
                 
                 <section>
                     <div style={{textAlign: 'center', background: '#00351ce8'}}>
@@ -139,7 +139,9 @@ export default function Presale(){
                         <div style={{width: '100%', transform: 'skew(0deg)', opacity: '1', textAlign: 'center', display: 'flex', justifyContent: 'center', height: 'auto', marginTop: '10px', flexDirection: 'column', alignItems: 'center', background: 'transparent'}}>
 
                             <h6 style={{color: '#fff', width: '100%', transform: 'skew(-30deg)', padding: '10px'}}>The Best Offer Ever</h6>
-                            <button style={{transform: 'skew(-30deg)', padding: '10px', background: '#00926e', borderRadius: '5px'}}>Subscribe Now</button>
+                            <button onClick={e=> {
+                                window.open('/entrepreneur/signup')
+                            }} style={{transform: 'skew(-30deg)', padding: '10px', background: '#00926e', borderRadius: '5px'}}>Subscribe Now</button>
 
                         </div>
 
@@ -206,7 +208,9 @@ export default function Presale(){
                     </ul>
 
                     <br />
-                    <button>Get Started</button>
+                    <button onClick={e=> {
+                        window.open('/entrepreneur/signup')
+                    }}>Get Started</button>
                 </section>
 
 

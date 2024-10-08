@@ -7,7 +7,7 @@ const { uuid } = require('uuidv4');
 
 
 
-async function registration_handler(req,res) {
+async function register_entrepreneur(req,res) {
 
     let {
         fname,
@@ -100,7 +100,7 @@ async function registration_handler(req,res) {
                         '${email}',
                         '${hPwd}',
                         '${phone_number}',
-                        '${gender}',
+                        '${null}',
                         '${false}',
                         '${new Date()}',
                         '${false}',
@@ -118,7 +118,7 @@ async function registration_handler(req,res) {
 
 
 
-async function login_handler(req, res) {
+async function signin_entrepreneur(req, res) {
     let {email,pwd} = req.body;
  
     try {
@@ -188,4 +188,10 @@ async function login_handler(req, res) {
         errHandler(error)
     }
     
+}
+
+
+module.exports={
+    signin_entrepreneur,
+    register_entrepreneur
 }

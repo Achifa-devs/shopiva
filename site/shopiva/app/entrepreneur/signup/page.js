@@ -7,6 +7,7 @@ import tt_svg from '@/svgs/twitter-svgrepo-com (3).svg'
 import './styles/xxl.css'
 import 'react-phone-number-input/style.css'
 import country from '@/reusables/country.json'
+import axios from 'axios';
 export default function Signup() {
 
     const [countries, setcountries] = useState([])
@@ -16,7 +17,7 @@ export default function Signup() {
     let [email, setEmail] = useState('')
     let [search_char, set_search_char] = useState('')
     let [country_code, set_country_code] = useState('')
-    let [phone, setPhone] = useState('')
+    let [phone_number, setPhone_number] = useState('')
     let [pwd, setPwd] = useState('')
 
     useEffect(() => {
@@ -29,7 +30,9 @@ export default function Signup() {
         setcountries(country)
     }, [])
     
-    
+    function handle_registration() {
+        
+    }
 
     
 
@@ -122,7 +125,19 @@ export default function Signup() {
                         </div>
 
                         <div className="input-cnt">
-                            <button style={{borderRadius: '8px'}}>Register</button>
+                            <button style={{borderRadius: '8px'}} onClick={e => {
+                                axios.post('http://localhost:3456/entrepreneur/registration', {
+                                    fname,lname,email,pwd,phone_number
+                                })
+                                .then((result) => {
+                                    if(result.data){
+
+                                    }
+                                })
+                                .catch((err) => {
+                                    console.log(err)
+                                })
+                            }}>Register</button>
                         </div>
                     </div>
                 </section>
@@ -131,7 +146,7 @@ export default function Signup() {
                     <button style={{marginLeft: '0'}}>
                         <small>Already registered? Login.</small>
                     </button>
-                    <button style={{padding: '5px', background: '#fff', border: 'none'}}>
+                    {/* <button style={{padding: '5px', background: '#fff', border: 'none'}}>
                         <img src={fb_svg.src} style={{height: '100%', width: '100%'}} alt="" />
                     </button>
                     <button style={{padding: '7px', background: '#fff', border: 'none'}}>
@@ -140,7 +155,7 @@ export default function Signup() {
                     
                     <button style={{padding: '8px', background: '#fff', border: 'none'}}>
                         <img src={gg_svg.src} style={{height: '100%', width: '100%'}} alt="" />
-                    </button>
+                    </button> */}
                 </section>
             </div>
         </div>
