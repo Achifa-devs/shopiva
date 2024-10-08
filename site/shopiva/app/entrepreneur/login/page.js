@@ -79,7 +79,7 @@ export default function Signup() {
     
             Validation();
 
-            console.log(book.current)
+            // console.log(book.current)
             Object.values(book.current).filter(item => item !== true).length > 0 ? validation.current = false : validation.current = true;
     
             if(validation.current){
@@ -95,6 +95,9 @@ export default function Signup() {
                 .then(async(result) => {
                     let response = await result.json();
                     if(response.bool){
+                        e.target.disabled = false;
+
+                        // console.log(response)
                         dispatch(set_entrepreneur_cookie(response.cookie))
                         window.location.href="/entrepreneur/pre-sale"
                     }else{

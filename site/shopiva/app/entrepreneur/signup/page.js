@@ -10,6 +10,8 @@ import country from '@/reusables/country.json'
 import axios from 'axios';
 import { set_entrepreneur_cookie } from '@/redux/entrepreneur/entrepreneur_cookie';
 import { useDispatch } from 'react-redux';
+
+
 export default function Signup() {
 
     const [countries, setcountries] = useState([])
@@ -40,9 +42,9 @@ export default function Signup() {
         const urlParams = new URLSearchParams(window.location.search);
         const referral = urlParams.get('referral');
         if(referral === ''){
-            set_referral_src('website')
+            set_referral_src('website');
         }else{
-            set_referral_src(referral)
+            set_referral_src(referral);
         }
     }, [])
 
@@ -115,7 +117,7 @@ export default function Signup() {
     
             Validation();
 
-            console.log(book.current)
+            // console.log(book.current)
             Object.values(book.current).filter(item => item !== true).length > 0 ? validation.current = false : validation.current = true;
     
             if(validation.current){
@@ -259,6 +261,7 @@ export default function Signup() {
         <div className="enetrepreneur-signup-form">
             <div className='form-cnt'>
                 <h5 style={{background: '#000', marginBottom: '10px', color: '#fff', width: 'fit-content', padding: '5px 8px', borderRadius: '5px'}}>Shopiva</h5>
+                
                 <section style={{height: 'auto'}}>
                     <div style={{width: '100%'}}>
                         <section style={{display: 'flex', justifyContent: 'space-between'}}>
@@ -367,6 +370,7 @@ export default function Signup() {
                         <img src={gg_svg.src} style={{height: '100%', width: '100%'}} alt="" />
                     </button> */}
                 </section>
+
             </div>
         </div>
     </>

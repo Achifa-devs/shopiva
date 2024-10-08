@@ -6,6 +6,7 @@ import { Provider } from 'react-redux'
 // import {NextUIProvider} from '@nextui-org/react'
 import { setNewCookie } from './layout'
 import EntrepreneurLayout from '@/layouts/Entrepreneur'
+import AuthLayout from '@/layouts/Auth'
 
 export default function App({children}) {
   let pathname = usePathname();
@@ -39,9 +40,11 @@ export default function App({children}) {
               pathname.split('/').splice(1,2)[1] === 'user-profile' || pathname.split('/').splice(1,2)[1] === 'signup' || pathname.split('/').splice(1,2)[1] === 'login'
               ?
                 <>
-                  {
-                    children
-                  }
+                  <AuthLayout setCookie={setCookie}>
+                    {
+                      children
+                    }
+                  </AuthLayout>
                 </>
               :
               pathname.split('/').splice(1,2)[1] === 'pre-sale'
@@ -53,7 +56,9 @@ export default function App({children}) {
                   }
                 </div>
               </>
+
               :
+
               <EntrepreneurLayout setCookie={setCookie}>
                 {
                   children
