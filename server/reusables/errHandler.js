@@ -1,5 +1,5 @@
 function errHandler(err_src,err_mssg,err_type) {
-    
+    console.log(err_src,err_mssg,err_type)
 }
 
 module.exports={errHandler}

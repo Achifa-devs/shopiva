@@ -8,8 +8,9 @@ import NotificationFloater from '@/components/floaters.js/Notification'
 import SearchFloater from '@/components/floaters.js/Search'
 import { useDispatch, useSelector } from 'react-redux'
 import { set_floater_src } from '@/redux/entrepreneur/floater_src'
+import { set_entrepreneur_id_to, set_entrepreneur_to } from '@/redux/entrepreneur/entrepreneur_id'
 
-export default function EntrepreneurLayout({children}) {
+export default function EntrepreneurLayout({children,setCookie}) {
   let dispatch = useDispatch()
 
   let [screenWidth, setScreenWidth] = useState(0)
@@ -33,6 +34,66 @@ export default function EntrepreneurLayout({children}) {
       
     }
   }, [floater_src])
+
+
+  
+
+
+  let {
+    entrepreneur_cookie
+  }=useSelector(s=> s.entrepreneur_cookie)
+    
+  useEffect(() => {
+    setCookie(entrepreneur_cookie, 1) 
+  }, [entrepreneur_cookie])   
+ 
+  useEffect(() => {
+    if(pathname.split('/').splice(-1)[0] !== 'login' && pathname.split('/').splice(-1)[0] !== 'signup' && pathname.split('/').splice(-1)[0] !== 'password-recovery'){
+      function getCookie(name) {
+        const cookieName = `${name}=`;
+        const cookies = document.cookie.split(';');
+      
+        for (let i = 0; i < cookies.length; i++) {
+          let cookie = cookies[i].trim();
+          if (cookie.indexOf(cookieName) === 0) {
+          return cookie.substring(cookieName.length, cookie.length);
+          }
+        }
+        return null; // Cookie not found
+      }
+        
+      // Example usage:
+      const myCookie = getCookie('entrepreneur_secret');
+      fetch('http://localhost:3456/entrepreneur/authentication',
+      {
+        method: 'GET',
+        // credentials: 'include',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': myCookie
+        }
+      
+      })
+      .then(async(result) => {
+
+        let response = await result.json(); 
+        if(response.bool){
+          dispatch(set_entrepreneur_id_to(response.id))
+        }else{
+          window.location.href=('/entrepreneur/login')
+        }
+          
+      })
+      .catch((error) => {
+        console.log(error)
+        // window.location.href=('/seller/login')
+
+      })
+    } 
+      
+  }, [entrepreneur_cookie])
+      
+
 
   // useEffect(() => {
   //   if(search_status){

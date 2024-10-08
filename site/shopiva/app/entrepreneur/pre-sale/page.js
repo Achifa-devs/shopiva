@@ -251,7 +251,7 @@ export default function Presale(){
 
 
                 <section id='benefits'>
-                    <h2>Find your forever customers</h2>
+                    <h2 style={{fontSize: '7.5vh', fontWeight: '100', color: '#fff'}}>Find your forever customers</h2>
                     {/* <br /> */}
 
                     <div>

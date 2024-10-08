@@ -2,9 +2,15 @@
 const { neon_db } = require("../../reusables/db");
 const { IS_EXISTING } = require("../../reusables/db_functions");
 const { errHandler } = require("../../reusables/errHandler");
-const { bcrypt } = require("../../reusables/modules");
+const { bcrypt, jwt } = require("../../reusables/modules");
 const { uuid } = require('uuidv4');
+const maxAge = 90 * 24 * 60 * 60; 
 
+const createToken = (id) => {
+    return jwt.sign({ id }, 'entrepreneur_secret', {
+       expiresIn: maxAge
+    });
+};
 
 
 async function register_entrepreneur(req,res) {
@@ -16,7 +22,12 @@ async function register_entrepreneur(req,res) {
         pwd,
         phone_number,
         gender,
+        referral_src
     } = req.body;
+
+    
+
+    console.log(fname, lname, email, pwd, phone_number)
 
     let hPwd = await bcrypt.hash(pwd, 10) 
     let entrepreneur_id = uuid()
@@ -81,7 +92,7 @@ async function register_entrepreneur(req,res) {
                         fname,
                         lname,
                         email,
-                        pwd,
+                        password,
                         phone_number,
                         gender,
                         is_active,
@@ -90,7 +101,8 @@ async function register_entrepreneur(req,res) {
                         is_phone_verified,
                         is_acct_verified,
                         created_at,
-                        updated_at
+                        updated_at,
+                        referral_src
                     )
                     VALUES(
                         DEFAULT,
@@ -107,9 +119,18 @@ async function register_entrepreneur(req,res) {
                         '${false}',
                         '${false}',
                         '${new Date()}',
-                        '${new Date()}'
+                        '${new Date()}',
+                        '${referral_src}'
                     )
                 `)
+                .then((result) => {
+                    const token = createToken(entrepreneur_id);
+                    result.rowCount === 1 ? res.status(200).send({bool: true, cookie: token, id: entrepreneur_id}) : ({bool: false, data: ''})
+                })
+                .catch(err => {
+                    console.log(err)
+                    res.status(400).send({bool: false, err: ''})
+                })
             
             }).catch(err => errHandler(err))
         )
@@ -158,6 +179,8 @@ async function signin_entrepreneur(req, res) {
         .then(async(user) => { 
             if(user){
                 const auth = await bcrypt.compare(pwd, user.password);
+                console.log(auth,pwd)
+
                 if (auth) {
                     const token = createToken(user.entrepreneur_id);
                     res.status(200).send({bool: true, id: user.entrepreneur_id, cookie: token});

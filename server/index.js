@@ -14,6 +14,7 @@ const {
 } = require('./reusables/modules');
 
 const cookieParser = require('cookie-parser');
+const { entrepreneurRoute } = require('./routes/post');
 require('dotenv').config();    
 const app = express();  
 
@@ -26,7 +27,7 @@ app.use(cors({
     credentials: true,
     optionsSuccessStatus: 200 
 })); 
-
+app.use(entrepreneurRoute)
 
 
 

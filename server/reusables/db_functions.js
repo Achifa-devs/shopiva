@@ -1,6 +1,7 @@
 const { neon_db } = require("./db");
+const { errHandler } = require("./errHandler");
 
-export function IS_EXISTING(table,column,column_value) {
+function IS_EXISTING(table,column,column_value) {
     neon_db().then((pool) => 
         pool.query(`
             SELECT COUNT (*) AS COUNT
@@ -11,7 +12,7 @@ export function IS_EXISTING(table,column,column_value) {
     ).catch(err => errHandler(err))
 }
 
-export async function DELETE_ROW_AFTER_ERR(table,column,colum_name) {
+async function DELETE_ROW_AFTER_ERR(table,column,colum_name) {
     neon_db()
     .then((pool) => {
         pool.query(`
@@ -25,4 +26,9 @@ export async function DELETE_ROW_AFTER_ERR(table,column,colum_name) {
     .catch((err) => {
         console.log(err)
     })
+}
+
+module.exports={
+    IS_EXISTING, 
+    DELETE_ROW_AFTER_ERR
 }

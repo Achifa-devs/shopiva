@@ -11,18 +11,18 @@ export default function App({children}) {
   let pathname = usePathname();
   
 
-  // async function setCookie(data,role) {
-  //   if(data !== null && data !== 'null' && data !== ''){
-  //     let response = await setNewCookie(data, role)
-  //     let result = JSON.parse(response);
-  //     if(role === 1 && result){
-  //       window.location.href=('/entrepreneur/shop')
-  //     }else if(role === 0 && result){
-  //       window.location.href=('/')
+  async function setCookie(data,role) {
+    if(data !== null && data !== 'null' && data !== ''){
+      let response = await setNewCookie(data, role)
+      let result = JSON.parse(response);
+      if(role === 1 && result){
+        window.location.href=('/entrepreneur/shop')
+      }else if(role === 0 && result){
+        window.location.href=('/')
 
-  //     }
-  //   }
-  // }
+      }
+    }
+  }
 
   
 
@@ -36,7 +36,7 @@ export default function App({children}) {
           {
             pathname.split('/').splice(1,2)[0] === 'entrepreneur'
             ?
-              pathname.split('/').splice(1,2)[1] === 'user-profile' || pathname.split('/').splice(1,2)[1] === 'signup'
+              pathname.split('/').splice(1,2)[1] === 'user-profile' || pathname.split('/').splice(1,2)[1] === 'signup' || pathname.split('/').splice(1,2)[1] === 'login'
               ?
                 <>
                   {
@@ -54,7 +54,7 @@ export default function App({children}) {
                 </div>
               </>
               :
-              <EntrepreneurLayout setCookie={''}>
+              <EntrepreneurLayout setCookie={setCookie}>
                 {
                   children
                 }

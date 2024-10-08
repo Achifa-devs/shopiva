@@ -8,7 +8,7 @@ const maxAge = 90 * 24 * 60 * 60;
 export async function setNewCookie(data,role) {
   let cookieStore = cookies();
   const expires = new Date();
-  let result = cookieStore.set(role === 0 ? 'customer_secret' : 'customer_secret', data, {expires: expires.setTime(expires.getTime() + (30 * 24 * 60 * 60 * 1000))});
+  let result = cookieStore.set(role === 0 ? 'customer_secret' : 'entrepreneur_secret', data, {expires: expires.setTime(expires.getTime() + (30 * 24 * 60 * 60 * 1000))});
   return JSON.stringify(result);
 };
 

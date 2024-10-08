@@ -15,51 +15,16 @@ export default function Signup() {
     const [countries, setcountries] = useState([])
     let dispatch = useDispatch()
 
-    let [fname, setFname] = useState('')
-    let [lname, setLname] = useState('')
     let [email, setEmail] = useState('')
-    let [referral_src, set_referral_src] = useState('')
-    let [search_char, set_search_char] = useState('')
-    let [country_code, set_country_code] = useState('')
-    let [phone_number, setPhone_number] = useState('')
     let [pwd, setPwd] = useState('')
     const validation = useRef(false);
 
-    useEffect(() => {
-        let list = countries.filter(item => item.name.toLowerCase().indexOf(search_char.toLowerCase()) > -1)
-        setcountries(list)
-        // console.log(search_char, list)
-    }, [search_char])
 
-    useEffect(() => {
-        setcountries(country)
-    }, [])
-
-    useEffect(() => {
-        const urlParams = new URLSearchParams(window.location.search);
-        const referral = urlParams.get('referral');
-        if(referral === ''){
-            set_referral_src('website')
-        }else{
-            set_referral_src(referral)
-        }
-    }, [])
-
-    // useEffect(() => {
-    //     if(referral_src === ''){
-    //         set_referral_src('website')
-    //     }else{
-    //         set_referral_src(referral)
-    //     }
-    // }, [referral_src])
     
     
     let book = useRef({
-        fname: false,
-        lname: false,
         email: false,
-        pwd: false,
-        phn: false
+        pwd: false 
     })
 
     function addErrMssg(err,pElem) {
@@ -108,7 +73,7 @@ export default function Signup() {
      
     }
 
-    let Registration = (e) => {
+    let Login = (e) => {
         try {
             e.target.disabled = true;
     
@@ -120,12 +85,12 @@ export default function Signup() {
             if(validation.current){
                
                 e.target.disabled = true;
-                fetch('http://localhost:3456/entrepreneur/registration', {
+                fetch('http://localhost:3456/entrepreneur/login', {
                     method: 'post',
                     headers: {
                         "Content-Type": "Application/json"
                     },
-                    body: JSON.stringify({fname,lname,email,pwd,phone_number,referral_src})
+                    body: JSON.stringify({email,pwd})
                 })
                 .then(async(result) => {
                     let response = await result.json();
@@ -260,100 +225,28 @@ export default function Signup() {
                 <h5 style={{background: '#000', marginBottom: '10px', color: '#fff', width: 'fit-content', padding: '5px 8px', borderRadius: '5px'}}>Shopiva</h5>
                 <section style={{height: 'auto'}}>
                     <div style={{width: '100%'}}>
-                        <section style={{display: 'flex', justifyContent: 'space-between'}}>
-                            <div style={{width: '48%'}} className="input-cnt">
-                                <label htmlFor="">First name</label>
-                                <input onInput={e=> setFname(e.target.value)} type="text" placeholder='First name' name="fname" id="" />
-                            </div>
-                            <div style={{width: '48%'}} className="input-cnt">
-                                <label htmlFor="">Last name</label>
-                                <input onInput={e=> setLname(e.target.value)} type="text" placeholder='Last name' name="lname" id="" />
-                            </div>
-                        </section>
                         <div className="input-cnt">
                             <label htmlFor="">Email</label>
                             <input onInput={e=> setEmail(e.target.value)} type="text" placeholder='Email' name="email" id="" />
                         </div>
                         <div className="input-cnt">
-                            <label htmlFor="">Phone</label>
-                            <div style={{display: 'flex', justifyContent: 'space-between'}}>
-                                <span>
-                                    <div style={{padding: '5px', background: '#fff', border: 'none', height: '40px', width: '100px'}} name="" id="">
-                                        <div className="dropdown">
-                                            <button style={{height: '40px', width: '90px', margin: '-5px 0px 0px 0px', background: '#f9f9f9', padding: '5px 0px 5px 5px', display:'flex', justifyContent: 'center', alignItems: 'center', color: '#000'}} className="btn btn-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-
-                                           {
-                                            !country_code === ''
-                                            ?
-                                            <small><b>+ country</b></small>
-                                            :
-                                            <>
-                                                <span>
-                                                    <img src={'https://flagcdn.com/w320/ng.png'} style={{height: '20px', width: '20px'}} alt="" />
-                                                </span>
-                                                
-                                                <span style={{color: '#000', padding: '5px', display:'flex', justifyContent: 'center', alignItems: 'center', margin: '0px 0px -5px 0px', fontWeight: '500', fontSize: 'small'}}>{'+234'}</span>
-                                            </>
-
-                                            
-                                           }
-                                            </button>
-
-                                            <ul className="dropdown-menu" style={{width: '300px', overflow: 'auto', height: '200px'}}>
-
-                                                {/* <li>
-                                                    <input style={{height: '30px', width: '100%'}} placeholder='Search country here...' onInput={e=> set_search_char(e.target.value)} type="search" name="" id="" />
-                                                </li>
-                                               
-                                                {
-                                                    countries.map((item) => 
-                                                        <li onClick={e=>set_country_code(item)} className='dropdown-item'>
-                                                            <span>
-                                                                <img src={item.flag_icon} style={{height: '20px', width: '20px'}} alt="" />
-                                                            </span>
-                                                            &nbsp;
-                                                            &nbsp;
-                                                            <span>{item.phone_code}</span>
-                                                            &nbsp;
-                                                            &nbsp;
-                                                            <span>{item.name}</span>
-                                                            
-                                                        </li>
-                                                    )
-                                                } */}
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </span>
-                                <span style={{width: 'calc(100% - 100px)'}}>
-                                    <input onInput={e=> setPhone_number(`+234${e.target.value}`)} type="tel" maxLength={10} name="phone" defaultValue={''} id="" />
-                                </span>
-                            </div>
-                        </div> 
-
-                        <div className="input-cnt">
                             <label htmlFor="">Password</label>
                             <input onInput={e=> setPwd(e.target.value)} type="password" placeholder='Password' name="password" id="" />
                         </div>
-{/* 
-                        <div className="input-cnt">
-                            <label htmlFor=""> Confirm Password</label>
-                            <input type="password" placeholder='Confirm Password' name="password" id="" />
-                        </div> */}
 
                         <div className="input-cnt">
                             <button style={{borderRadius: '8px'}} onClick={e => {
-                                Registration(e)
-                            }}>Register</button>
+                                Login(e)
+                            }}>Login</button>
                         </div>
                     </div>
                 </section>
 
                 <section className="other-reg-forms">
                     <button style={{marginLeft: '0'}} onClick={e=> {
-                        window.open('/entrepreneur/login')
+                        window.open('/entrepreneur/signup')
                     }} >
-                        <small>Already registered? Login.</small>
+                        <small>Not registered? Signup.</small>
                     </button>
                     {/* <button style={{padding: '5px', background: '#fff', border: 'none'}}>
                         <img src={fb_svg.src} style={{height: '100%', width: '100%'}} alt="" />

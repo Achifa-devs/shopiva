@@ -15,3 +15,7 @@ entrepreneurRoute.post('/entrepreneur/login', parser, signin_entrepreneur);
 // userRoute.post('/favourite', parser, post_favourite);
 
 // userRoute.post('/listing', parser, post_listing);
+
+module.exports={
+    entrepreneurRoute
+}
