@@ -77,7 +77,7 @@ function Genenral() {
 
     return(
         <>
-            <div classN className='description'ame='description'>
+            <div classN className='description' name='description'>
                 <section style={{padding: '10px 10px ', minHeight: '50px', display: 'flex', alignItem: 'center', flexDirection: 'column', justifyContent: 'center'}}>
                     <p><b>Details</b></p>
                     <small>View and updateyour personal details</small>
@@ -158,7 +158,7 @@ function Genenral() {
 
             <hr />
 
-            <div classN className='description'ame='description'>
+            <div classN className='description' name='description'>
                 <section style={{padding: '10px 10px ', minHeight: '50px', display: 'flex', alignItem: 'center', flexDirection: 'column', justifyContent: 'center'}}>
                     <p><b>Stores</b></p>
                     <small>
@@ -175,7 +175,7 @@ function Genenral() {
             <hr />
 
  
-            <div classN className='description'ame='description'>
+            <div classN className='description' name='description'>
                 <section style={{padding: '10px 10px ', minHeight: '50px', display: 'flex', alignItem: 'center', flexDirection: 'column', justifyContent: 'center'}}>
                     <p><b>Preferred language</b></p>
                     <small>
