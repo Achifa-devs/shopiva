@@ -44,19 +44,19 @@ export default function Presale(){
     let [is_authorized, set_is_authorized] = useState(false);
 
     function handle_subscribe_btn() {
-        // !is_authorized
-        // ?
-        // window.open('/entrepreneur/signup')
-        // :
-        // initializePayment(onSuccess, onClose)
+        !is_authorized
+        ?
+        window.open('/entrepreneur/signup')
+        :
+        initializePayment(onSuccess, onClose)
     }
 
     function link_handler(link) {
-        // window.location.href=link
+        window.location.href=link
     }
 
     useEffect(() => {
-        // setScreenWidth(window.innerWidth)
+        setScreenWidth(window.innerWidth)
     }, [])
 
     useEffect(() => {
