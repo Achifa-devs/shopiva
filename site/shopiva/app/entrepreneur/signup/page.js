@@ -7,9 +7,9 @@ import tt_svg from '@/svgs/twitter-svgrepo-com (3).svg'
 import './styles/xxl.css'
 import 'react-phone-number-input/style.css'
 import country from '@/reusables/country.json'
-import axios from 'axios';
 import { set_entrepreneur_cookie } from '@/redux/entrepreneur/entrepreneur_cookie';
 import { useDispatch } from 'react-redux';
+import { entrepreneur_overlay_setup } from '@/reusables/overlay';
 
 
 export default function Signup() {
@@ -114,7 +114,7 @@ export default function Signup() {
     let Registration = (e) => {
         try {
             e.target.disabled = true;
-    
+            entrepreneur_overlay_setup(true, 'One Moment Please...')
             Validation();
 
             // console.log(book.current)
@@ -135,6 +135,8 @@ export default function Signup() {
                     if(response.bool){
                         dispatch(set_entrepreneur_cookie(response.cookie))
                         window.location.href="/entrepreneur/pre-sale"
+                        entrepreneur_overlay_setup(false, 'One Moment Please...')
+
                     }else{
                         
                         // overlay.removeAttribute('id');
@@ -145,6 +147,8 @@ export default function Signup() {
                         }
                         // setBtn("Signup")
                         e.target.disabled = false;
+                        entrepreneur_overlay_setup(false, 'Try Again...')
+
                     }
                 })
                 .catch((err) => {
@@ -154,6 +158,8 @@ export default function Signup() {
                 
             }else{
                 // alert()
+                entrepreneur_overlay_setup(false, 'Try Again...')
+
             }
         } catch (error) {
             console.log(error)

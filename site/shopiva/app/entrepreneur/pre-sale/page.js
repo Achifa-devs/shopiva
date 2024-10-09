@@ -48,7 +48,9 @@ export default function Presale(){
         if(entrepreneur_id !== null) {
             // alert('hello')
             set_is_authorized(true)
-            set_entrepreneur_data(JSON.parse(window.localStorage.getItem('entrepreneur_data')))
+            if(window.localStorage.getItem('entrepreneur_data') !== null){
+                set_entrepreneur_data(JSON.parse(window.localStorage.getItem('entrepreneur_data')))
+            }
         }
 
     }, [entrepreneur_id])

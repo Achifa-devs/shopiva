@@ -10,6 +10,7 @@ import country from '@/reusables/country.json'
 import axios from 'axios';
 import { set_entrepreneur_cookie } from '@/redux/entrepreneur/entrepreneur_cookie';
 import { useDispatch } from 'react-redux';
+import { entrepreneur_overlay_setup } from '@/reusables/overlay';
 export default function Signup() {
 
     const [countries, setcountries] = useState([])
@@ -83,6 +84,7 @@ export default function Signup() {
             Object.values(book.current).filter(item => item !== true).length > 0 ? validation.current = false : validation.current = true;
     
             if(validation.current){
+                entrepreneur_overlay_setup(true, 'One Moment Please...')
                
                 e.target.disabled = true;
                 fetch('https://shopiva-server.vercel.app/entrepreneur/login', {
@@ -100,6 +102,8 @@ export default function Signup() {
                         // console.log(response)
                         dispatch(set_entrepreneur_cookie(response.cookie))
                         window.location.href="/entrepreneur/pre-sale"
+                        entrepreneur_overlay_setup(false, 'Try Again...')
+
                     }else{
                         
                         // overlay.removeAttribute('id');
@@ -107,13 +111,19 @@ export default function Signup() {
                             addErrMssg([{mssg:'Email already exist, please try something else'}], document.querySelector('.email').parentElement)
                         }else if(response.data === 'duplicate phone'){
                             addErrMssg([{mssg:'Phone Number already exist, please try something else'}], document.querySelector('.phone').parentElement)
+                        }else {
+                            addErrMssg([{mssg:'Password is not correct...'}], document.querySelector('.pwd').parentElement)
+
                         }
                         // setBtn("Signup")
                         e.target.disabled = false;
+                        entrepreneur_overlay_setup(false, 'Try Again...')
+
                     }
                 })
                 .catch((err) => {
                     // setBtn("Signup")
+                    console.log(err)
                     e.target.disabled = false;
                 })
                 
@@ -234,7 +244,7 @@ export default function Signup() {
                         </div>
                         <div className="input-cnt">
                             <label htmlFor="">Password</label>
-                            <input onInput={e=> setPwd(e.target.value)} type="password" placeholder='Password' name="password" id="" />
+                            <input onInput={e=> setPwd(e.target.value)} type="password" placeholder='Password' className='pwd' name="password" id="" />
                         </div>
 
                         <div className="input-cnt">
