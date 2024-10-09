@@ -1,5 +1,6 @@
 const { register_entrepreneur, signin_entrepreneur } = require("../controllers/enterpreneur/authentication");
-const { entrepreneur_auth } = require("../middleware/entrepreneur");
+const { entrepreneur_auth, check_entrepreneur } = require("../middleware/entrepreneur");
+const { confirm_payment } = require("../payment_processor/presale_payment");
 const { 
     express, 
     parser
@@ -8,7 +9,9 @@ let entrepreneurRoute = express.Router();
 
 entrepreneurRoute.post('/entrepreneur/registration', parser, register_entrepreneur);
 entrepreneurRoute.post('/entrepreneur/login', parser, signin_entrepreneur);
-entrepreneurRoute.post('/entrepreneur/authentication', parser, entrepreneur_auth);
+entrepreneurRoute.post('/entrepreneur/authentication', parser, check_entrepreneur);
+entrepreneurRoute.post('/entrepreneur/authorization', parser, entrepreneur_auth);
+entrepreneurRoute.post('/entrepreneur/pre-sale-subscription', parser, confirm_payment);
 
 // userRoute.post('/shop', parser, post_shop);
 

@@ -17,7 +17,6 @@ export default function EntrepreneurLayout({children,setCookie}) {
   let pathname = usePathname()
 
   let [screenWidth, setScreenWidth] = useState(0)
-  let [search_floater, set_search_floater] = useState(null)
   let [active_floater, set_active_floater] = useState(null)
   useEffect(() => {
     setScreenWidth(window.innerWidth)
@@ -38,10 +37,40 @@ export default function EntrepreneurLayout({children,setCookie}) {
     }
   }, [floater_src])
 
+  let {
+    entrepreneur_id
+  } = useSelector(s => s.entrepreneur_id)
 
-  
+  useEffect(() => {
+    let stored_entrepreneur  = window.localStorage.getItem('entrepreneur_data')
+    if(stored_entrepreneur === '' && stored_entrepreneur === null && stored_entrepreneur === 'null' && stored_entrepreneur === 'undefined' && stored_entrepreneur === undefined) {
+      fetch('https://shopiva-server.vercel.app/entrepreneur/authentication',
+      {
+        method: 'POST',
+        // credentials: 'include',
+        headers: {
+        'Content-Type': 'application/json',
+        'Authorization': entrepreneur_id
+        }
+      
+      })
+      .then(async(result) => {
 
+        let response = await result.json(); 
+        if(response.bool){
+          window.localStorage.setItem('entrepreneur_data', JSON.stringify(response.data))
+        }else{
+          window.location.href=('/entrepreneur/login')
+        }
+          
+      })
+      .catch((error) => {
+        console.log(error)
+        // window.location.href=('/seller/login')
 
+      })
+    }
+  }, [entrepreneur_id])
 
   // useEffect(() => {
   //   if(search_status){

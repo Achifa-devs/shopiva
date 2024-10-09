@@ -1,14 +1,22 @@
 import { set_entrepreneur_id_to } from '@/redux/entrepreneur/entrepreneur_id'
 import { usePathname } from 'next/navigation'
 import React, { useEffect } from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 
 export default function AuthLayout({children,setCookie}) {
-    let pathname = usePathname()
+    let pathname = usePathname();
+    let dispatch = useDispatch();
+
     
     let {
         entrepreneur_cookie
     }=useSelector(s=> s.entrepreneur_cookie)
+
+    
+    let {
+        entrepreneur_id
+    } = useSelector(s => s.entrepreneur_id)
+
         
     useEffect(() => {
     setCookie(entrepreneur_cookie, 1) 
@@ -31,34 +39,73 @@ export default function AuthLayout({children,setCookie}) {
             
         // Example usage:
         const myCookie = getCookie('entrepreneur_secret');
-        fetch('https://shopiva-server.vercel.app/entrepreneur/authentication',
-        {
-            method: 'GET',
-            // credentials: 'include',
-            headers: {
-            'Content-Type': 'application/json',
-            'Authorization': myCookie
-            }
-        
-        })
-        .then(async(result) => {
-
-            let response = await result.json(); 
-            if(response.bool){
-            dispatch(set_entrepreneur_id_to(response.id))
-            }else{
-            window.location.href=('/entrepreneur/login')
-            }
+            fetch('https://shopiva-server.vercel.app/entrepreneur/authorization',
+            {
+                method: 'POST',
+                // credentials: 'include',
+                headers: {
+                'Content-Type': 'application/json',
+                'Authorization': myCookie
+                }
             
-        })
-        .catch((error) => {
-            console.log(error)
-            // window.location.href=('/seller/login')
+            })
+            .then(async(result) => {
 
-        })
+                let response = await result.json(); 
+
+                if(response.bool){
+                dispatch(set_entrepreneur_id_to(response.id))
+                // alert(response.id)
+                }else{
+                window.location.href=('/entrepreneur/login')
+                }
+                
+            })
+            .catch((error) => {
+                console.log(error)
+                // window.location.href=('/seller/login')
+
+            })
         } 
         
     }, [entrepreneur_cookie])
+
+    useEffect(() => {
+        let stored_entrepreneur  = window.localStorage.getItem('entrepreneur_data')
+        if(stored_entrepreneur === '' || stored_entrepreneur === null || stored_entrepreneur === 'null' || stored_entrepreneur === 'undefined' || stored_entrepreneur === undefined) {
+            alert(stored_entrepreneur)
+                
+            fetch('https://shopiva-server.vercel.app/entrepreneur/authentication',
+            {
+                method: 'POST',
+                // credentials: 'include',
+                headers: {
+                'Content-Type': 'application/json',
+                'Authorization': entrepreneur_id
+                }
+            
+            })
+            .then(async(result) => {
+
+                // alert(response.bool)
+        
+                let response = await result.json(); 
+                // alert(response.bool)
+
+                if(response.bool){
+                window.localStorage.setItem('entrepreneur_data', JSON.stringify(response.data.data))
+                }else{
+                // window.location.href=('/entrepreneur/login')
+                }
+                
+            })
+            .catch((error) => {
+                console.log(error)
+                // window.location.href=('/seller/login')
+        
+            })
+        }
+      }, [entrepreneur_id])
         
 
     return (

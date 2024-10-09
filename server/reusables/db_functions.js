@@ -28,6 +28,8 @@ async function DELETE_ROW_AFTER_ERR(table,column,colum_name) {
     })
 }
 
+
+
 module.exports={
     IS_EXISTING, 
     DELETE_ROW_AFTER_ERR

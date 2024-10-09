@@ -17,7 +17,7 @@ export default function App({children}) {
       let response = await setNewCookie(data, role)
       let result = JSON.parse(response);
       if(role === 1 && result){
-        window.location.href=('/entrepreneur/shop')
+        window.location.href=('/entrepreneur/pre-sale')
       }else if(role === 0 && result){
         window.location.href=('/')
 
@@ -50,11 +50,13 @@ export default function App({children}) {
               pathname.split('/').splice(1,2)[1] === 'pre-sale'
               ?
               <>
-                <div style={{height: '100vh', width: '100vw', overflow: 'auto', background: '#fff'}}>
-                  {
-                    children
-                  }
-                </div>
+                <AuthLayout setCookie={setCookie}>
+                  <div style={{height: '100vh', width: '100vw', overflow: 'auto', background: '#fff'}}>
+                    {
+                      children
+                    }
+                  </div>
+                </AuthLayout>
               </>
 
               :

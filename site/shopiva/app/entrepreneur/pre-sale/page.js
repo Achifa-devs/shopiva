@@ -27,24 +27,70 @@ import menu_svg from '@/svgs/menu-alt-2-svgrepo-com.svg'
 import cancel_svg from '@/svgs/close-square-svgrepo-com.svg'
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { handleFloater } from '@/reusables/anitmation'
-import { set_floater_src } from '@/redux/entrepreneur/floater_src'
-import SearchFloater from '@/components/floaters.js/Search'
-import ProfileFloater from '@/components/floaters.js/Profile'
+import { usePaystackPayment } from 'react-paystack'
 export default function Presale(){
-    let dispatch = useDispatch()
+    let dispatch = useDispatch();
+    let {
+        entrepreneur_id
+    } = useSelector(s => s.entrepreneur_id)
 
-    let [screenWidth, setScreenWidth] = useState(0)
-    let [active_floater, set_active_floater] = useState(null)
+    let [screenWidth, setScreenWidth] = useState(0);
+    let [entrepreneur_data, set_entrepreneur_data] = useState({});
+    let [is_authorized, set_is_authorized] = useState(false);
 
     useEffect(() => {
         setScreenWidth(window.innerWidth)
     }, [])
 
+    useEffect(() => {
+        // alert('entrepreneur_id: ',entrepreneur_id);
 
-    let [close, set_close]  =useState(false)
-   
+        if(entrepreneur_id !== null) {
+            // alert('hello')
+            set_is_authorized(true)
+            set_entrepreneur_data(JSON.parse(window.localStorage.getItem('entrepreneur_data')))
+        }
 
+    }, [entrepreneur_id])
+    
+
+    let [close, set_close] = useState(false);
+
+    const config = {
+        reference: (new Date()).getTime().toString(),
+        email: entrepreneur_data?.email,
+        amount: '750' + '00', //Amount is in the country's lowest currency. E.g Kobo, so 20000 kobo = N200
+        publicKey: 'sk_live_bec413b86aa5a7ef5f7f17f80a467e4460bc3b6d',
+        
+        metadata: {
+            entrepreneur_id: entrepreneur_data?.id,
+            amount: '750',
+            firstname: entrepreneur_data?.fname,
+            lastname: entrepreneur_data?.lname,
+            phone: entrepreneur_data?.phone,
+            email: entrepreneur_data?.email,
+        }
+    };
+    
+    // you can call this function anything
+    const onSuccess = (reference) => {
+      // Implementation for whatever you want to do with reference and after success call.
+      console.log(reference);
+    };
+  
+    // you can call this function anything
+    const onClose = () => {
+      // implementation for  whatever you want to do when the Paystack dialog closed.
+      console.log('closed')
+    }
+
+    const initializePayment = usePaystackPayment(config);
+
+
+    useEffect(() => {
+        console.log(entrepreneur_data)
+    }, [entrepreneur_data])
+    
     return(
 
         <>
@@ -76,7 +122,11 @@ export default function Presale(){
                     }}>How It Works</li>
 
                     <li onClick={e=> {
+                        !is_authorized
+                        ?
                         window.open('/entrepreneur/signup')
+                        :
+                        initializePayment(onSuccess, onClose)
                     }}>Get started</li>
                 </ul>
             </div>
@@ -127,6 +177,10 @@ export default function Presale(){
                             window.open('/entrepreneur/signup')
                         }}>Get started</li>
                     </ul>
+
+                    {
+
+                    }
                 </section>
             </header>
             <div id='intro' className='header' style={{height: '100vh', width: '100vw'}}>
@@ -140,7 +194,11 @@ export default function Presale(){
 
                             <h6 style={{color: '#fff', width: '100%', transform: 'skew(-30deg)', padding: '10px'}}>The Best Offer Ever</h6>
                             <button onClick={e=> {
+                                !is_authorized
+                                ?
                                 window.open('/entrepreneur/signup')
+                                :
+                                initializePayment(onSuccess, onClose)
                             }} style={{transform: 'skew(-30deg)', padding: '10px', background: '#00926e', borderRadius: '5px'}}>Subscribe Now</button>
 
                         </div>
@@ -209,7 +267,11 @@ export default function Presale(){
 
                     <br />
                     <button onClick={e=> {
+                        !is_authorized
+                        ?
                         window.open('/entrepreneur/signup')
+                        :
+                        initializePayment(onSuccess, onClose)
                     }}>Get Started</button>
                 </section>
 
