@@ -257,7 +257,7 @@ export default function Signup() {
 
                 <section className="other-reg-forms">
                     <button style={{marginLeft: '0'}} onClick={e=> {
-                        window.open('/entrepreneur/signup')
+                        window.location.href=('/entrepreneur/signup')
                     }} >
                         <small>Not registered? Signup.</small>
                     </button>

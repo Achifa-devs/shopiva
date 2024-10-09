@@ -1,11 +1,14 @@
+import { set_entrepreneur_data_to } from '@/redux/entrepreneur/entrepreneur_data';
 import { set_entrepreneur_id_to } from '@/redux/entrepreneur/entrepreneur_id'
 import { usePathname } from 'next/navigation'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
 export default function AuthLayout({children,setCookie}) {
     let pathname = usePathname();
     let dispatch = useDispatch();
+
+    let [stored_entrepreneur, set_stored_entrepreneur] = useState('')
 
     
     let {
@@ -71,7 +74,11 @@ export default function AuthLayout({children,setCookie}) {
     }, [entrepreneur_cookie])
 
     useEffect(() => {
-        let stored_entrepreneur  = window.localStorage.getItem('entrepreneur_data')
+        set_stored_entrepreneur(window.localStorage.getItem('entrepreneur_data'))
+    }, [])
+    
+
+    useEffect(() => {
         if(stored_entrepreneur === '' || stored_entrepreneur === null || stored_entrepreneur === 'null' || stored_entrepreneur === 'undefined' || stored_entrepreneur === undefined) {
                 
             fetch('https://shopiva-server.vercel.app/entrepreneur/authentication',
@@ -92,7 +99,7 @@ export default function AuthLayout({children,setCookie}) {
                 // alert(response.bool)
 
                 if(response.bool){
-                window.localStorage.setItem('entrepreneur_data', JSON.stringify(response.data.data))
+                dispatch(set_entrepreneur_data_to((response.data.data)))
                 }else{
                 // window.location.href=('/entrepreneur/login')
                 }
@@ -104,7 +111,7 @@ export default function AuthLayout({children,setCookie}) {
         
             })
         }
-      }, [entrepreneur_id])
+    }, [entrepreneur_id])
         
 
     return (
