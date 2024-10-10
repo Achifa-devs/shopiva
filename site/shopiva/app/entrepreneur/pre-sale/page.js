@@ -30,6 +30,7 @@ import cancel_svg from '@/svgs/close-square-svgrepo-com.svg'
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import handlePaystackPayment from '@/components/entrepreneur/payment'
+import { entrepreneur_overlay_setup } from '@/reusables/overlay'
 
 export default function Presale(){
 
@@ -91,12 +92,16 @@ export default function Presale(){
 
     useEffect(() => {
         setScreenWidth(window.innerWidth)
+        
+
     }, [])
 
     useEffect(() => {
-        set_count(count + 1);
-        if(entrepreneur_data !== null && count >= 2){
+        // set_count(count + 1);
+        entrepreneur_overlay_setup(true, 'Loading...');
+        if(entrepreneur_data !== null){
             set_is_authorized(true)
+            entrepreneur_overlay_setup(false, 'Loading...');
         }
     }, [entrepreneur_data])
     
