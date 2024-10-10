@@ -14,11 +14,15 @@ export default function App({children}) {
 
   async function setCookie(data,role) {
     if(data !== null && data !== 'null' && data !== ''){
-      let response = await setNewCookie(data, role)
-      let result = JSON.parse(response);
-      if(role === 1 && result){
+      // let response = await setNewCookie(data, role)
+      // let result = JSON.parse(response);
+      if(role === 1 ){
+        window.localStorage.setItem('entrepreneur_jwt', data)
+
         window.location.href=('/entrepreneur/pre-sale')
       }else if(role === 0 && result){
+        window.localStorage.setItem('customer_jwt', data)
+
         window.location.href=('/')
 
       }

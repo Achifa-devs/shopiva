@@ -42,34 +42,36 @@ export default function AuthLayout({children,setCookie}) {
         }
             
         // Example usage:
-        const myCookie = getCookie('entrepreneur_secret');
-            fetch('https://shopiva-server.onrender.com/entrepreneur/authorization',
-            {
-                method: 'POST',
-                // credentials: 'include',
-                headers: {
-                'Content-Type': 'application/json',
-                'Authorization': myCookie
-                }
+        // const myCookie = getCookie('entrepreneur_secret');
+        
+        const myCookie = window.localStorage.getItem('entrepreneur_jwt');
+        fetch('https://shopiva-server.onrender.com/entrepreneur/authorization',
+        {
+            method: 'POST',
+            // credentials: 'include',
+            headers: {
+            'Content-Type': 'application/json',
+            'Authorization': myCookie
+            }
+        
+        })
+        .then(async(result) => {
+
+            let response = await result.json(); 
+
+            if(response.bool){
+            dispatch(set_entrepreneur_id_to(response.id))
+            }else{
+            window.location.href=('/entrepreneur/login')
+            // alert('cookie boolean auth false')
+            }
             
-            })
-            .then(async(result) => {
+        })
+        .catch((error) => {
+            console.log(error)
+            window.location.href=('/entrepreneur/login')
 
-                let response = await result.json(); 
-
-                if(response.bool){
-                dispatch(set_entrepreneur_id_to(response.id))
-                }else{
-                // window.location.href=('/entrepreneur/login')
-                alert('cookie boolean auth false')
-                }
-                
-            })
-            .catch((error) => {
-                console.log(error)
-                window.location.href=('/entrepreneur/login')
-
-            })
+        })
         } 
         
     }, [entrepreneur_cookie])
@@ -94,8 +96,7 @@ export default function AuthLayout({children,setCookie}) {
                 if(response.bool){
                 dispatch(set_entrepreneur_data_to((response.data.data)))
                 }else{
-                // window.location.href=('/entrepreneur/login')
-                alert('boolean auth false')
+                window.location.href=('/entrepreneur/login')
 
                 }
                 

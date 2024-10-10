@@ -98,11 +98,10 @@ export default function Signup() {
                     let response = await result.json();
                     if(response.bool){
                         e.target.disabled = false;
-
                         // console.log(response)
-                        dispatch(set_entrepreneur_cookie(response.cookie))
-                        window.location.href="/entrepreneur/pre-sale"
-                        entrepreneur_overlay_setup(false, 'Try Again...')
+                        dispatch(set_entrepreneur_cookie(response.cookie));
+                        window.location.href="/entrepreneur/pre-sale";
+                        entrepreneur_overlay_setup(false, 'Try Again...');
 
                     }else{
                         
