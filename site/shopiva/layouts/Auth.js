@@ -60,13 +60,16 @@ export default function AuthLayout({children,setCookie}) {
                 if(response.bool){
                 dispatch(set_entrepreneur_id_to(response.id))
                 }else{
-                window.location.href=('/entrepreneur/login')
+                // window.location.href=('/entrepreneur/login')
+                alert('cookie boolean auth false')
                 }
                 
             })
             .catch((error) => {
+                alert('cookie boolean auth error')
+
                 // console.log(error)
-                window.location.href=('/entrepreneur/login')
+                // window.location.href=('/entrepreneur/login')
 
             })
         } 
@@ -93,13 +96,17 @@ export default function AuthLayout({children,setCookie}) {
                 if(response.bool){
                 dispatch(set_entrepreneur_data_to((response.data.data)))
                 }else{
-                window.location.href=('/entrepreneur/login')
+                // window.location.href=('/entrepreneur/login')
+                alert('cookie boolean auth false')
+
                 }
                 
             })
             .catch((error) => {
                 console.log(error)
-                window.location.href=('/entrepreneur/login')
+                alert('cookie boolean auth error')
+
+                // window.location.href=('/entrepreneur/login')
         
             })
         }
