@@ -239,11 +239,11 @@ export default function Signup() {
                     <div style={{width: '100%'}}>
                         <div className="input-cnt">
                             <label htmlFor="">Email</label>
-                            <input onInput={e=> setEmail(e.target.value)} type="text" placeholder='Email' name="email" id="" />
+                            <input style={{color: '#000'}} onInput={e=> setEmail(e.target.value)} type="text" placeholder='Email' name="email" id="" />
                         </div>
                         <div className="input-cnt">
                             <label htmlFor="">Password</label>
-                            <input onInput={e=> setPwd(e.target.value)} type="password" placeholder='Password' className='pwd' name="password" id="" />
+                            <input style={{color: '#000'}} onInput={e=> setPwd(e.target.value)} type="password" placeholder='Password' className='pwd' name="password" id="" />
                         </div>
 
                         <div className="input-cnt">

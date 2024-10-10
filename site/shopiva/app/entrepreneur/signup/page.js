@@ -273,16 +273,16 @@ export default function Signup() {
                         <section style={{display: 'flex', justifyContent: 'space-between'}}>
                             <div style={{width: '48%'}} className="input-cnt">
                                 <label htmlFor="">First name</label>
-                                <input onInput={e=> setFname(e.target.value)} type="text" placeholder='First name' name="fname" id="" />
+                                <input style={{color: '#000'}} onInput={e=> setFname(e.target.value)} type="text" placeholder='First name' name="fname" id="" />
                             </div>
                             <div style={{width: '48%'}} className="input-cnt">
                                 <label htmlFor="">Last name</label>
-                                <input onInput={e=> setLname(e.target.value)} type="text" placeholder='Last name' name="lname" id="" />
+                                <input style={{color: '#000'}} onInput={e=> setLname(e.target.value)} type="text" placeholder='Last name' name="lname" id="" />
                             </div>
                         </section>
                         <div className="input-cnt">
                             <label htmlFor="">Email</label>
-                            <input onInput={e=> setEmail(e.target.value)} type="text" placeholder='Email' name="email" id="" />
+                            <input style={{color: '#000'}} onInput={e=> setEmail(e.target.value)} type="text" placeholder='Email' name="email" id="" />
                         </div>
                         <div className="input-cnt">
                             <label htmlFor="">Phone</label>
@@ -312,7 +312,7 @@ export default function Signup() {
                                             <ul className="dropdown-menu" style={{width: '300px', overflow: 'auto', height: '200px'}}>
 
                                                 {/* <li>
-                                                    <input style={{height: '30px', width: '100%'}} placeholder='Search country here...' onInput={e=> set_search_char(e.target.value)} type="search" name="" id="" />
+                                                    <input style={{color: '#000'}} style={{height: '30px', width: '100%'}} placeholder='Search country here...' onInput={e=> set_search_char(e.target.value)} type="search" name="" id="" />
                                                 </li>
                                                
                                                 {
@@ -336,19 +336,19 @@ export default function Signup() {
                                     </div>
                                 </span>
                                 <span style={{width: 'calc(100% - 100px)'}}>
-                                    <input onInput={e=> setPhone_number(`+234${e.target.value}`)} type="tel" maxLength={10} name="phone" defaultValue={''} id="" />
+                                    <input style={{color: '#000'}} onInput={e=> setPhone_number(`+234${e.target.value}`)} type="tel" maxLength={10} name="phone" defaultValue={''} id="" />
                                 </span>
                             </div>
                         </div> 
 
                         <div className="input-cnt">
                             <label htmlFor="">Password</label>
-                            <input onInput={e=> setPwd(e.target.value)} type="password" placeholder='Password' name="password" id="" />
+                            <input style={{color: '#000'}} onInput={e=> setPwd(e.target.value)} type="password" placeholder='Password' name="password" id="" />
                         </div>
 {/* 
                         <div className="input-cnt">
                             <label htmlFor=""> Confirm Password</label>
-                            <input type="password" placeholder='Confirm Password' name="password" id="" />
+                            <input style={{color: '#000'}} type="password" placeholder='Confirm Password' name="password" id="" />
                         </div> */}
 
                         <div className="input-cnt">

@@ -34,8 +34,6 @@ import { entrepreneur_overlay_setup } from '@/reusables/overlay'
 
 export default function Presale(){
 
-    let [count, set_count] = useState(0)
-
     let {
         entrepreneur_id
     } = useSelector(s => s.entrepreneur_id);
