@@ -26,20 +26,14 @@ import ui_svg from '@/svgs/ui-checks-grid-svgrepo-com.svg'
 import cheap_svg from '@/svgs/sale-svgrepo-com (1).svg'
 import menu_svg from '@/svgs/menu-alt-2-svgrepo-com.svg'
 import cancel_svg from '@/svgs/close-square-svgrepo-com.svg'
+
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-// import PaystackPayment from 'react-paystack'
+import handlePaystackPayment from '@/components/entrepreneur/payment'
 
 export default function Presale(){
 
-    let [usePaystackPayment, setUsePaystackPayment] = useState('')
 
-    useEffect(() => {
-        // setUsePaystackPayment(PaystackPayment.usePaystackPayment)
-    }, [])
-    
-
-    
     let {
         entrepreneur_id
     } = useSelector(s => s.entrepreneur_id);
@@ -85,8 +79,10 @@ export default function Presale(){
         ?
         window.open('/entrepreneur/signup')
         :
-        initializePayment(onSuccess, onClose)
+        handlePaystackPayment(config,onSuccess,onClose)
     }
+
+    
 
     function link_handler(link) {
         window.location.href=link
