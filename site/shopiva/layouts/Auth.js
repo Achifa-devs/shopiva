@@ -59,15 +59,14 @@ export default function AuthLayout({children,setCookie}) {
 
                 if(response.bool){
                 dispatch(set_entrepreneur_id_to(response.id))
-                // alert(response.id)
                 }else{
                 window.location.href=('/entrepreneur/login')
                 }
                 
             })
             .catch((error) => {
-                console.log(error)
-                window.location.href=('/seller/login')
+                // console.log(error)
+                window.location.href=('/entrepreneur/login')
 
             })
         } 
@@ -76,7 +75,7 @@ export default function AuthLayout({children,setCookie}) {
 
 
     useEffect(() => {
-        if(entrepreneur_data === '' || entrepreneur_data === null || entrepreneur_data === 'null' || entrepreneur_data === 'undefined' || entrepreneur_data === undefined) {
+        // if(entrepreneur_data === '' || entrepreneur_data === null || entrepreneur_data === 'null' || entrepreneur_data === 'undefined' || entrepreneur_data === undefined) {
                 
             fetch('https://shopiva-server.vercel.app/entrepreneur/authentication',
             {
@@ -90,24 +89,22 @@ export default function AuthLayout({children,setCookie}) {
             })
             .then(async(result) => {
 
-                // alert(response.bool)
-        
                 let response = await result.json(); 
-                // alert(response.bool)
-
                 if(response.bool){
                 dispatch(set_entrepreneur_data_to((response.data.data)))
                 }else{
                 window.location.href=('/entrepreneur/login')
+                // console.log(response)
+
                 }
                 
             })
             .catch((error) => {
                 console.log(error)
-                window.location.href=('/seller/login')
+                window.location.href=('/entrepreneur/login')
         
             })
-        }
+        // }
     }, [entrepreneur_id])
         
 
