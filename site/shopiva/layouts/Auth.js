@@ -43,7 +43,7 @@ export default function AuthLayout({children,setCookie}) {
             
         // Example usage:
         const myCookie = getCookie('entrepreneur_secret');
-            fetch('https://shopiva-server.vercel.app/entrepreneur/authorization',
+            fetch('https://shopiva-server.onrender.com/entrepreneur/authorization',
             {
                 method: 'POST',
                 // credentials: 'include',
@@ -77,7 +77,7 @@ export default function AuthLayout({children,setCookie}) {
     useEffect(() => {
         // if(entrepreneur_data === '' || entrepreneur_data === null || entrepreneur_data === 'null' || entrepreneur_data === 'undefined' || entrepreneur_data === undefined) {
                 
-            fetch('https://shopiva-server.vercel.app/entrepreneur/authentication',
+            fetch('https://shopiva-server.onrender.com/entrepreneur/authentication',
             {
                 method: 'POST',
                 // credentials: 'include',

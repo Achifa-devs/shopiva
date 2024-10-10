@@ -87,7 +87,7 @@ export default function Signup() {
                 entrepreneur_overlay_setup(true, 'One Moment Please...')
                
                 e.target.disabled = true;
-                fetch('https://shopiva-server.vercel.app/entrepreneur/login', {
+                fetch('https://shopiva-server.onrender.com/entrepreneur/login', {
                     method: 'post',
                     headers: {
                         "Content-Type": "Application/json"

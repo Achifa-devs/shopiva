@@ -123,7 +123,7 @@ export default function Signup() {
             if(validation.current){
                
                 e.target.disabled = true;
-                fetch('https://shopiva-server.vercel.app/entrepreneur/registration', {
+                fetch('https://shopiva-server.onrender.com/entrepreneur/registration', {
                     method: 'post',
                     headers: {
                         "Content-Type": "Application/json"

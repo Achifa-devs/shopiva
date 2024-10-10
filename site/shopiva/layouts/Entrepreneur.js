@@ -44,7 +44,7 @@ export default function EntrepreneurLayout({children,setCookie}) {
   useEffect(() => {
     let stored_entrepreneur  = window.localStorage.getItem('entrepreneur_data')
     if(stored_entrepreneur === '' && stored_entrepreneur === null && stored_entrepreneur === 'null' && stored_entrepreneur === 'undefined' && stored_entrepreneur === undefined) {
-      fetch('https://shopiva-server.vercel.app/entrepreneur/authentication',
+      fetch('https://shopiva-server.onrender.com/entrepreneur/authentication',
       {
         method: 'POST',
         // credentials: 'include',
