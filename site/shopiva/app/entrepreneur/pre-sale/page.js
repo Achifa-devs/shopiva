@@ -100,6 +100,7 @@ export default function Presale(){
         if(entrepreneur_data !== null){
             set_is_authorized(true)
             entrepreneur_overlay_setup(false, 'Loading...');
+            handle_subscribe_btn()
         }
     }, [entrepreneur_data])
     

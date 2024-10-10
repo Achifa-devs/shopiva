@@ -60,7 +60,7 @@
 
 
     .enetrepreneur-signup-form .form-cnt .other-reg-forms button:first-child{
-        width: calc(100% - 150px);
+        width: calc(100% - 0px);
     }
     button{
         width: 100%;
