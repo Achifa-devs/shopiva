@@ -92,13 +92,13 @@ export default function Presale(){
 
     useEffect(() => {
         setScreenWidth(window.innerWidth)
+        entrepreneur_overlay_setup(true, 'Loading...');
         
 
     }, [])
 
     useEffect(() => {
         // set_count(count + 1);
-        entrepreneur_overlay_setup(true, 'Loading...');
         if(entrepreneur_data !== null){
             set_is_authorized(true)
             entrepreneur_overlay_setup(false, 'Loading...');
