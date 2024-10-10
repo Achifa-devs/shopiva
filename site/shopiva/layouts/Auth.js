@@ -75,7 +75,7 @@ export default function AuthLayout({children,setCookie}) {
 
 
     useEffect(() => {
-        // if(entrepreneur_data === '' || entrepreneur_data === null || entrepreneur_data === 'null' || entrepreneur_data === 'undefined' || entrepreneur_data === undefined) {
+        if(entrepreneur_data === '' || entrepreneur_data === null || entrepreneur_data === 'null' || entrepreneur_data === 'undefined' || entrepreneur_data === undefined) {
                 
             fetch('https://shopiva-server.onrender.com/entrepreneur/authentication',
             {
@@ -94,8 +94,6 @@ export default function AuthLayout({children,setCookie}) {
                 dispatch(set_entrepreneur_data_to((response.data.data)))
                 }else{
                 window.location.href=('/entrepreneur/login')
-                // console.log(response)
-
                 }
                 
             })
@@ -104,7 +102,7 @@ export default function AuthLayout({children,setCookie}) {
                 window.location.href=('/entrepreneur/login')
         
             })
-        // }
+        }
     }, [entrepreneur_id])
         
 
