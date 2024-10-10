@@ -66,10 +66,8 @@ export default function AuthLayout({children,setCookie}) {
                 
             })
             .catch((error) => {
-                alert('cookie boolean auth error')
-
-                // console.log(error)
-                // window.location.href=('/entrepreneur/login')
+                console.log(error)
+                window.location.href=('/entrepreneur/login')
 
             })
         } 
@@ -97,16 +95,14 @@ export default function AuthLayout({children,setCookie}) {
                 dispatch(set_entrepreneur_data_to((response.data.data)))
                 }else{
                 // window.location.href=('/entrepreneur/login')
-                alert('cookie boolean auth false')
+                alert('boolean auth false')
 
                 }
                 
             })
             .catch((error) => {
                 console.log(error)
-                alert('cookie boolean auth error')
-
-                // window.location.href=('/entrepreneur/login')
+                window.location.href=('/entrepreneur/login')
         
             })
         }
