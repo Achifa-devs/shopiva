@@ -48,7 +48,7 @@ export default function Presale(){
         reference: (new Date()).getTime().toString(),
         email: entrepreneur_data?.email,
         amount: '750' + '00', //Amount is in the country's lowest currency. E.g Kobo, so 20000 kobo = N200
-        publicKey: 'sk_live_bec413b86aa5a7ef5f7f17f80a467e4460bc3b6d',
+        publicKey: 'pk_live_13343a7bd4deeebc644070871efcdf8fdcf280f7',
         
         metadata: {
             entrepreneur_id: entrepreneur_data?.id,
