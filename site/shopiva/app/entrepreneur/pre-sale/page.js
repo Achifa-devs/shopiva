@@ -1,9 +1,9 @@
 "use client"
 
-
 import './styles/global.css'
 import './styles/small.css'
 import './styles/medium.css'
+
 import register_svg from '@/svgs/subscribe-svgrepo-com (1).svg'
 import sub_svg from '@/svgs/subscribe-filled-svgrepo-com.svg'
 import email_svg from '@/svgs/email-marketing-advertising-svgrepo-com.svg'
@@ -19,7 +19,6 @@ import img_3_svg from '@/images/ce0048c94b712ae773a1f6371ced6303.webp'
 import img_4_svg from '@/images/bbcn2_2405_1__2925-4290.webp'
 import img_5_svg from '@/images/HM_5LB_540x.webp'
 
-
 import pay_svg from '@/svgs/pay-in-cash-money-dollar-bill-svgrepo-com.svg'
 import mkting_svg from '@/svgs/marketing-mobile-information-speaker-news-svgrepo-com.svg'
 import growth_svg from '@/svgs/growth-report-graph-svgrepo-com.svg'
@@ -29,10 +28,18 @@ import menu_svg from '@/svgs/menu-alt-2-svgrepo-com.svg'
 import cancel_svg from '@/svgs/close-square-svgrepo-com.svg'
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { usePaystackPayment } from 'react-paystack';
-
+// import PaystackPayment from 'react-paystack'
 
 export default function Presale(){
+
+    let [usePaystackPayment, setUsePaystackPayment] = useState('')
+
+    useEffect(() => {
+        // setUsePaystackPayment(PaystackPayment.usePaystackPayment)
+    }, [])
+    
+
+    
     let {
         entrepreneur_id
     } = useSelector(s => s.entrepreneur_id);
@@ -42,31 +49,6 @@ export default function Presale(){
 
     let [screenWidth, setScreenWidth] = useState(0);
     let [is_authorized, set_is_authorized] = useState(false);
-
-    function handle_subscribe_btn() {
-        !is_authorized
-        ?
-        window.open('/entrepreneur/signup')
-        :
-        initializePayment(onSuccess, onClose)
-    }
-
-    function link_handler(link) {
-        window.location.href=link
-    }
-
-    useEffect(() => {
-        setScreenWidth(window.innerWidth)
-    }, [])
-
-    useEffect(() => {
-        if(entrepreneur_data !== null){
-            set_is_authorized(true)
-        }
-    }, [])
-    
-
-    let [close, set_close] = useState(false);
 
     const config = {
         reference: (new Date()).getTime().toString(),
@@ -96,8 +78,31 @@ export default function Presale(){
       console.log('closed')
     }
 
-    const initializePayment = usePaystackPayment(config);
+    // const initializePayment = usePaystackPayment(config);
 
+    function handle_subscribe_btn() {
+        !is_authorized
+        ?
+        window.open('/entrepreneur/signup')
+        :
+        initializePayment(onSuccess, onClose)
+    }
+
+    function link_handler(link) {
+        window.location.href=link
+    }
+
+    useEffect(() => {
+        setScreenWidth(window.innerWidth)
+    }, [])
+
+    useEffect(() => {
+        if(entrepreneur_data !== null){
+            set_is_authorized(true)
+        }
+    }, [entrepreneur_data])
+    
+    let [close, set_close] = useState(false);
 
     return(
 
@@ -454,5 +459,6 @@ export default function Presale(){
             </footer>
 
         </>
+
     )
 }

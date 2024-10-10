@@ -67,7 +67,7 @@ export default function AuthLayout({children,setCookie}) {
             })
             .catch((error) => {
                 console.log(error)
-                // window.location.href=('/seller/login')
+                window.location.href=('/seller/login')
 
             })
         } 
@@ -98,13 +98,13 @@ export default function AuthLayout({children,setCookie}) {
                 if(response.bool){
                 dispatch(set_entrepreneur_data_to((response.data.data)))
                 }else{
-                // window.location.href=('/entrepreneur/login')
+                window.location.href=('/entrepreneur/login')
                 }
                 
             })
             .catch((error) => {
                 console.log(error)
-                // window.location.href=('/seller/login')
+                window.location.href=('/seller/login')
         
             })
         }
