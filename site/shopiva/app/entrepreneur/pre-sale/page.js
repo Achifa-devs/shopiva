@@ -33,6 +33,7 @@ import handlePaystackPayment from '@/components/entrepreneur/payment'
 
 export default function Presale(){
 
+    let [count, set_count] = useState(0)
 
     let {
         entrepreneur_id
@@ -77,7 +78,7 @@ export default function Presale(){
     function handle_subscribe_btn() {
         !is_authorized
         ?
-        window.open('/entrepreneur/signup')
+        window.open('/entrepreneur/login')
         :
         handlePaystackPayment(config,onSuccess,onClose)
     }
@@ -93,7 +94,8 @@ export default function Presale(){
     }, [])
 
     useEffect(() => {
-        if(entrepreneur_data !== null){
+        set_count(count + 1);
+        if(entrepreneur_data !== null && count >= 2){
             set_is_authorized(true)
         }
     }, [entrepreneur_data])
