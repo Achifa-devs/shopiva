@@ -1,3 +1,5 @@
+const { neon_db } = require("../reusables/db");
+
 function confirm_payment(req,res) {
     console.log(req.body)
     let payload = req.body;
@@ -20,9 +22,9 @@ function confirm_payment(req,res) {
             VALUES(
                 DEFAULT,
                 '${entrepreneur_id}',
-                '009b45',
+                '${entrepreneur_id}',
                 '${new Date()}',
-                '${amount}',
+                '${parseInt(amount)}',
                 'active'
             )
         `)
