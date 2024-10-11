@@ -52,7 +52,7 @@ export default function Presale(){
         publicKey: 'pk_live_13343a7bd4deeebc644070871efcdf8fdcf280f7',
         
         metadata: {
-            entrepreneur_id: entrepreneur_data?.id,
+            entrepreneur_id: entrepreneur_data?.entrepreneur_id,
             amount: '750',
             firstname: entrepreneur_data?.fname,
             lastname: entrepreneur_data?.lname,
@@ -106,7 +106,9 @@ export default function Presale(){
     let [close, set_close] = useState(false);
 
     function get_subscription(){
-        axios.get('', {})
+        axios.get('https://shopiva-server.onrender.com/entrepreneur/subscription', {
+            params: {entrepreneur_id: entrepreneur_id}
+        })
         .then((result) => {
             if(result.bool){
                 set_is_subscribed(true)
