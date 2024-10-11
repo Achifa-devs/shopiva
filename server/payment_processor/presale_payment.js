@@ -17,7 +17,8 @@ function confirm_payment(req,res) {
                 entrepreneur_id,
                 transaction_date,
                 amount,
-                status
+                status,
+                created_at
             )
             VALUES(
                 DEFAULT,
@@ -25,7 +26,9 @@ function confirm_payment(req,res) {
                 '${entrepreneur_id}',
                 '${new Date()}',
                 '${parseInt(amount)}',
-                'active'
+                'active',
+                '${new Date()}'
+
             )
         `)
         .then((result) => {
