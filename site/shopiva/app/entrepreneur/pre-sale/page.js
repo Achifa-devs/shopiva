@@ -82,8 +82,6 @@ export default function Presale(){
         handlePaystackPayment(config,onSuccess,onClose)
     }
 
-    
-
     function link_handler(link) {
         window.location.href=link
     }
@@ -105,6 +103,16 @@ export default function Presale(){
     }, [entrepreneur_data])
     
     let [close, set_close] = useState(false);
+
+    function get_subscription(){
+        axios.get('', {})
+        .then((result) => {
+
+        })
+        .catch((err) => {
+            console.log(err)
+        })
+    }
 
     return(
 

@@ -1,4 +1,5 @@
 function confirm_payment(req,res) {
+    console.log(req.body)
     let payload = req.body;
     let response = payload.data;
 
