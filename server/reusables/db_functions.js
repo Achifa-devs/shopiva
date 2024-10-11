@@ -28,9 +28,47 @@ async function DELETE_ROW_AFTER_ERR(table,column,colum_name) {
     })
 }
 
+async function GET_LANG(req,res) {
+    return(
+        await neon_db()
+        .then((pool) => {
+            pool.query(`
+                SELECT * FROM languages
+            `)
+            .then((result) => res.status(200).send({bool: true, data:result.rows}))
+            .catch(err => res.status(400).send({bool: false, data:''}))
+        })
+        .catch((err) => {
+            
+            console.log(err)
+            res.status(400).send({bool: false, data:''})
+        })
+    )
+}
+
+async function GET_TIMEZONES(req,res) {
+    return(
+        await neon_db()
+        .then((pool) => {
+            pool.query(`
+                SELECT * FROM timezones
+            `)
+            .then((result) => res.status(200).send({bool: true, data:result.rows}))
+            .catch(err => res.status(400).send({bool: false, data:''}))
+        })
+        .catch((err) => {
+            
+            console.log(err)
+            res.status(400).send({bool: false, data:''})
+        })
+    )
+}
+
 
 
 module.exports={
     IS_EXISTING, 
-    DELETE_ROW_AFTER_ERR
+    DELETE_ROW_AFTER_ERR,
+    GET_LANG,
+    GET_TIMEZONES
 }

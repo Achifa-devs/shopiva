@@ -1,30 +1,90 @@
 const { neon_db } = require("./db");
 const { errHandler } = require("./errHandler");
 
+
 function CreateTables(params) {
+
+    // order_id
 
     // USERS
     neon_db().then(pool => {
-        pool.query(`CREATE TABLE IF NOT EXISTS enterpreneurs(
+        pool.query(`CREATE TABLE IF NOT EXISTS entrepreneurs(
             id SERIAL PRIMARY KEY,
-            user_id TEXT NOT NULL UNIQUE,
+            entrepreneur_id TEXT NOT NULL UNIQUE,
             fname TEXT NOT NULL,
             lname TEXT NOT NULL,
             email TEXT NOT NULL UNIQUE,
             password TEXT NOT NULL,
             phone_number TEXT NOT NULL UNIQUE,
-            gender TEXT NOT NULL,
+            gender TEXT NOT NULL, 
             is_active BOOLEAN NOT NULL,
             last_seen TEXT NOT NULL,
             is_email_verified BOOLEAN NOT NULL,
             is_phone_verified BOOLEAN NOT NULL,
             is_acct_verified BOOLEAN NOT NULL,
             created_at TEXT NOT NULL,
-            updated_at TEXT NOT NULL
+            updated_at TEXT NOT NULL,
+            referral_src TEXT NOT NULL,
+            language TEXT NOT NULL,
+            timezone TEXT NOT NULL
         )`)
     }).catch(err=> {
         errHandler(err)
     })
+
+    neon_db().then((pool) => {
+        pool.query(`CREATE TABLE timezones (
+            id SERIAL PRIMARY KEY,
+            timezone VARCHAR(100) NOT NULL,
+            name VARCHAR(100) NOT NULL,
+            utc_offset VARCHAR(10) NOT NULL
+        )`)
+    })
+    .catch(err=> {
+        errHandler(err)
+    })
+ 
+    neon_db().then((pool) => {
+        pool.query(`CREATE TABLE languages (
+            id SERIAL PRIMARY KEY,
+            code VARCHAR(10) NOT NULL,
+            name VARCHAR(100) NOT NULL
+        )`)
+    })
+    .catch(err=> {
+        errHandler(err)
+    })
+
+    neon_db().then((pool) => {
+        pool.query(`CREATE TABLE subscription_plans (
+            plan_id SERIAL PRIMARY KEY,
+            product_id TEXT NOT NULL,
+            name TEXT NOT NULL,
+            price TEXT NOT NULL,
+            billing_frequency TEXT NOT NULL,
+            created_at TEXT NOT NULL        
+        )`)
+    })
+    .catch(err=> {
+        errHandler(err)
+    })
+
+    neon_db().then((pool) => {
+        pool.query(`CREATE TABLE subscription_transactions (
+            transaction_id SERIAL PRIMARY KEY,
+            subscription_id TEXT NOT NULL,
+            entrepreneur_id TEXT NOT NULL,
+            transaction_date TEXT NOT NULL,
+            amount bigint NOT NULL,
+            status TEXT NOT NULL,
+            created_at TEXT NOT NULL
+        )`)
+    })
+    .catch(err=> {
+        errHandler(err)
+    })
+
+
 
     // SHOPS
     neon_db().then(pool => {
@@ -105,7 +165,7 @@ function CreateTables(params) {
             price bigint NOT NULL,
             stock bigint NOT NULL,
             category TEXT NOT NULL,
-            sub-category TEXT NOT NULL,
+            sub_category TEXT NOT NULL,
             specification JSON NOT NULL,
             others JSON NOT NULL,
             discount TEXT NOT NULL,
@@ -137,7 +197,6 @@ function CreateTables(params) {
     neon_db().then(pool => {
         pool.query(`CREATE TABLE IF NOT EXISTS shop_orders (
             id SERIAL PRIMARY KEY,
-            order_id TEXT NOT NULL,
             customer_id TEXT NOT NULL,
             order_id TEXT NOT NULL,
             product_id TEXT NOT NULL,
@@ -273,4 +332,8 @@ function CreateTables(params) {
     }).catch(err=> {
         errHandler(err)
     })
+}
+
+module.exports={
+    CreateTables
 }

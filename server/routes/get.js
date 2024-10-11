@@ -1,4 +1,6 @@
+const passport = require("passport");
 const { entrepreneur_subscription_transactions } = require("../controllers/enterpreneur/subscription");
+const { GET_LANG, GET_TIMEZONES } = require("../reusables/db_functions");
 const { 
     express, 
     parser
@@ -6,6 +8,16 @@ const {
 let entrepreneurGetRoute = express.Router();  
 
 entrepreneurGetRoute.get('/entrepreneur/subscription', parser, entrepreneur_subscription_transactions);
+entrepreneurGetRoute.get('/entrepreneur/profile', parser, entrepreneur_subscription_transactions);
+entrepreneurGetRoute.get('/entrepreneur/lang', parser, GET_LANG);
+entrepreneurGetRoute.get('/entrepreneur/timezones', parser, GET_TIMEZONES);
+
+entrepreneurGetRoute.get('/entrepreneur/google', passport.authenticate('google', {
+    scope: ['profile']
+}));
+entrepreneurGetRoute.get('/entrepreneur/google/redirect', (req,res) => {
+    res.send('hello auth completed...')
+});
 
 // userRoute.post('/shop', parser, post_shop);
 

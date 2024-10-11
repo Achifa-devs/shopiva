@@ -1,5 +1,6 @@
 const {Client,Pool} = require('pg');
-let  DATABASE_URL  = `postgresql://achifa.io.llc:cflV8XEbCO7h@ep-billowing-sunset-28191429-pooler.us-east-2.aws.neon.tech/shopiva?sslmode=require`;
+// let  DATABASE_URL  = `postgresql://achifa.io.llc:cflV8XEbCO7h@ep-billowing-sunset-28191429-pooler.us-east-2.aws.neon.tech/shopiva?sslmode=require`;
+let  DATABASE_URL  = `postgresql://postgres:asdfghjkl@localhost:5432/shopiva`;
 require('dotenv').config();    
 
 
@@ -8,9 +9,7 @@ new Promise((resolve, reject) => {
     try{
         const pool = new Pool({
             connectionString: DATABASE_URL,
-            ssl: {
-                rejectUnauthorized: false,
-            },
+           
             createTimeoutMillis: 8000,
             connectionTimeoutMillis: 10000000,
             acquireTimeoutMillis: 8000,

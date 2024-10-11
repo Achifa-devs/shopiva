@@ -16,6 +16,10 @@ const {
 const cookieParser = require('cookie-parser');
 const { entrepreneurPostRoute } = require('./routes/post');
 const { entrepreneurGetRoute } = require('./routes/get');
+const passportSetup = require('./config/passport-setup');
+
+
+// const { CreateTables } = require('./reusables/tables');
 require('dotenv').config();    
 const app = express();  
 
@@ -37,4 +41,5 @@ var server = app.listen(process.env.PORT,_ => console.log('app is live @',proces
 io(server, {cors: {origin: '*'}}).on('connection',(socket) => {
 
 });
-  
+
+// passportSetup
