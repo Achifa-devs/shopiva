@@ -31,6 +31,7 @@ import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import handlePaystackPayment from '@/components/entrepreneur/payment'
 import { entrepreneur_overlay_setup } from '@/reusables/overlay'
+import axios from 'axios'
 
 export default function Presale(){
 
@@ -99,27 +100,35 @@ export default function Presale(){
         if(entrepreneur_data !== null){
             set_is_authorized(true)
             entrepreneur_overlay_setup(false, 'Loading...');
-            handle_subscribe_btn()
+            
         }
     }, [entrepreneur_data])
     
     let [close, set_close] = useState(false);
 
    useEffect(() => {
-        axios.get('https://shopiva-server.onrender.com/entrepreneur/subscription', {
-            params: {entrepreneur_id: entrepreneur_id}
-        })
-        .then((result) => {
-            if(result.bool){
-                set_is_subscribed(true)
-            }else{
-                set_is_subscribed(false)
-            }
-        })
-        .catch((err) => {
-            console.log(err)
-        })
-   }, [])
+        if (entrepreneur_id !== null) {
+            fetch(`https://shopiva-server.onrender.com/entrepreneur/subscription?entrepreneur_id=${entrepreneur_id}`)
+            .then(async(result) => {
+                let response = await result.json()
+                if(response.bool){
+                    set_is_subscribed(true)
+                }else{
+                    set_is_subscribed(false)
+                }
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+        }
+   }, [entrepreneur_id])
+
+   useEffect(() => {
+    if(!is_subscribed){
+        handle_subscribe_btn()
+    }
+   }, [is_subscribed])
+   
    
 
     return(
@@ -202,7 +211,7 @@ export default function Presale(){
 
                         <li onClick={e=> {
                             is_authorized ? '' : link_handler('/entrepreneur/signup')
-                        }}>is_subscribed ? 'August 20, 2025' : 'Get started'</li>
+                        }}>{is_subscribed ? 'August 20, 2025' : 'Get started'}</li>
                     </ul>
 
                    
@@ -290,7 +299,7 @@ export default function Presale(){
                     <br />
                     <button onClick={e=> {
                          is_subscribed ? '' : handle_subscribe_btn(e)
-                    }}> is_subscribed ? 'August 20, 2025' : 'Get started'</button>
+                    }}> {is_subscribed ? 'August 20, 2025' : 'Get started'}</button>
                 </section>
 
 
