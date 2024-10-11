@@ -105,7 +105,7 @@ export default function Presale(){
     
     let [close, set_close] = useState(false);
 
-    function get_subscription(){
+   useEffect(() => {
         axios.get('https://shopiva-server.onrender.com/entrepreneur/subscription', {
             params: {entrepreneur_id: entrepreneur_id}
         })
@@ -119,7 +119,8 @@ export default function Presale(){
         .catch((err) => {
             console.log(err)
         })
-    }
+   }, [])
+   
 
     return(
 
