@@ -13,15 +13,15 @@ function confirm_payment(req,res) {
         pool.query(`
             INSERT INTO subscription_transactions (
                 transaction_id,
-                entrepreneur_id,
                 subscription_id,
+                entrepreneur_id,
                 transaction_date,
                 amount,
                 status
             )
             VALUES(
                 DEFAULT,
-                '${entrepreneur_id}',
+                '009b45',
                 '${entrepreneur_id}',
                 '${new Date()}',
                 '${parseInt(amount)}',

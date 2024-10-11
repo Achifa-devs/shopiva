@@ -5,13 +5,13 @@ const {
     express, 
     parser
  } = require("../reusables/modules");
-let entrepreneurRoute = express.Router();  
+let entrepreneurPostRoute = express.Router();  
 
-entrepreneurRoute.post('/entrepreneur/registration', parser, register_entrepreneur);
-entrepreneurRoute.post('/entrepreneur/login', parser, signin_entrepreneur);
-entrepreneurRoute.post('/entrepreneur/authentication', parser, check_entrepreneur);
-entrepreneurRoute.post('/entrepreneur/authorization', parser, entrepreneur_auth);
-entrepreneurRoute.post('/entrepreneur/pre-sale-subscription', parser, confirm_payment);
+entrepreneurPostRoute.post('/entrepreneur/registration', parser, register_entrepreneur);
+entrepreneurPostRoute.post('/entrepreneur/login', parser, signin_entrepreneur);
+entrepreneurPostRoute.post('/entrepreneur/authentication', parser, check_entrepreneur);
+entrepreneurPostRoute.post('/entrepreneur/authorization', parser, entrepreneur_auth);
+entrepreneurPostRoute.post('/entrepreneur/pre-sale-subscription', parser, confirm_payment);
 
 // userRoute.post('/shop', parser, post_shop);
 
@@ -22,5 +22,5 @@ entrepreneurRoute.post('/entrepreneur/pre-sale-subscription', parser, confirm_pa
 // userRoute.post('/listing', parser, post_listing);
 
 module.exports={
-    entrepreneurRoute
+    entrepreneurPostRoute
 }
