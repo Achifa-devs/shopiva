@@ -43,6 +43,7 @@ export default function Presale(){
 
     let [screenWidth, setScreenWidth] = useState(0);
     let [is_authorized, set_is_authorized] = useState(false);
+    let [is_subscribed, set_is_subscribed] = useState(false);
 
     const config = {
         reference: (new Date()).getTime().toString(),
@@ -107,7 +108,11 @@ export default function Presale(){
     function get_subscription(){
         axios.get('', {})
         .then((result) => {
-
+            if(result.bool){
+                set_is_subscribed(true)
+            }else{
+                set_is_subscribed(false)
+            }
         })
         .catch((err) => {
             console.log(err)
@@ -193,8 +198,8 @@ export default function Presale(){
                         }}>How It Works</li>
 
                         <li onClick={e=> {
-                            link_handler('/entrepreneur/signup')
-                        }}>Get started</li>
+                            is_authorized ? '' : link_handler('/entrepreneur/signup')
+                        }}>is_subscribed ? 'August 20, 2025' : 'Get started'</li>
                     </ul>
 
                    
@@ -212,8 +217,8 @@ export default function Presale(){
 
                             <h6 style={{color: '#fff', width: '100%', transform: 'skew(-30deg)', padding: '10px'}}>The Best Offer Ever</h6>
                             <button onClick={e=> {
-                                handle_subscribe_btn(e)
-                            }} style={{transform: 'skew(-30deg)', padding: '10px', background: '#00926e', borderRadius: '5px'}}>Subscribe Now</button>
+                                is_subscribed ? '' : handle_subscribe_btn(e)
+                            }} style={{transform: 'skew(-30deg)', padding: '10px', background: '#00926e', borderRadius: '5px'}}>{is_subscribed ? 'Subscribed' : 'Subscribe Now'}</button>
 
                         </div>
 
@@ -281,8 +286,8 @@ export default function Presale(){
 
                     <br />
                     <button onClick={e=> {
-                        handle_subscribe_btn(e)
-                    }}>Get Started</button>
+                         is_subscribed ? '' : handle_subscribe_btn(e)
+                    }}> is_subscribed ? 'August 20, 2025' : 'Get started'</button>
                 </section>
 
 
