@@ -12,20 +12,14 @@ entrepreneurGetRoute.get('/entrepreneur/profile', parser, entrepreneur_subscript
 entrepreneurGetRoute.get('/entrepreneur/lang', parser, GET_LANG);
 entrepreneurGetRoute.get('/entrepreneur/timezones', parser, GET_TIMEZONES);
 
-entrepreneurGetRoute.get('/entrepreneur/google', passport.authenticate('google', {
-    scope: ['profile']
-}));
-entrepreneurGetRoute.get('/entrepreneur/google/redirect', (req,res) => {
-    res.send('hello auth completed...')
+entrepreneurGetRoute.get('/auth/google', passport.authenticate('google', { scope: ['profile'] }));
+
+entrepreneurGetRoute.get('/auth/google/callback', 
+  passport.authenticate('google', { failureRedirect: '/login' }),
+  function(req, res) {
+    // Successful authentication, redirect home.
+    res.redirect('/');
 });
-
-// userRoute.post('/shop', parser, post_shop);
-
-// userRoute.post('/cart', parser, post_cart);
-// userRoute.post('/order', parser, post_order);
-// userRoute.post('/favourite', parser, post_favourite);
-
-// userRoute.post('/listing', parser, post_listing);
 
 module.exports={
     entrepreneurGetRoute

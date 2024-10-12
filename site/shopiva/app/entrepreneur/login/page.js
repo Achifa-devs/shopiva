@@ -260,16 +260,22 @@ export default function Signup() {
                     }} >
                         <small>Not registered? Signup.</small>
                     </button>
-                    {/* <button style={{padding: '5px', background: '#fff', border: 'none'}}>
+                    <button style={{padding: '5px', background: '#fff', border: 'none'}}>
                         <img src={fb_svg.src} style={{height: '100%', width: '100%'}} alt="" />
                     </button>
                     <button style={{padding: '7px', background: '#fff', border: 'none'}}>
                         <img src={tt_svg.src} style={{height: '100%', width: '100%'}} alt="" />
                     </button>
                     
-                    <button style={{padding: '8px', background: '#fff', border: 'none'}}>
+                    <button onClick={e=> {
+                        axios.get('https://shopiva-server.onrender.com/entrepreneur/google')
+                        .then((result) => {
+                            console.log(result)
+                        })
+                        .catch(err => console.log(err))
+                    }} style={{padding: '8px', background: '#fff', border: 'none'}}>
                         <img src={gg_svg.src} style={{height: '100%', width: '100%'}} alt="" />
-                    </button> */}
+                    </button>
                 </section>
             </div>
         </div>

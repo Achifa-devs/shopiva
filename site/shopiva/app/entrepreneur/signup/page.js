@@ -10,6 +10,7 @@ import country from '@/reusables/country.json'
 import { set_entrepreneur_cookie } from '@/redux/entrepreneur/entrepreneur_cookie';
 import { useDispatch } from 'react-redux';
 import { entrepreneur_overlay_setup } from '@/reusables/overlay';
+import axios from 'axios';
 
 
 export default function Signup() {
@@ -25,6 +26,8 @@ export default function Signup() {
     let [country_code, set_country_code] = useState('');
     let [phone_number, setPhone_number] = useState('');
     let [pwd, setPwd] = useState('');
+    let [confirm_pwd, set_confirm_pwd] = useState('');
+    let [duplicate_err, set_duplicate_err] = useState('')
 
     const validation = useRef(false);
 
@@ -113,7 +116,7 @@ export default function Signup() {
 
     let Registration = (e) => {
         try {
-            e.target.disabled = true;
+            // e.target.disabled = true;
             entrepreneur_overlay_setup(true, 'One Moment Please...')
             Validation();
 
@@ -122,39 +125,46 @@ export default function Signup() {
     
             if(validation.current){
                
-                e.target.disabled = true;
-                fetch('https://shopiva-server.onrender.com/entrepreneur/registration', {
-                    method: 'post',
-                    headers: {
-                        "Content-Type": "Application/json"
-                    },
-                    body: JSON.stringify({fname,lname,email,pwd,phone_number,referral_src})
-                })
-                .then(async(result) => {
-                    let response = await result.json();
-                    if(response.bool){
-                        dispatch(set_entrepreneur_cookie(response.cookie))
-                        window.location.href="/entrepreneur/pre-sale"
-                        entrepreneur_overlay_setup(false, 'One Moment Please...')
+                // if (pwd === confirm_pwd) {
+                    // e.target.disabled = true;
+                    fetch('https://shopiva-server.onrender.com/entrepreneur/registration', {
+                        method: 'post',
+                        headers: {
+                            "Content-Type": "Application/json"
+                        },
+                        body: JSON.stringify({fname,lname,email,pwd,phone_number,referral_src})
+                    })
+                    .then(async(result) => {
+                        let response = await result.json();
+                        if(response.bool){
+                            dispatch(set_entrepreneur_cookie(response.cookie))
+                            window.location.href="/entrepreneur/pre-sale"
+                            entrepreneur_overlay_setup(false, 'One Moment Please...')
+    
+                        }else{
+                            
+                            // overlay.removeAttribute('id');
+                            if(response.data.mssg === 'email exists'){
+                                // addErrMssg([{mssg:'Email already exist, please try something else'}], document.querySelector('.email').parentElement)
+                                set_duplicate_err('Email already exist, please try something else')
+                            }else if(response.data.mssg === 'phone exists'){
+                                // addErrMssg([{mssg:'Phone Number already exist, please try something else'}], document.querySelector('.phone').parentElement)
+                                set_duplicate_err('Phone already exist, please try something else')
 
-                    }else{
-                        
-                        // overlay.removeAttribute('id');
-                        if(response.data === 'duplicate email'){
-                            addErrMssg([{mssg:'Email already exist, please try something else'}], document.querySelector('.email').parentElement)
-                        }else if(response.data === 'duplicate phone'){
-                            addErrMssg([{mssg:'Phone Number already exist, please try something else'}], document.querySelector('.phone').parentElement)
+                            }
+                            // setBtn("Signup")
+                            // e.target.disabled = false;
+                            entrepreneur_overlay_setup(false, 'Try Again...')
+    
                         }
+                    })
+                    .catch((err) => {
                         // setBtn("Signup")
-                        e.target.disabled = false;
-                        entrepreneur_overlay_setup(false, 'Try Again...')
+                        // e.target.disabled = false;
+                    })
+                // }else{
 
-                    }
-                })
-                .catch((err) => {
-                    // setBtn("Signup")
-                    e.target.disabled = false;
-                })
+                // }
                 
             }else{
                 // alert()
@@ -224,6 +234,16 @@ export default function Signup() {
                     let list =errs.filter(item => item.mssg !== '')
 
                     list.length > 0 ? book.current.pwd = false : book.current.pwd = true
+                }else if(item.name === 'confirm-password'){
+                    let empty = item.value !== '' ? {bool: true, mssg: ''} : {bool: false, mssg: 'Please field cannot be empty.'}
+                    let length = item.value === pwd ? {bool: true, mssg: ''} :  {bool: false, mssg: 'Password mismatch.'}
+                    let errs = [empty,length];
+                    
+                    addErrMssg(errs.filter(item => item.mssg !== ''),item.parentElement)
+
+                    let list =errs.filter(item => item.mssg !== '')
+
+                    list.length > 0 ? book.current.pwd = false : book.current.pwd = true
                 }
             }else if(item.type === 'tel'){
                 if(item.name === 'phone'){
@@ -266,9 +286,26 @@ export default function Signup() {
     <>
         <div className="enetrepreneur-signup-form">
             <div className='form-cnt'>
-                <h5 style={{background: '#000', marginBottom: '10px', color: '#fff', width: 'fit-content', padding: '5px 8px', borderRadius: '5px'}}>Shopiva</h5>
+                <h5 style={{display: 'flex', justifyContent: 'space-between'}}>
+                    <span style={{background: '#000', marginBottom: '10px', color: '#fff', width: 'fit-content', padding: '5px 8px', borderRadius: '5px'}}>Shopiva</span>
+                    {/* <span>
+                        <button onClick={async()=> {
+                            axios.get('http://localhost:3456/auth/google')
+                            .then((result) => {
+                                console.log(result)
+                            })
+                            .catch(err => console.log(err))
+                        }} style={{padding: '8px', background: '#fff', border: 'none'}}>
+                            <img src={gg_svg.src} style={{height: '100%', width: '100%'}} alt="" />
+                        </button>
+                    </span> */}
+                </h5>
+
+                
                 
                 <section style={{height: 'auto'}}>
+
+                    <h6 className='err-mssg'>{duplicate_err}</h6>
                     <div style={{width: '100%'}}>
                         <section style={{display: 'flex', justifyContent: 'space-between'}}>
                             <div style={{width: '48%'}} className="input-cnt">
@@ -336,7 +373,7 @@ export default function Signup() {
                                     </div>
                                 </span>
                                 <span style={{width: 'calc(100% - 100px)'}}>
-                                    <input style={{color: '#000'}} onInput={e=> setPhone_number(`+234${e.target.value}`)} type="tel" maxLength={10} name="phone" defaultValue={''} id="" />
+                                    <input style={{color: '#000'}} onInput={e=> setPhone_number(`+234${e.target.value}`)} type="tel" maxLength={11} name="phone" defaultValue={''} id="" />
                                 </span>
                             </div>
                         </div> 
@@ -345,11 +382,11 @@ export default function Signup() {
                             <label htmlFor="">Password</label>
                             <input style={{color: '#000'}} onInput={e=> setPwd(e.target.value)} type="password" placeholder='Password' name="password" id="" />
                         </div>
-{/* 
+
                         <div className="input-cnt">
                             <label htmlFor=""> Confirm Password</label>
-                            <input style={{color: '#000'}} type="password" placeholder='Confirm Password' name="password" id="" />
-                        </div> */}
+                            <input style={{color: '#000'}} onInput={e=> set_confirm_pwd(e.target.value)} type="password" placeholder='Confirm Password' name="confirm-password" id="" />
+                        </div>
 
                         <div className="input-cnt">
                             <button style={{borderRadius: '8px'}} onClick={e => {
@@ -365,16 +402,8 @@ export default function Signup() {
                     }} >
                         <small>Already registered? Login.</small>
                     </button>
-                    {/* <button style={{padding: '5px', background: '#fff', border: 'none'}}>
-                        <img src={fb_svg.src} style={{height: '100%', width: '100%'}} alt="" />
-                    </button>
-                    <button style={{padding: '7px', background: '#fff', border: 'none'}}>
-                        <img src={tt_svg.src} style={{height: '100%', width: '100%'}} alt="" />
-                    </button>
                     
-                    <button style={{padding: '8px', background: '#fff', border: 'none'}}>
-                        <img src={gg_svg.src} style={{height: '100%', width: '100%'}} alt="" />
-                    </button> */}
+                    
                 </section>
 
             </div>

@@ -12,20 +12,19 @@ const {
     jwt,
     io
 } = require('./reusables/modules');
-
 const cookieParser = require('cookie-parser');
 const { entrepreneurPostRoute } = require('./routes/post');
 const { entrepreneurGetRoute } = require('./routes/get');
 const passportSetup = require('./config/passport-setup');
 
 
-// const { CreateTables } = require('./reusables/tables');
 require('dotenv').config();    
 const app = express();  
 
 
 app.use(cookieParser());
-app.use(morgan('dev'));   
+app.use(morgan('dev'));
+
 app.use(cors({
     origin: '*',
     methods: ['POST', 'PUT', 'GET', 'OPTIONS', 'HEAD', 'DELETE', 'UPDATE'],
@@ -35,11 +34,4 @@ app.use(cors({
 app.use(entrepreneurPostRoute)
 app.use(entrepreneurGetRoute)
 
-
-
 var server = app.listen(process.env.PORT,_ => console.log('app is live @',process.env.PORT));
-io(server, {cors: {origin: '*'}}).on('connection',(socket) => {
-
-});
-
-// passportSetup

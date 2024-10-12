@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './styles/global.css'
 import './styles/s.css'
 import './styles/m.css'
@@ -7,11 +7,16 @@ import './styles/xxl.css'
 import './styles/xl.css'
 import './styles/l.css'
 import Link from 'next/link'
+import { useSelector } from 'react-redux'
 
 
 export default function UserProfile() {
 
-    let [active_panel, set_active_panel] = useState(1)
+    let [active_panel, set_active_panel] = useState(1);
+   
+   
+
+   
   return (
     <>
         <header className='shadow-sm'>
@@ -73,6 +78,65 @@ export default function UserProfile() {
 
 
 function Genenral() {
+
+    let {
+        entrepreneur_id
+    } = useSelector(s => s.entrepreneur_id);
+
+    useEffect(() => {
+        if (entrepreneur_id !== null) {
+            fetch(`http://localhost:3456/entrepreneur/profile?entrepreneur_id=${entrepreneur_id}`)
+            .then(async(result) => {
+                let response = await result.json()
+                if(response.bool){
+                    set_is_subscribed(true)
+                }else{
+                    set_is_subscribed(false)
+                }
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+        }
+   }, [entrepreneur_id])
+
+    useEffect(() => {
+        // if (entrepreneur_id !== null) {
+            fetch(`http://localhost:3456/entrepreneur/lang`)
+            .then(async(result) => {
+                let response = await result.json()
+                if(response.bool){
+                    set_lang(response.data)
+                }else{
+                    set_lang(response.data)
+                }
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+        // }
+    }, [])
+
+    useEffect(() => {
+        // if (entrepreneur_id !== null) {
+            fetch(`http://localhost:3456/entrepreneur/timezones`)
+            .then(async(result) => {
+                let response = await result.json()
+                if(response.bool){
+                    set_time_zone(response.data)
+                }else{
+                    set_time_zone(response.data)
+                }
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+        // }
+    }, [])
+
+    let [lang, set_lang] = useState([]);
+    let [time_zone, set_time_zone] = useState([]);
+
 
 
     return(
@@ -186,7 +250,23 @@ function Genenral() {
                     <section>
                         <div className="input-cnt cnt-input">
                             <label htmlFor=""><b>Language</b></label>
-                            <select name="" id=""></select>
+                            <select name="" id="">
+                                {
+                                    lang.map((item,index) => 
+                                        <option key={index} value={item.name}>
+                                            &nbsp;
+
+                                            <span>{item.code}</span>
+
+                                            &nbsp;
+                                            &nbsp;
+                                            &nbsp;
+                                            <span>{item.name}</span>
+
+                                        </option>
+                                    )
+                                }
+                            </select>
                         </div>
                         <br />
                         <hr />
@@ -210,7 +290,24 @@ function Genenral() {
                     <section>
                         <div className="input-cnt cnt-input">
                             <label htmlFor=""><b>Timezone</b></label>
-                            <select name="" id=""></select>
+                            <select name="" id="">
+                                {
+                                    time_zone.map((item,index) => 
+                                        <option key={index} value={item.timezone}>
+                                            &nbsp;
+
+                                            <span>{item.utc_offset}</span>
+
+                                            &nbsp;
+                                            &nbsp;
+                                            &nbsp;
+                                            <span>{item.timezone}</span> 
+
+
+                                        </option>
+                                    )
+                                }
+                            </select>
                         </div>
                          <br />
                         <div>

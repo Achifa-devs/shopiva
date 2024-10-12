@@ -27,24 +27,27 @@ async function register_entrepreneur(req,res) {
 
     
 
-    console.log(fname, lname, email, pwd, phone_number)
+    // console.log(fname, lname, email, pwd, phone_number)
 
     let hPwd = await bcrypt.hash(pwd, 10) 
     let entrepreneur_id = uuid()
 
 
     try {
-        new Promise((resolve, reject) => {
-            let email_check = IS_EXISTING('entrepreneurs', 'email', email)
+        new Promise(async(resolve, reject) => {
+            let email_check = await IS_EXISTING('entrepreneurs', 'email', email)
+            console.log('email_check: ', email_check)
             if(!email_check){
                 resolve({bool: true})
             }else{
                 reject({bool: false, mssg: 'email exists'})
             }
         })
-        .then((result) => {
+        .then(async(result) => {
             if (result) {
-                let phone_check = IS_EXISTING('entrepreneurs', 'phone_number', phone_number);
+                let phone_check = await IS_EXISTING('entrepreneurs', 'phone_number', phone_number);
+                console.log('phone_check: ', phone_check)
+
                 if(!phone_check){
                     return ({bool: true})
                 }else{
@@ -74,10 +77,12 @@ async function register_entrepreneur(req,res) {
             }
         })
         .catch(err => {
-            throw err
+            // throw err
+            res.status(501).send(err)
         })
     } catch (error) {
-        errHandler(error)
+        res.status(501).send(error)
+        // errHandler(error)
     }
 
 
