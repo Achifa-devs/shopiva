@@ -160,7 +160,9 @@ export default function Presale(){
                     <li onClick={e=> {
                         link_handler('#how-it-works')
                     }}>How It Works</li>
-
+                    <li onClick={e=> {
+                        window.open('/about/blogs/')
+                    }}>About Uss</li>
                     <li onClick={e=> {
                         handle_subscribe_btn(e)
                     }}>Get started</li>
@@ -208,7 +210,9 @@ export default function Presale(){
                         <li onClick={e=> {
                             link_handler('#how-it-works')
                         }}>How It Works</li>
-
+                        <li onClick={e=> {
+                            window.open('/about/blogs/')
+                        }}>About Uss</li>
                         <li onClick={e=> {
                             is_authorized ? '' : link_handler('/entrepreneur/signup')
                         }}>{is_subscribed ? 'August 20, 2025' : 'Get started'}</li>

@@ -13,8 +13,26 @@ import { useSelector } from 'react-redux'
 export default function UserProfile() {
 
     let [active_panel, set_active_panel] = useState(1);
+    let [profile, set_profile] = useState('');
    
-   
+    useEffect(() => {
+        // if (entrepreneur_id !== null) {
+            fetch(`http://localhost:3456/entrepreneur/user-profile`)
+            .then(async(result) => {
+                let response = await result.json()
+                console.log(response)
+
+                if(response.bool){
+                    set_profile(response.data)
+                }else{
+                    set_profile(response.data)
+                }
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+        // }
+    }, [])
 
    
   return (
@@ -27,7 +45,7 @@ export default function UserProfile() {
                 <span style={{background: '#000', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', height: 'auto', width: 'auto', padding: '5px', borderRadius: '5px', fontSize: 'x-small'}}>A.F</span>
                 &nbsp;
                 {/* &nbsp; */}
-                <span><small>Akpulu Fabian</small></span>
+                <span><small>{profile.fname} {profile.lname}</small></span>
             </section>
         </header>
 
@@ -63,7 +81,7 @@ export default function UserProfile() {
                 {
                     active_panel
                     ? 
-                    <Genenral />
+                    <Genenral profile={profile} />
                     :
                     <Security />
                 }
@@ -77,7 +95,14 @@ export default function UserProfile() {
 
 
 
-function Genenral() {
+function Genenral({profile}) {
+
+    useEffect(() => {
+        console.log(profile)
+
+    }, [profile])
+    
+
 
     let {
         entrepreneur_id
@@ -164,12 +189,12 @@ function Genenral() {
                         <div className='names-cnt'>
                             <div className="input-cnt">
                                 <label htmlFor="">First name</label>
-                                <input type="text" name="" id="" placeholder='FirstName' />
+                                <input type="text" value={profile?.fname} name="" id="" placeholder='FirstName' />
                             </div>
                             <br />
                             <div className="input-cnt">
                                 <label htmlFor="">Last name</label>
-                                <input type="text" name="" id="" placeholder='LastName' />
+                                <input type="text" value={profile?.lname} name="" id="" placeholder='LastName' />
                             </div>
                         </div>
 
@@ -180,13 +205,13 @@ function Genenral() {
                         <div className='email-section'>
                             <div className="input-cnt">
                                 <label htmlFor="">Email</label>
-                                <input style={{border: 'none', outline: 'none', paddingLeft: '.5px', fontSize: 'small'}} value={'akpulufabian@gmail.com'} type="email" name="" id="" placeholder='Email' />
+                                <input style={{border: 'none', outline: 'none', paddingLeft: '.5px', fontSize: 'small'}} value={profile?.email} type="email" name="" id="" placeholder='Email' />
                             </div>
                             <div className="input-cnt" style={{justifyContent: 'space-between', display: 'flex', padding: '20px 5px', marginTop: '10px'}}>
                                 <span style={{color: 'green', height: '25px', display: 'flex', alignItems: 'flex-end', fontSize: 'small'}}>
                                     Verified
                                 </span>
-                                <span>
+                                <span> 
                                     <button className='update-btn'>
                                         <small>Update</small>
                                     </button>
@@ -202,7 +227,7 @@ function Genenral() {
                         <div className='phone-section'>
                             <div className="input-cnt">
                                 <label htmlFor="">Phone Number</label>
-                                <input style={{border: 'none', outline: 'none', paddingLeft: '.5px',  fontSize: 'small'}} value={'08032639894'} type="tel" name="" id="" placeholder='Phone Number' />
+                                <input style={{border: 'none', outline: 'none', paddingLeft: '.5px',  fontSize: 'small'}} value={profile.phone_number} type="tel" name="" id="" placeholder='Phone Number' />
                             </div>
                             <div className="input-cnt" style={{justifyContent: 'space-between', display: 'flex', padding: '20px 5px', marginTop: '10px'}}>
                                 <span style={{color: 'green', height: '25px', display: 'flex', alignItems: 'flex-end', fontSize: 'small'}}>

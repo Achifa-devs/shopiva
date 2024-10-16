@@ -7,6 +7,7 @@ import { Provider } from 'react-redux'
 import { setNewCookie } from './layout'
 import EntrepreneurLayout from '@/layouts/Entrepreneur'
 import AuthLayout from '@/layouts/Auth'
+import DashboardLayout from '@/layouts/DashboardLayout'
 
 export default function App({children}) {
   let pathname = usePathname();
@@ -70,6 +71,16 @@ export default function App({children}) {
                   children
                 }
               </EntrepreneurLayout>
+            :
+            pathname.split('/').splice(1,2)[0] === 'dashboard'
+            ?
+            <DashboardLayout>
+              <div className='dashboard-cnt'>
+                {
+                  children
+                }
+              </div>
+            </DashboardLayout>
             :
             ''
           }

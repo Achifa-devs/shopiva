@@ -260,7 +260,7 @@ export default function Signup() {
                     }} >
                         <small>Not registered? Signup.</small>
                     </button>
-                    <button style={{padding: '5px', background: '#fff', border: 'none'}}>
+                    {/* <button style={{padding: '5px', background: '#fff', border: 'none'}}>
                         <img src={fb_svg.src} style={{height: '100%', width: '100%'}} alt="" />
                     </button>
                     <button style={{padding: '7px', background: '#fff', border: 'none'}}>
@@ -275,7 +275,7 @@ export default function Signup() {
                         .catch(err => console.log(err))
                     }} style={{padding: '8px', background: '#fff', border: 'none'}}>
                         <img src={gg_svg.src} style={{height: '100%', width: '100%'}} alt="" />
-                    </button>
+                    </button> */}
                 </section>
             </div>
         </div>

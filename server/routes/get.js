@@ -5,10 +5,11 @@ const {
     express, 
     parser
  } = require("../reusables/modules");
+const { entrepreneur_profile } = require("../controllers/enterpreneur/profile");
 let entrepreneurGetRoute = express.Router();  
 
 entrepreneurGetRoute.get('/entrepreneur/subscription', parser, entrepreneur_subscription_transactions);
-entrepreneurGetRoute.get('/entrepreneur/profile', parser, entrepreneur_subscription_transactions);
+entrepreneurGetRoute.get('/entrepreneur/profile', parser, entrepreneur_profile);
 entrepreneurGetRoute.get('/entrepreneur/lang', parser, GET_LANG);
 entrepreneurGetRoute.get('/entrepreneur/timezones', parser, GET_TIMEZONES);
 

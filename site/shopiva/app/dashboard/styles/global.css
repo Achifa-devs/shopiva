@@ -1,0 +1,337 @@
+header{
+    height: 60px;
+    background-color: #fff;
+    display: flex;
+    position: sticky;
+    z-index: 5000;
+    top: 0;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header section{
+
+}
+
+header section b{
+    font-size: 4vh;
+}
+
+header section ul{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+    justify-content: center;
+}
+header section ul li{
+    border: 1px solid #00926e;
+    padding: 6px 12px;
+    border-radius: 15px;
+    margin: 0px 5px;
+    font-weight: 500;
+    color: #00926e;
+
+}
+
+header section ul li:last-child{
+    background-color: #00926e;
+    color: #fff;
+}
+
+header section ul li:hover{
+    background-color: #00926e;
+    color: #fff;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    /* background-image: url(../../../../images/ecommerce-box-and-phone-call-communication-for-gi-2023-09-06-22-34-01-utc-1.webp); */
+    background-size: cover ;
+    background-repeat: no-repeat;
+}
+
+.header section {
+    width: 70%;
+    /* background-color: rgb(255, 255, 255); */
+    /* background-color: #00926e; */
+    /* transform: skew(30deg); */
+    height: 100%;
+    /* z-index: 2000; */
+    /* background-color: #fff; */
+}
+/* .header section:nth-child(1) .bg-img{
+    background-image: url(../../../../images/ecommerce-box-and-phone-call-communication-for-gi-2023-09-06-22-34-01-utc-1.webp);
+    background-size: cover ;
+    background-repeat: no-repeat;
+
+} */
+
+.header section:nth-child(1){
+    font-size: 4vh;
+}
+.header section:nth-child(1) h4{
+    font-size: 4vh;
+    margin-left: -10px;
+}
+
+.header section:nth-child(1) div{
+    padding: 10% 0px 0px 0px;
+}
+
+.header section:nth-child(1) div h6{
+    font-size: 4vh;
+    margin-left: -50px;
+}
+
+.header section:nth-child(1) div button{
+    font-size: medium;
+    margin-left: -50px;
+}
+
+
+.header section:nth-child(2){
+    width: 65%;
+    position: absolute;
+    right: 0;
+    /* background-color: #00926e; */
+    z-index: 2500;
+    height: 100%;
+}
+
+
+
+.header section div:nth-child(1){
+    width: 100%;
+    background-color: #00351ce8;
+    /* background-color: rgb(0, 66, 0); */
+    transform: skew(30deg);
+    z-index: 2500;
+    height: 100%;
+}
+
+.header section div:nth-child(2){
+    width: 100%;
+    background-color: #00926e;
+    opacity: .4;
+    transform: skew(-30deg);
+    height: 100%;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main section{
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+
+}
+
+main section h4{
+    width: 100%;
+    text-align: center;
+}
+
+main section button{
+    padding: 10px;
+    background-color: #fff;
+    color: #00926e;
+    border: 1px solid #00926e;
+    border-radius: 5px;
+}
+
+main section button:hover{
+    background-color: #00926e;
+    color: #fff;
+}
+
+main section ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+#why ul{
+    background-color: #fff;
+}
+
+#why ul li{
+    border: 1px solid #00926e;
+    color: #00926e;
+    width: 25%;
+}
+
+
+
+main section:nth-child(2){
+    background-color: #00351ce8;
+    border-radius: 25px 25px 0px 0px;
+    color: #fff;
+    font-size: 7.5vh;
+    text-align: justify;
+    font-weight: 500;
+}
+
+
+main section:nth-child(2) div{
+    height: 280px;
+    width: 100%;
+    /* background-color: #fff; */
+}
+
+main section:nth-child(2) div ul{
+    list-style-type: none;
+    display: flex;
+    height: 100%;
+    padding: 10px;
+    margin: 0;
+    overflow: auto;
+    justify-content: space-between;
+}
+
+main section:nth-child(2) div ul li{
+    width: 200px;
+    background-color: #fff;
+    display: flex;
+    flex-shrink: 0;
+    margin: 0px 8px;
+    
+    border-radius: 10px;
+    justify-content: space-between;
+}
+
+main section:nth-child(2) div ul li:nth-child(3){
+    width: 200px;
+}
+main section:nth-child(2) div ul li:nth-child(3){
+    font-size: 7.5vh;
+    font-weight: 100;
+}
+
+footer{
+    height: 100px;
+    width: 100%;
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    background-color: rgb(4, 59, 45);
+}
+
+main section:nth-child(3){
+    background-color: #00351ce8;
+    /* border-radius: 25px 25px 0px 0px; */
+    color: #fff;
+    font-size: 7.5vh;
+    text-align: left;
+    padding: 0px 40px;
+    font-weight: 500;
+}
+
+main section:nth-child(3) div{
+    height: auto;
+    width: 100%;
+    /* background-color: #fff; */
+}
+
+main section:nth-child(3) div ul{
+    list-style-type: none;
+    display: flex;
+    height: 100%;
+    padding: 10px;
+    margin: 0;
+    overflow: auto;
+    justify-content: space-between;
+}
+
+main section:nth-child(3) div ul li{
+    width: 45%;
+    background-color: #00351ce8;
+    display: flex;
+    flex-shrink: 0;
+    margin: 0px 8px;
+    border-radius: 10px;
+    justify-content: space-between;
+}
+
+main section:nth-child(4){
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    background-color: #00351ce8;
+    padding: 40px;
+    justify-content: space-between;
+}
+
+main section:nth-child(4) .list-cnt{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: #00351ce8;
+    justify-content: space-between;
+    height: auto;
+    /* padding: 20px; */
+}
+
+
+main section:nth-child(4) .list-cnt div{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* background-color: #00926e; */
+    border-radius: 5px;
+    padding: 10px;
+    justify-content: space-between;
+    background-color: #005741;
+    height: 600px;
+}
+
+.pre-sale-menu{
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    z-index: 5000;
+    left: 0;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(0, 0, 0);
+    background-color: rgb(0, 0, 0,.5);
+}
+#pre-sale-menu{
+    display: flex;
+}
+
+.pre-sale-menu ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    justify-content: left;
+}
+
+.pre-sale-menu ul li{
+    color: #fff;
+    font-size: large;
+}
