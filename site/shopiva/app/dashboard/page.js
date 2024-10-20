@@ -27,23 +27,11 @@ import connect_svg from '@/svgs/target-audience-svgrepo-com.svg'
 
 export default function Dashboard() {
 
-  let [active_imgs, set_active_imgs] = useState([conclude_img_1_gp_1, conclude_img_1_gp_2])
-
-  function handle_set_up(src) {
-    if(src === 'first'){
-      set_active_imgs([conclude_img_1_gp_1, conclude_img_1_gp_2])
-    }else if(src === 'second'){
-      set_active_imgs([conclude_img_2_gp_1, conclude_img_2_gp_2])
-
-    }else{
-      set_active_imgs([customer_1_svg,  customer_2_svg])
-    }
-  }
 
   return (
     <>
 
-      <div className="dashboard-summary" style={{position: 'relative', zIndex: '1000', height: 'auto', padding: '40px'}}>
+      <div className="dashboard-summary" style={{position: 'relative', zIndex: '1000', height: 'auto', padding: '40px', background: '#000'}}>
 
         <ul>
           <li style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-between', aligItems: 'flex-start', paddingTop: '10px'}}>
@@ -310,7 +298,6 @@ export default function Dashboard() {
           </div>
         </div>
 
-
         <div>
           <section style={{display: 'flex', justifyContent: 'center', width: '100%', flexDirection: 'row', alignItems: 'flex-end', padding: '20px 55px', fontWeight: '100'}}>
             <h2 style={{fontSize: '9vh', fontWeight: 'lighter', zIndex: '2000', color: '#fff'}}>
@@ -342,4 +329,6 @@ export default function Dashboard() {
 
     </>
   )
+
+  
 }
