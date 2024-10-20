@@ -8,7 +8,7 @@
 
 # testing
 /coverage
-/public/VideoMerge_13-10-2024_224733.mp4
+/public/vids
 
 # next.js
 /.next/
@@ -32,4 +32,6 @@ yarn-error.log*
 # vercel
 .vercel
 
-# t
+# typescript
+*.tsbuildinfo
+next-env.d.ts
