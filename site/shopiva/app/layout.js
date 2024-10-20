@@ -53,7 +53,7 @@ export default async function RootLayout({ children }) {
         {/* <title>Campus Express</title> */}
         {/* <script async src="https://cdn.jsdelivr.net/npm/next-paystack@3.0.3/dist/index.min.js"></script> */}
       </head>
-      <body style={{overflow: 'auto'}}>
+      <body style={{overflow: 'auto', background: '#000'}}>
         <App>
           {
             children

@@ -1,7 +1,7 @@
 "use client"
 import React, { useState } from 'react'
 import '@/app/dashboard/global.css'
-
+import logo_img from '@/images/462832894_122104672550563288_120709183929923776_n.jpg'
 export default function DashboardLayout({children}) {
 
   let [count, set_count]  =useState(0)
@@ -37,10 +37,15 @@ export default function DashboardLayout({children}) {
 
       <header>
         <div className='header'>
-          <section>
-              <h3 style={{color: '#00926e', paddingLeft: '20px'}}>Shopiva</h3>
+          <section style={{marginLeft: '20px', flexDirection: 'row', display: 'flex', alignItems: 'flex-end'}}>
+            <img src={logo_img.src} style={{height: '50px', width: '50px', borderRadius: '10px'}} alt="" />
+            <h3 style={{color: '#00926e', paddingLeft: '20px'}}>Shopiva</h3>
           </section>
-          
+          {/* <div style={{flexDirection: 'row', display: 'flex', alignItems: 'flex-end'}}>
+            <img src={logo_img.src} style={{height: '50px', width: '50px', borderRadius: '10px'}} alt="" />
+            <h2>Shopiva</h2>
+          </div>
+           */}
           <section>
               <ul>
                   <li>Solutions</li>
@@ -95,6 +100,103 @@ export default function DashboardLayout({children}) {
       </main>
 
       <footer>
+        <section style={{}}>
+
+         
+        
+        </section>
+
+
+
+        <section>
+          <div style={{flexDirection: 'row', display: 'flex', alignItems: 'flex-end', height: '100%'}}>
+            <img src={logo_img.src} style={{height: '50px', width: '50px', borderRadius: '10px'}} alt="" />
+            &nbsp;
+            &nbsp;
+            <h5>Shopiva</h5>
+          </div>
+
+         
+          <div>
+            <h6>Shopiva</h6>
+            <ul>
+              <li style={{fontSize: 'small'}}>About</li>
+              <li style={{fontSize: 'small'}}>Careers</li>
+              <li style={{fontSize: 'small'}}>Investors</li>
+              <li style={{fontSize: 'small'}}>Press And Media</li>
+              <li style={{fontSize: 'small'}}>Partners</li>
+              <li style={{fontSize: 'small'}}>Affiliates</li>
+              <li style={{fontSize: 'small'}}>Legal</li>
+              <li style={{fontSize: 'small'}}>Service Status</li>
+            </ul>
+          </div>
+
+          
+          <div>
+            <h6>Support</h6>
+            <ul>
+              <li style={{fontSize: 'small'}}>Merchant Support</li>
+              <li style={{fontSize: 'small'}}>Help Center</li>
+              <li style={{fontSize: 'small'}}>Hire a Partner</li>
+              <li style={{fontSize: 'small'}}>Shopiva Academy</li>
+              <li style={{fontSize: 'small'}}>Shopiva Community</li>
+            </ul>
+          </div>
+
+
+          <div>
+            <h6>Developers</h6>
+            <ul>
+              <li style={{fontSize: 'small'}}>Shopiva.dev</li>
+              <li style={{fontSize: 'small'}}>API Documentation</li>
+              <li style={{fontSize: 'small'}}>Dev Degree</li>
+            </ul>
+          </div>
+
+
+          <div>
+            <h6>Products</h6>
+            <ul>
+              <li style={{fontSize: 'small'}}>Shop</li>
+              <li style={{fontSize: 'small'}}>Shopiva Plus</li>
+              <li style={{fontSize: 'small'}}>Linkpop</li>
+              <li style={{fontSize: 'small'}}>Shopiva for Enterprise</li>
+            </ul>
+          </div>
+
+        </section>
+
+        <hr />
+
+        <section className='copywright'>
+          <div style={{height: '100%'}}>
+            <ul>
+             
+              <li>Terms Of Service</li>
+              <li>Privacy Policy</li>
+              <li>Sitemap</li>
+              <li>Privacy Choices</li>
+            </ul>
+          </div>
+
+
+          <div style={{height: '50px'}}>
+            <ul style={{height: '100%', margin: '0', padding: '0'}}>
+             <li>
+                <i style={{display: 'flex', height: '100%', position: 'relative', alignItems: 'center'}} class="fa-brands fa-facebook fa-lg"></i>
+              </li>
+              <li>
+                <i style={{display: 'flex', height: '100%', position: 'relative', alignItems: 'center'}} class="fa-brands fa-twitter fa-lg"></i>
+              </li>
+              <li>
+                <i style={{display: 'flex', height: '100%', position: 'relative', alignItems: 'center'}} class="fa-brands fa-whatsapp fa-lg"></i>
+              </li>
+              <li>
+                <i style={{display: 'flex', height: '100%', position: 'relative', alignItems: 'center'}} class="fa-brands fa-youtube fa-lg"></i>
+              </li>
+            </ul>
+          </div>
+        </section>
 
       </footer>
 
