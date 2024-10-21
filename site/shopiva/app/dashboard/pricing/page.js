@@ -1,0 +1,769 @@
+"use client"
+import React, { useEffect } from 'react'
+import './styles/xxl.css'
+import ui_svg from '@/svgs/complete-ok-accept-good-tick-svgrepo-com.svg'
+import plus_svg from '@/svgs/plus-circle-svgrepo-com.svg'
+
+export default function Pricing() {
+
+    useEffect(() => {
+        document.body.style.background='#fff'
+        document.querySelector('header').style.height='70px'
+    }, [])
+  return (
+    <>
+      <div className="pricing-cnt">
+
+
+        <section>
+            <h5>Plans & pricing</h5>
+
+            <h1>Start for free, then enjoy
+            <br />
+            your first month for 1500</h1>
+
+            <h5>Choose the best plan for your business. Change plans as you grow.</h5>
+
+            <div className="input-cnt">
+                <input placeholder='Enter your email address' type="search" name="" id="" />
+                <button>Start free trial</button>
+            </div>
+
+            <br />
+
+            <small>Try Shopiva free, no credit card required. By entering your email, you agree to receive marketing emails from Shopiva.</small>
+        </section>
+
+        <section>
+            <ul>
+                <li>Pay monthly</li>
+                <li>Pay yearly (save 25%)</li>
+            </ul>
+
+            {/* <br /> */}
+         
+            <ul>
+                <li className='shadow'>
+                    <div>
+                        1 For your first month
+                    </div>
+
+                    <div >
+                        <span>
+                            <h4>Basic</h4>
+                            <p style={{margin: '0'}}>For solo entrepreneurs</p>
+                        </span>                        
+                        <span></span>
+                    </div>
+
+                    {/* <hr /> */}
+                    <div >
+                        <span style={{width: '100%', textAlign: 'left'}}>
+                            <h2>&#x20A6;1500</h2><small>NGN/Month</small>
+                        </span>
+                       
+                        
+                    </div>
+                    <div >
+                        <h6>Standout features</h6>
+                        <ul>
+                            <li>
+                                <span>
+                                    <img src={ui_svg.src} style={{height: '20px', width: '20px', borderRadius: '10px'}} alt="" />
+
+                                </span>
+                                &nbsp;                                &nbsp;
+                                <span>10 inventory locations</span>
+                            </li>
+                            <li>
+                                <span>
+                                    <img src={ui_svg.src} style={{height: '20px', width: '20px', borderRadius: '10px'}} alt="" />
+
+                                </span>
+                                &nbsp;                                &nbsp;
+                                <span>24/7 chat support</span>
+                            </li>
+                            <li>
+                                <span>
+                                    <img src={ui_svg.src} style={{height: '20px', width: '20px', borderRadius: '10px'}} alt="" />
+
+                                </span>
+                                &nbsp;                                &nbsp;
+                                <span>Localized global selling (3 markets)</span>
+                            </li>
+                            <li>
+                                <span>
+                                    <img src={ui_svg.src} style={{height: '20px', width: '20px', borderRadius: '10px'}} alt="" />
+
+                                </span>
+                                &nbsp;                                &nbsp;
+                                <span>POS Lite</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <button style={{width: '70%', textAlign: 'center', justifyContent: 'center', borderRadius: '25px', marginBottom: '20px'}}>
+                        <b>Try for free</b>
+                    </button>
+
+                </li>
+
+
+
+                <li className='shadow'>
+                    <div>
+                        1 For your first month
+                    </div>
+
+                    <div >
+                        <span>
+                            <h4>Standard</h4>
+                            <p style={{margin: '0'}}>For solo entrepreneurs</p>
+                        </span>                        
+                        <span></span>
+                    </div>
+
+                    {/* <hr /> */}
+                    <div >
+                        <span style={{width: '100%', textAlign: 'left'}}>
+                            <h2>&#x20A6;2500</h2><small>NGN/Month</small>
+                        </span>
+                       
+                        
+                    </div>
+                    <div >
+                        <h6>Standout features</h6>
+                        <ul>
+                            <li>
+                                <span>
+                                    <img src={ui_svg.src} style={{height: '20px', width: '20px', borderRadius: '10px'}} alt="" />
+
+                                </span>
+                                &nbsp;                                &nbsp;
+                                <span>10 inventory locations</span>
+                            </li>
+                            <li>
+                                <span>
+                                    <img src={ui_svg.src} style={{height: '20px', width: '20px', borderRadius: '10px'}} alt="" />
+
+                                </span>
+                                &nbsp;                                &nbsp;
+                                <span>24/7 chat support</span>
+                            </li>
+                            <li>
+                                <span>
+                                    <img src={ui_svg.src} style={{height: '20px', width: '20px', borderRadius: '10px'}} alt="" />
+
+                                </span>
+                                &nbsp;                                &nbsp;
+                                <span>Localized global selling (3 markets)</span>
+                            </li>
+                            <li>
+                                <span>
+                                    <img src={ui_svg.src} style={{height: '20px', width: '20px', borderRadius: '10px'}} alt="" />
+
+                                </span>
+                                &nbsp;                                &nbsp;
+                                <span>POS Lite</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <button style={{width: '70%', textAlign: 'center', justifyContent: 'center', borderRadius: '25px', marginBottom: '20px'}}>
+                        <b>Try for free</b>
+                    </button>
+
+                </li>
+
+
+
+                <li className='shadow'>
+                    <div>
+                        1 For your first month
+                    </div>
+
+                    <div >
+                        <span>
+                            <h4>Advanced</h4>
+                            <p style={{margin: '0'}}>For solo entrepreneurs</p>
+                        </span>                        
+                        <span></span>
+                    </div>
+
+                    {/* <hr /> */}
+                    <div >
+                        <span style={{width: '100%', textAlign: 'left'}}>
+                            <h2>&#x20A6;4500</h2><small>NGN/Month</small>
+                        </span>
+                       
+                        
+                    </div>
+                    <div >
+                        <h6>Standout features</h6>
+                        <ul>
+                            <li>
+                                <span>
+                                    <img src={ui_svg.src} style={{height: '20px', width: '20px', borderRadius: '10px'}} alt="" />
+
+                                </span>
+                                &nbsp;                                &nbsp;
+                                <span>10 inventory locations</span>
+                            </li>
+                            <li>
+                                <span>
+                                    <img src={ui_svg.src} style={{height: '20px', width: '20px', borderRadius: '10px'}} alt="" />
+
+                                </span>
+                                &nbsp;                                &nbsp;
+                                <span>24/7 chat support</span>
+                            </li>
+                            <li>
+                                <span>
+                                    <img src={ui_svg.src} style={{height: '20px', width: '20px', borderRadius: '10px'}} alt="" />
+
+                                </span>
+                                &nbsp;                                &nbsp;
+                                <span>Localized global selling (3 markets)</span>
+                            </li>
+                            <li>
+                                <span>
+                                    <img src={ui_svg.src} style={{height: '20px', width: '20px', borderRadius: '10px'}} alt="" />
+
+                                </span>
+                                &nbsp;                                &nbsp;
+                                <span>POS Lite</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <button style={{width: '70%', textAlign: 'center', justifyContent: 'center', borderRadius: '25px', marginBottom: '20px'}}>
+                        <b>Try for free</b>
+                    </button>
+
+                </li>
+
+
+
+                <li className='shadow'>
+                    <div>
+                        1 For your first month
+                    </div>
+
+                    <div >
+                        <span>
+                            <h4>Premium</h4>
+                            <p style={{margin: '0'}}>For solo entrepreneurs</p>
+                        </span>                        
+                        <span></span>
+                    </div>
+
+                    {/* <hr /> */}
+                    <div >
+                        <span style={{width: '100%', textAlign: 'left'}}>
+                            <h2>&#x20A6;6000</h2><small>NGN/Month</small>
+                        </span>
+                       
+                        
+                    </div>
+                    <div >
+                        <h6>Standout features</h6>
+                        <ul>
+                            <li>
+                                <span>
+                                    <img src={ui_svg.src} style={{height: '20px', width: '20px', borderRadius: '10px'}} alt="" />
+
+                                </span>
+                                &nbsp;                                &nbsp;
+                                <span>10 inventory locations</span>
+                            </li>
+                            <li>
+                                <span>
+                                    <img src={ui_svg.src} style={{height: '20px', width: '20px', borderRadius: '10px'}} alt="" />
+
+                                </span>
+                                &nbsp;                                &nbsp;
+                                <span>24/7 chat support</span>
+                            </li>
+                            <li>
+                                <span>
+                                    <img src={ui_svg.src} style={{height: '20px', width: '20px', borderRadius: '10px'}} alt="" />
+
+                                </span>
+                                &nbsp;                                &nbsp;
+                                <span>Localized global selling (3 markets)</span>
+                            </li>
+                            <li>
+                                <span>
+                                    <img src={ui_svg.src} style={{height: '20px', width: '20px', borderRadius: '10px'}} alt="" />
+
+                                </span>
+                                &nbsp;                                &nbsp;
+                                <span>POS Lite</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <button style={{width: '70%', textAlign: 'center', justifyContent: 'center', borderRadius: '25px', marginBottom: '20px'}}>
+                        <b>Try for free</b>
+                    </button>
+
+                </li>
+              
+            </ul>
+        </section>
+
+        <section>
+            <h2>What every plan gets you</h2>
+
+            <br />
+
+            <ul>
+                <li className='shadow'></li>
+                <li className='shadow'></li>
+                <li className='shadow'></li>
+                <li className='shadow'></li>
+                <li className='shadow'></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Alternative solutions for your business</h2>
+
+            <br />
+
+            <ul>
+                <li className='shadow'>
+                    <div>
+                        1 For your first month
+                    </div>
+
+                    <div >
+                        <span>
+                            <h4>Starter</h4>
+                        </span>                        
+                        <span></span>
+                    </div>
+
+                    {/* <hr /> */}
+                    <div >
+                        <span style={{width: '100%', textAlign: 'left'}}>
+                            <h2>&#x20A6;1500</h2><small>NGN/Month</small>
+                        </span>
+                       
+                    </div>
+
+                    <p style={{fontSize: 'large', color: '#363636'}}>
+                    Sell instantly through social media and messaging apps or a simple online store
+                    </p>
+                  
+
+                    <button style={{width: 'auto', textAlign: 'center', justifyContent: 'center', borderRadius: '25px', marginBottom: '20px'}}>
+                        <b>Learn more.</b>
+                    </button>
+
+                </li>
+
+                <li className='shadow'>
+                    <div>
+                        1 For your first month
+                    </div>
+
+                    <div >
+                        <span>
+                            <h4>Retail</h4>
+                        </span>                        
+                        <span></span>
+                    </div>
+
+                    {/* <hr /> */}
+                    <div >
+                        <span style={{width: '100%', textAlign: 'left'}}>
+                            <h2>&#x20A6;25000</h2><small>NGN/Month</small>
+                        </span>
+                       
+                    </div>
+
+                    <p style={{fontSize: 'large', color: '#363636'}}>
+                    In-person selling tools with advanced staff, inventory, and loyalty features
+                    </p>
+                  
+
+                    <button style={{width: 'auto', textAlign: 'center', justifyContent: 'center', borderRadius: '25px', marginBottom: '20px'}}>
+                        <b>Learn more.</b>
+                    </button>
+
+                </li>
+
+                <li className='shadow'>
+                    <div>
+                        1 For your first month
+                    </div>
+
+                    <div >
+                        <span>
+                            <h4>Enterprse Commerce</h4>
+                        </span>                        
+                        <span></span>
+                    </div>
+
+                    {/* <hr /> */}
+                    <div >
+                        <span style={{width: '100%', textAlign: 'left'}}>
+                            <h2>&#x20A6;65000</h2><small>NGN/Month</small>
+                        </span>
+                       
+                    </div>
+
+                    <p style={{fontSize: 'large', color: '#363636'}}>
+                    Build agility, speed to deployment, and performance for enterprise organizations
+                    </p>
+                  
+
+                    <button style={{width: 'auto', textAlign: 'center', justifyContent: 'center', borderRadius: '25px', marginBottom: '20px'}}>
+                        <b>Learn more.</b>
+                    </button>
+
+                </li>
+               
+            </ul>
+
+            {/* <small>All payments will be billed in your selected currency.</small> */}
+        </section>
+
+        <section style={{background: '#000'}}>
+            <br />
+            <br />
+            <h2>Frequently Asked Questions</h2>
+
+            <br />
+            <br />
+
+
+            <ul>
+                <li>
+                    <h3 style={{color: '#fff'}}>General Questions</h3>
+                    <br />
+                    <ul className='faq-sub-list'>
+                        <li id='faq-sub-list-title'>
+                        
+                            <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500'}}>
+                                <span style={{color: '#fff'}}>What is Shopify and how does it work?</span>
+                                <span>
+                                    <img src={plus_svg.src} style={{height: '45px', width: '45px'}} alt="" />
+                                </span>
+                            </div>
+                            <hr/>
+                            <div>
+
+                            </div>
+                        
+                        </li>
+                        <li id='faq-sub-list-title'>
+                        
+                            <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500'}}>
+                                <span style={{color: '#fff'}}>How much does Shopify cost?</span>
+                                <span>
+                                    <img src={plus_svg.src} style={{height: '45px', width: '45px'}} alt="" />
+                                </span>
+                            </div>
+                            <hr/>
+                            <div>
+
+                            </div>
+                        
+                        </li>
+                        <li id='faq-sub-list-title'>
+                        
+                            <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500'}}>
+                                <span style={{color: '#fff'}}>How long are your contracts?</span>
+                                <span>
+                                    <img src={plus_svg.src} style={{height: '45px', width: '45px'}} alt="" />
+                                </span>
+                            </div>
+                            <hr/>
+                            <div>
+
+                            </div>
+                        
+                        </li>
+                        <li id='faq-sub-list-title'>
+                        
+                            <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500'}}>
+                                <span style={{color: '#fff'}}>Can I cancel my account at any time?</span>
+                                <span>
+                                    <img src={plus_svg.src} style={{height: '45px', width: '45px'}} alt="" />
+                                </span>
+                            </div>
+                            <hr/>
+                            <div>
+
+                            </div>
+                        
+                        </li>
+                        <li id='faq-sub-list-title'>
+                        
+                            <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500'}}>
+                                <span style={{color: '#fff'}}>Can I change my plan later on?</span>
+                                <span>
+                                    <img src={plus_svg.src} style={{height: '45px', width: '45px'}} alt="" />
+                                </span>
+                            </div>
+                            <hr/>
+                            <div>
+
+                            </div>
+                            
+                        </li>
+                        <li id='faq-sub-list-title'>
+                        
+                            <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500'}}>
+                                <span style={{color: '#fff'}}>Do you offer any discounts?</span>
+                                <span>
+                                    <img src={plus_svg.src} style={{height: '45px', width: '45px'}} alt="" />
+                                </span>
+                            </div>
+                            <hr/>
+                            <div>
+
+                            </div>
+                        
+                        </li>
+                        <li id='faq-sub-list-title'>
+                        
+                            <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500'}}>
+                                <span style={{color: '#fff'}}>In what countries can I use Shopify?</span>
+                                <span>
+                                    <img src={plus_svg.src} style={{height: '45px', width: '45px'}} alt="" />
+                                </span>
+                            </div>
+                            <hr/>
+                            <div>
+
+                            </div>
+                        
+                        </li>
+                        <li id='faq-sub-list-title'>
+                        
+                            <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500'}}>
+                                <span style={{color: '#fff'}}>Is Shopify PCI Compliant or PCI Certified?</span>
+                                <span>
+                                    <img src={plus_svg.src} style={{height: '45px', width: '45px'}} alt="" />
+                                </span>
+                            </div>
+                            <hr/>
+                            <div>
+
+                            </div>
+                            
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <h3 style={{color: '#fff'}}>Payment questions</h3>
+                    <br />
+                    <ul className='faq-sub-list'>
+
+                        <li id='faq-sub-list-title'>
+                        
+                            <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500'}}>
+                                <span style={{color: '#fff'}}>Are there third-party transaction fees?</span>
+                                <span>
+                                    <img src={plus_svg.src} style={{height: '45px', width: '45px'}} alt="" />
+                                </span>
+                            </div>
+                            <hr/>
+                            <div>
+
+                            </div>
+                        
+                        </li>
+                        <li id='faq-sub-list-title'>
+                        
+                            <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500'}}>
+                                <span style={{color: '#fff'}}>What is a third-party payment provider?</span>
+                                <span>
+                                    <img src={plus_svg.src} style={{height: '45px', width: '45px'}} alt="" />
+                                </span>
+                            </div>
+                            <hr/>
+                            <div>
+
+                            </div>
+                        
+                        </li>
+                        <li id='faq-sub-list-title'>
+                        
+                            <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500'}}>
+                                <span style={{color: '#fff'}}>Are there any credit card fees?</span>
+                                <span>
+                                    <img src={plus_svg.src} style={{height: '45px', width: '45px'}} alt="" />
+                                </span>
+                            </div>
+                            <hr/>
+                            <div>
+
+                            </div>
+                        
+                        </li>
+                      
+                    </ul>
+                </li>
+
+                <li>
+                    <h3 style={{color: '#fff'}}>Store setup Questions</h3>
+                    <br />
+                    <ul className='faq-sub-list'>
+                    
+                        <li id='faq-sub-list-title'>
+                        
+                            <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500'}}>
+                                <span style={{color: '#fff'}}>Is there a setup fee?</span>
+                                <span>
+                                    <img src={plus_svg.src} style={{height: '45px', width: '45px'}} alt="" />
+                                </span>
+                            </div>
+                            <hr/>
+                            <div>
+
+                            </div>
+                        
+                        </li>
+                        <li id='faq-sub-list-title'>
+                        
+                            <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500'}}>
+                                <span style={{color: '#fff'}}>I'm looking to switch to Shopify. How do I get my data over?</span>
+                                <span>
+                                    <img src={plus_svg.src} style={{height: '45px', width: '45px'}} alt="" />
+                                </span>
+                            </div>
+                            <hr/>
+                            <div>
+
+                            </div>
+                        
+                        </li>
+                        <li id='faq-sub-list-title'>
+                        
+                            <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500'}}>
+                                <span style={{color: '#fff'}}>Can I use my own domain name with Shopify?</span>
+                                <span>
+                                    <img src={plus_svg.src} style={{height: '45px', width: '45px'}} alt="" />
+                                </span>
+                            </div>
+                            <hr/>
+                            <div>
+
+                            </div>
+                        
+                        </li>
+                        <li id='faq-sub-list-title'>
+                        
+                            <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500'}}>
+                                <span style={{color: '#fff'}}>Do I get free web hosting when I open an online store?</span>
+                                <span>
+                                    <img src={plus_svg.src} style={{height: '45px', width: '45px'}} alt="" />
+                                </span>
+                            </div>
+                            <hr/>
+                            <div>
+
+                            </div>
+                            
+                        </li>
+                        <li id='faq-sub-list-title'>
+                        
+                            <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500'}}>
+                                <span style={{color: '#fff'}}>What are your bandwidth fees?</span>
+                                <span>
+                                    <img src={plus_svg.src} style={{height: '45px', width: '45px'}} alt="" />
+                                </span>
+                            </div>
+                            <hr/>
+                            <div>
+
+                            </div>
+                        
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+
+                    <h3 style={{color: '#fff'}}>POS</h3>
+                    <br />
+                    <ul className='faq-sub-list'>
+                        <li id='faq-sub-list-title'>
+                        
+                            <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500'}}>
+                                <span style={{color: '#fff'}}>What is Shopify POS?</span>
+                                <span>
+                                    <img src={plus_svg.src} style={{height: '45px', width: '45px'}} alt="" />
+                                </span>
+                            </div>
+                            <hr/>
+                            <div>
+
+                            </div>
+                        
+                        </li>
+                        <li id='faq-sub-list-title'>
+                        
+                            <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500'}}>
+                                <span style={{color: '#fff'}}>What kinds of businesses use Shopify POS?</span>
+                                <span>
+                                    <img src={plus_svg.src} style={{height: '45px', width: '45px'}} alt="" />
+                                </span>
+                            </div>
+                            <hr/>
+                            <div>
+
+                            </div>
+                        
+                        </li>
+                        <li id='faq-sub-list-title'>
+                        
+                            <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500'}}>
+                                <span style={{color: '#fff'}}>Does my online store integrate with Shopify POS?</span>
+                                <span>
+                                    <img src={plus_svg.src} style={{height: '45px', width: '45px'}} alt="" />
+                                </span>
+                            </div>
+                            <hr/>
+                            <div>
+
+                            </div>
+                        
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+        </section>
+
+
+        <section>
+            <h2 style={{textAlign: 'center'}}>Everything you need to sell online,
+            <br /> all in one place</h2>
+
+            <br />
+
+            <h4>Whether you’re building a website, managing inventory, or responding to customers,
+            <br />you can do it all with Shopify.</h4>
+
+            <br />
+            <div className="input-cnt">
+                <input placeholder='Enter your email address' type="search" name="" id="" />
+                <button>Start free trial</button>
+            </div>
+
+            <br />
+
+            <small>Try Shopify free, no credit card required. By entering your email, you agree to receive marketing emails from Shopify.</small>
+            
+        </section>
+        
+      </div>
+    </>
+  )
+}

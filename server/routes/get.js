@@ -13,7 +13,10 @@ entrepreneurGetRoute.get('/entrepreneur/profile', parser, entrepreneur_profile);
 entrepreneurGetRoute.get('/entrepreneur/lang', parser, GET_LANG);
 entrepreneurGetRoute.get('/entrepreneur/timezones', parser, GET_TIMEZONES);
 
-entrepreneurGetRoute.get('/auth/google', passport.authenticate('google', { scope: ['profile'] }));
+
+
+
+entrepreneurGetRoute.get('/entrepreneur/auth/google', passport.authenticate('google', { scope: ['profile'] }));
 
 entrepreneurGetRoute.get('/auth/google/callback', 
   passport.authenticate('google', { failureRedirect: '/login' }),

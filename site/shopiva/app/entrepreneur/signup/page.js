@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import fb_svg from '@/svgs/facebook-svgrepo-com (1).svg'
 import gg_svg from '@/svgs/google-color-svgrepo-com (1).svg'
 import tt_svg from '@/svgs/twitter-svgrepo-com (3).svg'
+import logo_img from '@/images/462832894_122104672550563288_120709183929923776_n.jpg'
 import './styles/xxl.css'
 import 'react-phone-number-input/style.css'
 import country from '@/reusables/country.json'
@@ -11,9 +12,11 @@ import { set_entrepreneur_cookie } from '@/redux/entrepreneur/entrepreneur_cooki
 import { useDispatch } from 'react-redux';
 import { entrepreneur_overlay_setup } from '@/reusables/overlay';
 import axios from 'axios';
+import { useSession, signIn, signOut } from "next-auth/react"
 
 
 export default function Signup() {
+    const session = useSession();
 
     const [countries, setcountries] = useState([])
     let dispatch = useDispatch()
@@ -115,6 +118,7 @@ export default function Signup() {
     }
 
     let Registration = (e) => {
+        console.log(session)
         try {
             // e.target.disabled = true;
             entrepreneur_overlay_setup(true, 'One Moment Please...')
@@ -280,26 +284,62 @@ export default function Signup() {
         //     }
         // })
     }
+
+
+    
+    // if (session) {
+    //     return (
+    //     <>
+    //         Signed in as {session.user.email} <br />
+    //         <button onClick={() => signOut()}>Sign out</button>
+    //     </>
+    //     )
+    // }
+    // return (
+    //     <>
+    //     Not signed in <br />
+    //     <button onClick={() => signIn()}>Sign in</button>
+    //     </>
+    // )
     
 
   return (
     <>
         <div className="enetrepreneur-signup-form">
             <div className='form-cnt'>
-                <h5 style={{display: 'flex', justifyContent: 'space-between'}}>
-                    <span style={{background: '#000', marginBottom: '10px', color: '#fff', width: 'fit-content', padding: '5px 8px', borderRadius: '5px'}}>Shopiva</span>
-                    {/* <span>
-                        <button onClick={async()=> {
-                            axios.get('http://localhost:3456/auth/google')
-                            .then((result) => {
-                                console.log(result)
-                            })
-                            .catch(err => console.log(err))
-                        }} style={{padding: '8px', background: '#fff', border: 'none'}}>
-                            <img src={gg_svg.src} style={{height: '100%', width: '100%'}} alt="" />
+            <section>
+                    <section style={{marginLeft: '0px', flexDirection: 'row', display: 'flex', alignItems: 'flex-start'}}>
+                        <img src={logo_img.src} style={{height: '40px', width: '40px', borderRadius: '10px'}} alt="" />
+                        {/* <h5 style={{color: '#00926e', paddingLeft: '5px', margin: '0'}}>Shopiva</h5> */}
+                    </section>
+
+                    {/* <br />
+                    <br /> */}
+
+                    <div style={{display: 'flex', width: 'auto'}}>
+                        <button style={{padding: '5px', background: '#fff', border: 'none'}}>
+                            <img src={fb_svg.src} style={{height: '28px', width: '28px'}} alt="" />
                         </button>
-                    </span> */}
-                </h5>
+                        <button style={{padding: '7px', background: '#fff', border: 'none'}}>
+                            <img src={tt_svg.src} style={{height: '25px', width: '25px'}} alt="" />
+                        </button>
+                        
+                        <button onClick={e=> {
+                            axios.get('http://localhost:3456/entrepreneur/auth/google')
+                            .then((result) => {
+                                // window.open('/auth/google/redirect')
+                            })
+                            .catch(err => {
+                                console.log(err)
+                                // window.open('/auth/google/redirect')
+
+                            })
+                        }} style={{padding: '8px', background: '#fff', border: 'none'}}>
+                            <img src={gg_svg.src} style={{height: '25px', width: '25px'}} alt="" />
+                        </button>
+                    </div>
+                </section>
+
 
                 
                 
@@ -397,13 +437,27 @@ export default function Signup() {
                 </section>
 
                 <section className="other-reg-forms">
-                    <button style={{marginLeft: '0'}} onClick={e=> {
+                    <button style={{marginLeft: '0', background: '#fff', border: 'none', color: '#00926e'}} onClick={e=> {
                         window.location.href=('/entrepreneur/login')
                     }} >
                         <small>Already registered? Login.</small>
                     </button>
+                    {/* <button style={{padding: '5px', background: '#fff', border: 'none'}}>
+                        <img src={fb_svg.src} style={{height: '100%', width: '100%'}} alt="" />
+                    </button>
+                    <button style={{padding: '7px', background: '#fff', border: 'none'}}>
+                        <img src={tt_svg.src} style={{height: '100%', width: '100%'}} alt="" />
+                    </button>
                     
-                    
+                    <button onClick={e=> {
+                        axios.get('https://shopiva-server.onrender.com/entrepreneur/google')
+                        .then((result) => {
+                            console.log(result)
+                        })
+                        .catch(err => console.log(err))
+                    }} style={{padding: '8px', background: '#fff', border: 'none'}}>
+                        <img src={gg_svg.src} style={{height: '100%', width: '100%'}} alt="" />
+                    </button> */}
                 </section>
 
             </div>
@@ -411,3 +465,4 @@ export default function Signup() {
     </>
   )
 }
+

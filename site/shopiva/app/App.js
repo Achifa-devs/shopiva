@@ -8,8 +8,9 @@ import { setNewCookie } from './layout'
 import EntrepreneurLayout from '@/layouts/Entrepreneur'
 import AuthLayout from '@/layouts/Auth'
 import DashboardLayout from '@/layouts/DashboardLayout'
+import { SessionProvider } from "next-auth/react"
 
-export default function App({children}) {
+export default function App({session,children}) {
   let pathname = usePathname();
   
 
@@ -30,63 +31,60 @@ export default function App({children}) {
     }
   }
 
-  
-
-
-  
   return (
     <>
       {
-        <Provider store={store}>
+        <SessionProvider session={session}>
+          <Provider store={store}>
           
-          {
-            pathname.split('/').splice(1,2)[0] === 'entrepreneur'
-            ?
-              pathname.split('/').splice(1,2)[1] === 'user-profile' || pathname.split('/').splice(1,2)[1] === 'signup' || pathname.split('/').splice(1,2)[1] === 'login'
+            {
+              pathname.split('/').splice(1,2)[0] === 'entrepreneur'
               ?
+                pathname.split('/').splice(1,2)[1] === 'user-profile' || pathname.split('/').splice(1,2)[1] === 'signup' || pathname.split('/').splice(1,2)[1] === 'login'
+                ?
+                  <>
+                    <AuthLayout setCookie={setCookie}>
+                      {
+                        children
+                      }
+                    </AuthLayout>
+                  </>
+                :
+                pathname.split('/').splice(1,2)[1] === 'pre-sale'
+                ?
                 <>
                   <AuthLayout setCookie={setCookie}>
-                    {
-                      children
-                    }
+                    <div style={{height: '100vh', width: '100vw', overflow: 'auto', background: '#fff'}}>
+                      {
+                        children
+                      }
+                    </div>
                   </AuthLayout>
                 </>
+                :
+                <EntrepreneurLayout setCookie={setCookie}>
+                  {
+                    children
+                  }
+                </EntrepreneurLayout>
               :
-              pathname.split('/').splice(1,2)[1] === 'pre-sale'
+              pathname.split('/').splice(1,2)[0] === 'dashboard'
               ?
-              <>
-                <AuthLayout setCookie={setCookie}>
-                  <div style={{height: '100vh', width: '100vw', overflow: 'auto', background: '#fff'}}>
-                    {
-                      children
-                    }
-                  </div>
-                </AuthLayout>
-              </>
-
+              <DashboardLayout>
+                <div className='dashboard-cnt'>
+                  {
+                    children
+                  }
+                </div>
+              </DashboardLayout>
               :
-
-              <EntrepreneurLayout setCookie={setCookie}>
-                {
-                  children
-                }
-              </EntrepreneurLayout>
-            :
-            pathname.split('/').splice(1,2)[0] === 'dashboard'
-            ?
-            <DashboardLayout>
-              <div className='dashboard-cnt'>
-                {
-                  children
-                }
-              </div>
-            </DashboardLayout>
-            :
-            ''
-          }
+              ''
+            }
           
-        </Provider>
+          </Provider>
+        </SessionProvider>
       }
     </>
   )
 }
+

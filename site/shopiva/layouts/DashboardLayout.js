@@ -1,19 +1,27 @@
 "use client"
 import React, { useState } from 'react'
+
 import '@/app/dashboard/global.css'
+import '@/app/dashboard/styles/xxl.css'
+
 import logo_img from '@/images/462832894_122104672550563288_120709183929923776_n.jpg'
+import Solution from '@/components/floaters.js/Solution'
+import Resources from '@/components/floaters.js/Resources'
+import { usePathname } from 'next/navigation'
+
 export default function DashboardLayout({children}) {
 
   let [count, set_count]  =useState(0)
-    let [list, set_list]  =useState([
+
+  let [solution_menu, set_solution_menu] = useState(false)
+  let [resources_menu, set_resources_menu] = useState(false)
+  let [list, set_list]  =useState([
     'Get Your Store Global',
     'Get Your Brand Popular',
     'Get Your Business To The Next Level',
     'Get Your Your Permanent Customers',
   ])
   let [clause, set_clause]  =useState(list[0])
-
-
   function txt_changer(params) {
     setInterval(() => {
 
@@ -30,13 +38,15 @@ export default function DashboardLayout({children}) {
 
   txt_changer()
 
+  let pathname = usePathname();
+
   return (
     <>
 
       
 
-      <header>
-        <div className='header'>
+      <header >
+        <div className='header' style={{position: 'sticky', top: '0', left: '0', zIndex: '10000'}}>
           <section style={{marginLeft: '20px', flexDirection: 'row', display: 'flex', alignItems: 'flex-end'}}>
             <img src={logo_img.src} style={{height: '50px', width: '50px', borderRadius: '10px'}} alt="" />
             <h3 style={{color: '#00926e', paddingLeft: '20px'}}>Shopiva</h3>
@@ -48,23 +58,41 @@ export default function DashboardLayout({children}) {
            */}
           <section>
               <ul>
-                  <li>Solutions</li>
-                  <li>Pricing</li>
-                  <li>Resources</li>
-                  <li>What&apos;new</li>
-                  <li>Enterprise</li>
-                  <li>More</li>
+                  <li onClick={e => {
+                    set_resources_menu(false)
+                    set_solution_menu(!solution_menu)
+                  }}>Solutions</li>
+                  
+                  <li onClick={e => {
+                    set_solution_menu(false)
+                    set_resources_menu(!resources_menu)
+                  }}>Resources</li>
+
+                  <li onClick={e => {
+                    window.open('/dashboard/pricing')
+                  }}>Pricing</li>
+                  {/* <li onClick={e => {
+                    window.open('/entrepreneur/whats-new')
+                  }}>What&apos;new</li> */}
+                  
               </ul>
           </section>
           <section>
               <ul>
-                  <li>Log in</li>
-                  <li>Start Free Trial</li>
+                  <li onClick={e => {
+                    window.open('/entrepreneur/login')
+                  }}>Log in</li>
+                  <li onClick={e => {
+                    window.open('')
+                  }}>Start Free Trial</li>
               </ul>
           </section>
         </div>
 
-        <div className="dashboard-head" style={{position: 'absolute', top: '0', left: '0'}}>
+        {
+          pathname.split('/').splice(-1)[0] === 'dashboard'
+          ?
+          <div className="dashboard-head" style={{position: 'absolute', top: '0', left: '0'}}>
 
           <video style={{height: '100vh', width: '100%', objectFit: 'cover', zIndex: '1000'}} src={'/vids/VideoMerge_13-10-2024_224733.mp4'} 
           autoPlay
@@ -90,8 +118,23 @@ export default function DashboardLayout({children}) {
             </h4>
 
           </div>
-        </div>
+          </div>
+          :
+          ''
+        }
       </header>
+
+      {
+        solution_menu
+        &&
+        <Solution />
+      }
+
+      {
+        resources_menu
+        &&
+        <Resources />
+      }
 
       <main style={{overflow: 'auto', height: 'auto', position: 'relative'}}>
         {

@@ -8,6 +8,8 @@ import './styles/xxl.css'
 import 'react-phone-number-input/style.css'
 import country from '@/reusables/country.json'
 import axios from 'axios';
+import logo_img from '@/images/462832894_122104672550563288_120709183929923776_n.jpg'
+
 import { set_entrepreneur_cookie } from '@/redux/entrepreneur/entrepreneur_cookie';
 import { useDispatch } from 'react-redux';
 import { entrepreneur_overlay_setup } from '@/reusables/overlay';
@@ -234,7 +236,35 @@ export default function Signup() {
     <>
         <div className="enetrepreneur-signup-form">
             <div className='form-cnt'>
-                <h5 style={{background: '#000', marginBottom: '10px', color: '#fff', width: 'fit-content', padding: '5px 8px', borderRadius: '5px'}}>Shopiva</h5>
+                <section>
+                    <section style={{marginLeft: '0px', flexDirection: 'row', display: 'flex', alignItems: 'flex-start'}}>
+                        <img src={logo_img.src} style={{height: '40px', width: '40px', borderRadius: '10px'}} alt="" />
+                        {/* <h5 style={{color: '#00926e', paddingLeft: '5px', margin: '0'}}>Shopiva</h5> */}
+                    </section>
+
+                    {/* <br />
+                    <br /> */}
+
+                    <div style={{display: 'flex', width: 'auto'}}>
+                        <button style={{padding: '5px', background: '#fff', border: 'none'}}>
+                            <img src={fb_svg.src} style={{height: '28px', width: '28px'}} alt="" />
+                        </button>
+                        <button style={{padding: '7px', background: '#fff', border: 'none'}}>
+                            <img src={tt_svg.src} style={{height: '25px', width: '25px'}} alt="" />
+                        </button>
+                        
+                        <button onClick={e=> {
+                            axios.get('https://shopiva-server.onrender.com/entrepreneur/google')
+                            .then((result) => {
+                                console.log(result)
+                            })
+                            .catch(err => console.log(err))
+                        }} style={{padding: '8px', background: '#fff', border: 'none'}}>
+                            <img src={gg_svg.src} style={{height: '25px', width: '25px'}} alt="" />
+                        </button>
+                    </div>
+                </section>
+
                 <section style={{height: 'auto'}}>
                     <div style={{width: '100%'}}>
                         <div className="input-cnt">
@@ -247,7 +277,7 @@ export default function Signup() {
                         </div>
 
                         <div className="input-cnt">
-                            <button style={{borderRadius: '8px'}} onClick={e => {
+                            <button style={{borderRadius: '8px', background: '#00926e'}} onClick={e => {
                                 Login(e)
                             }}>Login</button>
                         </div>
@@ -255,7 +285,7 @@ export default function Signup() {
                 </section>
 
                 <section className="other-reg-forms">
-                    <button style={{marginLeft: '0'}} onClick={e=> {
+                    <button style={{marginLeft: '0', background: '#fff', border: 'none', color: '#00926e'}} onClick={e=> {
                         window.location.href=('/entrepreneur/signup')
                     }} >
                         <small>Not registered? Signup.</small>
