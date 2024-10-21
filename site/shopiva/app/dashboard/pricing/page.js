@@ -4,6 +4,13 @@ import './styles/xxl.css'
 import ui_svg from '@/svgs/complete-ok-accept-good-tick-svgrepo-com.svg'
 import plus_svg from '@/svgs/plus-circle-svgrepo-com.svg'
 
+
+import summary_1_svg from '@/svgs/9d36b48155c935d6912dc78f33dd84cc.svg'
+import summary_2_svg from '@/svgs/a0160a9073ac18b083d8d3ab2fd63866.svg'
+import summary_3_svg from '@/svgs/9a0ec4dfb7a774bb3666745a58609900.svg'
+import summary_4_svg from '@/svgs/6068938a5623e730c29fff2fbac436e4.svg'
+import summary_5_svg from '@/svgs/3dff791cdf4e8c1a94c8df91a5531c48.svg'
+
 export default function Pricing() {
 
     useEffect(() => {
@@ -318,11 +325,63 @@ export default function Pricing() {
             <br />
 
             <ul>
-                <li className='shadow'></li>
-                <li className='shadow'></li>
-                <li className='shadow'></li>
-                <li className='shadow'></li>
-                <li className='shadow'></li>
+                <li className='shadow' style={{justifyContent: 'flex-start'}}>
+                    <div>
+                        <img src={summary_1_svg.src} alt="" />
+                    </div>
+
+                    <h5 style={{textAlign: 'left', paddingLeft: '5px', width: '100%'}}>World's best checkout</h5>
+                    <div style={{marginBottom: '10px'}}>Shopiva checkout converts 15% better on average than other commerce platforms.</div>
+                    
+                </li>
+
+
+                <li className='shadow' style={{justifyContent: 'flex-start'}}>
+                    <div>
+                        <img src={summary_2_svg.src} alt="" />
+                    </div>
+
+                    <h5 style={{textAlign: 'left', paddingLeft: '5px', width: '100%'}}>In-person selling</h5>
+                    <div style={{marginBottom: '10px'}}>Sell in person and keep inventory in sync with online sales—all with Shopiva POS.</div>
+                    
+                </li>
+
+
+                <li className='shadow' style={{justifyContent: 'flex-start'}}>
+                    <div>
+                        <img src={summary_3_svg.src} alt="" />
+                    </div>
+
+                    <h5 style={{textAlign: 'left', paddingLeft: '5px', width: '100%'}}>Multiple sales channels</h5>
+                    <div style={{marginBottom: '10px'}}>Promote and sell products on Instagram, TikTok, Google, and other channels.</div>
+                    
+                </li>
+
+
+                <li className='shadow' style={{justifyContent: 'flex-start'}}>
+                    <div>
+                        <img src={summary_4_svg.src} alt="" />
+                    </div>
+
+                    <h5 style={{textAlign: 'left', paddingLeft: '5px', width: '100%'}}>In-depth analytics</h5>
+                    <div style={{marginBottom: '10px'}}>Access reports to track store performance and identify optimisation opportunities.</div>
+                    
+                </li>
+
+                
+                <li className='shadow' style={{justifyContent: 'flex-start'}}>
+                    <div>
+                        <img src={summary_5_svg.src} alt="" />
+                    </div>
+
+                    <h5 style={{textAlign: 'left', paddingLeft: '5px', width: '100%'}}>Commerce apps</h5>
+                    <div style={{marginBottom: '10px'}}>Use apps for everything from product sourcing to customizing your store.</div>
+                    
+                </li>
+
+
+
+
             </ul>
         </section>
 
@@ -447,7 +506,7 @@ export default function Pricing() {
                         <li id='faq-sub-list-title'>
                         
                             <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500'}}>
-                                <span style={{color: '#fff'}}>What is Shopify and how does it work?</span>
+                                <span style={{color: '#fff'}}>What is Shopiva and how does it work?</span>
                                 <span>
                                     <img src={plus_svg.src} style={{height: '45px', width: '45px'}} alt="" />
                                 </span>
@@ -461,7 +520,7 @@ export default function Pricing() {
                         <li id='faq-sub-list-title'>
                         
                             <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500'}}>
-                                <span style={{color: '#fff'}}>How much does Shopify cost?</span>
+                                <span style={{color: '#fff'}}>How much does Shopiva cost?</span>
                                 <span>
                                     <img src={plus_svg.src} style={{height: '45px', width: '45px'}} alt="" />
                                 </span>
@@ -531,7 +590,7 @@ export default function Pricing() {
                         <li id='faq-sub-list-title'>
                         
                             <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500'}}>
-                                <span style={{color: '#fff'}}>In what countries can I use Shopify?</span>
+                                <span style={{color: '#fff'}}>In what countries can I use Shopiva?</span>
                                 <span>
                                     <img src={plus_svg.src} style={{height: '45px', width: '45px'}} alt="" />
                                 </span>
@@ -545,7 +604,7 @@ export default function Pricing() {
                         <li id='faq-sub-list-title'>
                         
                             <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500'}}>
-                                <span style={{color: '#fff'}}>Is Shopify PCI Compliant or PCI Certified?</span>
+                                <span style={{color: '#fff'}}>Is Shopiva PCI Compliant or PCI Certified?</span>
                                 <span>
                                     <img src={plus_svg.src} style={{height: '45px', width: '45px'}} alt="" />
                                 </span>
@@ -632,7 +691,7 @@ export default function Pricing() {
                         <li id='faq-sub-list-title'>
                         
                             <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500'}}>
-                                <span style={{color: '#fff'}}>I&apos;m looking to switch to Shopify. How do I get my data over?</span>
+                                <span style={{color: '#fff'}}>I&apos;m looking to switch to Shopiva. How do I get my data over?</span>
                                 <span>
                                     <img src={plus_svg.src} style={{height: '45px', width: '45px'}} alt="" />
                                 </span>
@@ -646,7 +705,7 @@ export default function Pricing() {
                         <li id='faq-sub-list-title'>
                         
                             <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500'}}>
-                                <span style={{color: '#fff'}}>Can I use my own domain name with Shopify?</span>
+                                <span style={{color: '#fff'}}>Can I use my own domain name with Shopiva?</span>
                                 <span>
                                     <img src={plus_svg.src} style={{height: '45px', width: '45px'}} alt="" />
                                 </span>
@@ -696,7 +755,7 @@ export default function Pricing() {
                         <li id='faq-sub-list-title'>
                         
                             <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500'}}>
-                                <span style={{color: '#fff'}}>What is Shopify POS?</span>
+                                <span style={{color: '#fff'}}>What is Shopiva POS?</span>
                                 <span>
                                     <img src={plus_svg.src} style={{height: '45px', width: '45px'}} alt="" />
                                 </span>
@@ -710,7 +769,7 @@ export default function Pricing() {
                         <li id='faq-sub-list-title'>
                         
                             <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500'}}>
-                                <span style={{color: '#fff'}}>What kinds of businesses use Shopify POS?</span>
+                                <span style={{color: '#fff'}}>What kinds of businesses use Shopiva POS?</span>
                                 <span>
                                     <img src={plus_svg.src} style={{height: '45px', width: '45px'}} alt="" />
                                 </span>
@@ -724,7 +783,7 @@ export default function Pricing() {
                         <li id='faq-sub-list-title'>
                         
                             <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500'}}>
-                                <span style={{color: '#fff'}}>Does my online store integrate with Shopify POS?</span>
+                                <span style={{color: '#fff'}}>Does my online store integrate with Shopiva POS?</span>
                                 <span>
                                     <img src={plus_svg.src} style={{height: '45px', width: '45px'}} alt="" />
                                 </span>
@@ -748,8 +807,8 @@ export default function Pricing() {
 
             <br />
 
-            <h4>Whether you’re building a website, managing inventory, or responding to customers,
-            <br />you can do it all with Shopify.</h4>
+            <h4>Whether you&apos;re building a website, managing inventory, or responding to customers,
+            <br />you can do it all with Shopiva.</h4>
 
             <br />
             <div className="input-cnt">
@@ -759,7 +818,7 @@ export default function Pricing() {
 
             <br />
 
-            <small>Try Shopify free, no credit card required. By entering your email, you agree to receive marketing emails from Shopify.</small>
+            <small>Try Shopiva free, no credit card required. By entering your email, you agree to receive marketing emails from Shopiva.</small>
             
         </section>
         
