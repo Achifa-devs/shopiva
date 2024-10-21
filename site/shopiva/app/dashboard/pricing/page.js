@@ -632,7 +632,7 @@ export default function Pricing() {
                         <li id='faq-sub-list-title'>
                         
                             <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500'}}>
-                                <span style={{color: '#fff'}}>I'm looking to switch to Shopify. How do I get my data over?</span>
+                                <span style={{color: '#fff'}}>I&apos;m looking to switch to Shopify. How do I get my data over?</span>
                                 <span>
                                     <img src={plus_svg.src} style={{height: '45px', width: '45px'}} alt="" />
                                 </span>
