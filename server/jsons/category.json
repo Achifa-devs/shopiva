@@ -1,0 +1,318 @@
+{
+    "categories": [
+      {
+        "name": "Electronics",
+        "subcategories": [
+          {"Smartphones & Mobile Phones": [
+            {"type": 
+                [
+                    {
+                        "Cell Phones": 
+                        [
+                            "Apple",
+                            "Samsung",
+                            "Xiaomi",
+                            "Google",
+                            "Huawei",
+                            "OnePlus",
+                            "Oppo",
+                            "Vivo",
+                            "Realme",
+                            "Sony",
+                            "Motorola",
+                            "Nokia",
+                            "LG",
+                            "Asus",
+                            "Lenovo",
+                            "Tecno",
+                            "Infinix",
+                            "ZTE",
+                            "Honor",
+                            "Meizu",
+                            "Ulefone",
+                            "Doogee",
+                            "Blackview",
+                            "Cubot",
+                            "Gionee",
+                            "Blu",
+                            "Leagoo",
+                            "Elephone",
+                            "iTel",
+                            "Micromax",
+                            "Oukitel",
+                            "Vernee",
+                            "Umidigi",
+                            "Wiko",
+                            "Lava",
+                            "Panasonic",
+                            "Karbonn",
+                            "Fairphone",
+                            "YotaPhone",
+                            "BQ"
+                        ]
+                          
+                    }, 
+                    {
+                        "Tablets": 
+                        [
+                            "Apple",
+                            "Samsung",
+                            "Xiaomi",
+                            "Google",
+                            "Huawei",
+                            "OnePlus",
+                            "Oppo",
+                            "Vivo",
+                            "Realme",
+                            "Sony",
+                            "Motorola",
+                            "Nokia",
+                            "LG",
+                            "Asus",
+                            "Lenovo",
+                            "Tecno",
+                            "Infinix",
+                            "ZTE",
+                            "Honor",
+                            "Meizu",
+                            "Ulefone",
+                            "Doogee",
+                            "Blackview",
+                            "Cubot",
+                            "Gionee",
+                            "Blu",
+                            "Leagoo",
+                            "Elephone",
+                            "iTel",
+                            "Micromax",
+                            "Oukitel",
+                            "Vernee",
+                            "Umidigi",
+                            "Wiko",
+                            "Lava",
+                            "Panasonic",
+                            "Karbonn",
+                            "Fairphone",
+                            "YotaPhone",
+                            "BQ"
+                        ]
+                    }
+                ]
+            }
+          ]},
+
+          {"Laptops & Computers": ""},
+          {"Audio & Headphones": ""},
+          {"Accessories": ""},
+          {"Televisions & Home Entertainment": ""},
+          {"Cameras & Photography": ""},
+          {"Wearable Technology": ""},
+          {"Video Games & Consoles": ""}
+        ]
+      },
+      {
+        "name": "Fashion",
+        "subcategories": [
+          "Men’s Clothing",
+          "Women’s Clothing",
+          "Kids' Clothing",
+          "Shoes & Footwear",
+          "Accessories",
+          "Bags & Handbags",
+          "Sportswear"
+        ]
+      },
+      {
+        "name": "Home & Furniture",
+        "subcategories": [
+          "Furniture",
+          "Home Décor & Lighting",
+          "Kitchen & Dining",
+          "Bedding & Linens",
+          "Home Improvement Tools",
+          "Storage & Organization",
+          "Gardening & Outdoor Furniture"
+        ]
+      },
+      {
+        "name": "Health & Beauty",
+        "subcategories": [
+          "Skincare",
+          "Haircare",
+          "Cosmetics & Makeup",
+          "Fragrances & Perfumes",
+          "Wellness & Supplements",
+          "Personal Care",
+          "Medical Supplies"
+        ]
+      },
+      {
+        "name": "Groceries & Food",
+        "subcategories": [
+          "Beverages",
+          "Snacks & Confectionery",
+          "Canned & Packaged Foods",
+          "Fresh Produce",
+          "Dairy Products & Eggs",
+          "Meat & Seafood",
+          "Cooking Essentials"
+        ]
+      },
+      {
+        "name": "Sports & Fitness",
+        "subcategories": [
+          "Exercise Equipment",
+          "Sportswear & Footwear",
+          "Outdoor Gear",
+          "Fitness Accessories",
+          "Team Sports Equipment",
+          "Supplements & Nutrition"
+        ]
+      },
+      {
+        "name": "Toys, Kids & Babies",
+        "subcategories": [
+          "Toys & Games",
+          "Baby Clothing",
+          "Diapers & Potty Training",
+          "Strollers & Car Seats",
+          "Baby Feeding",
+          "Kids’ Books & Learning",
+          "Baby Safety & Health"
+        ]
+      },
+      {
+        "name": "Automotive",
+        "subcategories": [
+          "Car Accessories",
+          "Car Electronics",
+          "Motorcycle Gear",
+          "Car Care & Maintenance Products",
+          "Tires & Wheels",
+          "Car Parts & Spares",
+          "Vehicle Tools & Equipment"
+        ]
+      },
+      {
+        "name": "Books & Stationery",
+        "subcategories": [
+          "Fiction & Non-Fiction Books",
+          "Textbooks & Educational Materials",
+          "Office Supplies",
+          "Art & Craft Supplies",
+          "Journals & Planners"
+        ]
+      },
+      {
+        "name": "Home Appliances",
+        "subcategories": [
+          "Kitchen Appliances",
+          "Laundry Appliances",
+          "Refrigerators & Freezers",
+          "Vacuum Cleaners & Cleaning Devices",
+          "Air Conditioners & Fans",
+          "Coffee Machines"
+        ]
+      },
+      {
+        "name": "Computers & Office",
+        "subcategories": [
+          "Laptops & Desktops",
+          "Monitors & Accessories",
+          "Networking Equipment",
+          "Printers & Scanners",
+          "Office Chairs & Desks",
+          "Software & Antivirus"
+        ]
+      },
+      {
+        "name": "Pet Supplies",
+        "subcategories": [
+          "Pet Food",
+          "Pet Toys & Accessories",
+          "Pet Grooming Products",
+          "Pet Beds & Carriers",
+          "Pet Health & Wellness"
+        ]
+      },
+      {
+        "name": "Jewelry & Watches",
+        "subcategories": [
+          "Necklaces & Pendants",
+          "Rings & Bracelets",
+          "Earrings",
+          "Watches",
+          "Luxury Jewelry"
+        ]
+      },
+      {
+        "name": "Music & Entertainment",
+        "subcategories": [
+          "Musical Instruments",
+          "CDs & Vinyl",
+          "Music Accessories",
+          "Karaoke Machines",
+          "Party Supplies & Equipment"
+        ]
+      },
+      {
+        "name": "Travel & Luggage",
+        "subcategories": [
+          "Suitcases & Travel Bags",
+          "Travel Accessories",
+          "Outdoor Gear",
+          "Travel Electronics"
+        ]
+      },
+      {
+        "name": "Building & Industrial",
+        "subcategories": [
+          "Construction Tools",
+          "Industrial Equipment",
+          "Electrical Supplies",
+          "Safety Gear",
+          "Plumbing & Hardware"
+        ]
+      },
+      {
+        "name": "Crafts & DIY",
+        "subcategories": [
+          "Arts & Crafts Supplies",
+          "Sewing Machines & Fabrics",
+          "DIY Tools & Kits",
+          "Painting & Drawing Supplies",
+          "Handcraft Materials"
+        ]
+      },
+      {
+        "name": "Office & School Supplies",
+        "subcategories": [
+          "Desks, Chairs, and Office Furniture",
+          "Office Electronics",
+          "Writing Instruments",
+          "Notebooks & Paper",
+          "Calculators & Staplers"
+        ]
+      },
+      {
+        "name": "Event & Party Supplies",
+        "subcategories": [
+          "Party Decorations",
+          "Invitations & Cards",
+          "Balloons & Confetti",
+          "Catering Supplies",
+          "Party Favors"
+        ]
+      },
+      {
+        "name": "Other Categories",
+        "subcategories": [
+          "Gifts & Occasions",
+          "Collectibles & Memorabilia",
+          "Religious Items",
+          "Souvenirs & Cultural Products"
+        ]
+      }
+    ]
+  }
+  
