@@ -271,7 +271,7 @@ export default function EntrepreneurFreeLayout({children}) {
 
         <section className='copywright'>
           <div style={{height: '100%'}}>
-            
+            <small>Shopiva Copywright 2024</small>
           </div>
 
 
