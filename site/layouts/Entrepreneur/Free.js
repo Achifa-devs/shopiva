@@ -157,7 +157,7 @@ export default function EntrepreneurFreeLayout({children}) {
           <div style={{zIndex: '500', position: 'absolute', bottom: '50px', left: '30px', color: '#fff', height: 'auto', width: 'auto', padding: '10px', borderRadius: '10px'}}>
 
 
-            <h4 style={{fontSize: '4vh', fontWeight: '100'}}>
+            <h4 style={{fontSize: '2vh', fontWeight: '100'}}>
               Dream big, build fast, 
               <br />
               and grow far on Shopiva.
