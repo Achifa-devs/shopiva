@@ -1,4 +1,8 @@
 @media screen and (max-width: 480px) {
+
+    #section{
+        padding: 20px;
+    }
     
     #header-logoo-cnt{
         margin-left: 8px;

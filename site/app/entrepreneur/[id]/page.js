@@ -79,7 +79,7 @@ export default function Dashboard() {
 
       <div className="dashboard-body">
         <div>
-          <section style={{display: 'flex', justifyContent: 'space-between', width: '100%', flexDirection: 'row', alignItems: 'flex-end', fontWeight: '100'}}>
+          <section id='section' style={{display: 'flex', justifyContent: 'space-between', width: '100%', flexDirection: 'row', alignItems: 'flex-end', fontWeight: '100'}}>
             <h2 style={{fontSize: '9vh', fontWeight: 'lighter', zIndex: '2000', color: '#fff'}}>
             For everyone from
             <br />
@@ -88,7 +88,7 @@ export default function Dashboard() {
            
           </section>
           <section>
-            <ul>
+            <ul style={{padding: '0'}}>
               <li style={{padding: '10px'}}>
                 <div>
                   <img src={shop_img1.src} style={{height: '160px', width: '100%', borderRadius: '10px'}} alt="" />
@@ -144,7 +144,7 @@ export default function Dashboard() {
         <br />
 
         <div>
-          <section style={{display: 'flex', justifyContent: 'space-between', width: '100%', flexDirection: 'row', alignItems: 'flex-end', padding: '20px 55px', fontWeight: '100'}}>
+          <section id='section' style={{display: 'flex', justifyContent: 'space-between', width: '100%', flexDirection: 'row', alignItems: 'flex-end', fontWeight: '100'}}>
             <h2 style={{fontSize: '9vh', fontWeight: 'lighter', zIndex: '2000', color: '#fff'}}>
             Sell here, there, 
             <br />
@@ -157,7 +157,7 @@ export default function Dashboard() {
           </section>
 
 
-          <section style={{background: '#000'}}>
+          <section id='globe-section' style={{background: '#000'}}>
             <ul>
               <div className='globe-sale-cnt' style={{height: '80vh', width: '100%', borderRadius: '10px'}}>
                 <div style={{height: 'auto', fontSize: 'unset', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', alignItems: 'flex-start'}}>
@@ -259,10 +259,10 @@ export default function Dashboard() {
         </div>
       </div>
 
-      <div className="dashboard-conclusion" style={{overflow: 'hidden'}}>
+      <div  className="dashboard-conclusion" style={{overflow: 'hidden'}}>
 
         <div>
-          <section style={{display: 'flex', justifyContent: 'space-between', width: '100%', flexDirection: 'row', alignItems: 'flex-end', padding: '20px 55px', fontWeight: '100'}}>
+          <section id='section'  style={{display: 'flex', justifyContent: 'space-between', width: '100%', flexDirection: 'row', alignItems: 'flex-end', fontWeight: '100'}}>
               <h2 style={{fontSize: '9vh', fontWeight: 'lighter', zIndex: '2000', color: '#fff'}}>
               There Is No Better
               <br />
@@ -291,7 +291,7 @@ export default function Dashboard() {
         </div>
 
         <div>
-          <section style={{display: 'flex', justifyContent: 'center', width: '100%', flexDirection: 'row', alignItems: 'flex-end', padding: '20px 55px', fontWeight: '100'}}>
+          <section id='section' style={{display: 'flex', justifyContent: 'center', width: '100%', flexDirection: 'row', alignItems: 'flex-end', fontWeight: '100'}}>
             <h2 style={{fontSize: '9vh', fontWeight: 'lighter', zIndex: '2000', color: '#fff'}}>
               It&apos;s easy to start selling
             </h2>

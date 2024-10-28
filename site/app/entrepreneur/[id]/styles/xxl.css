@@ -1,5 +1,10 @@
 @media screen and (min-width: 1200px) {
-
+    #section{
+        padding: 20px 55px;
+    }
+    #globe-section{
+        padding: 20px;
+    }
     #header-logoo-cnt{
         margin-left: 20px;
     }
