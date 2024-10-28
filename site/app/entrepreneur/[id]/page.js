@@ -128,7 +128,7 @@ export default function Dashboard() {
 
 
           </section>
-
+{/* 
           <div style={{height: 'auto', fontSize: 'unset', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', alignItems: 'flex-start'}}>
             <h2 style={{color: '#fff'}}>
             Expand your business potential by connecting with millions of merchants worldwide through Shopiva. 
@@ -136,7 +136,7 @@ export default function Dashboard() {
             <small style={{color: '#fff', fontSize: 'small'}}>Shopiva enables sellers of all sizes to reach a global audience of millions of merchants. The platform offers user-friendly tools that allow entrepreneurs to easily manage their stores and connect with buyers worldwide. By using Shopiva, sellers can expand their business horizons, gain international exposure, and scale up effectively in the competitive e-commerce space.</small>
           </div>
 
-          
+           */}
         </div>
 
         <br />
