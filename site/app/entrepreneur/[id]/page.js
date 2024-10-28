@@ -78,6 +78,71 @@ export default function Dashboard() {
       </div>
 
       <div className="dashboard-body">
+        
+        <div className='globe-sale-cnt'>
+          <section id='section' style={{display: 'flex', justifyContent: 'space-between', width: '100%', flexDirection: 'row', alignItems: 'flex-end', fontWeight: '100'}}>
+            <h2 style={{fontSize: '9vh', fontWeight: 'lighter', zIndex: '2000', color: '#fff'}}>
+            Sell here, there, 
+            <br />
+            and everywhere
+            </h2>
+            {/* <small style={{color: '#fff'}}>
+            
+            Get a stunning store that’s made to sell—whether you build from scratch or start fast with pre-built themes.
+            </small> */}
+          </section>
+
+
+          <section id='globe-section' style={{background: 'transparent'}}>
+           
+            <ul style={{background: 'transparent'}} className='globe-list-cnt'>
+              
+              <li className='globe-list' style={{padding: '5px'}}>
+                
+                <div style={{height: 'auto', fontSize: 'unset', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', alignItems: 'flex-start'}}>
+                  <h4 style={{color: '#fff', textAlign: 'left'}}>
+                  Unveil Your Products to a Global Audience with Shopiva
+                  </h4>
+                  <small style={{color: '#fff', fontSize: 'small', textAlign: 'left'}}>Whether you’re launching the latest model or showcasing your luxury products, Shopiva helps your product unveiling company connect with millions of merchants globally. Reach potential partners and buyers in the automotive industry, and grow your brand with ease through a powerful, user-friendly platform.</small>
+                </div>  
+              </li>
+
+              <li className='globe-list' style={{padding: '5px'}}>
+                <div style={{height: 'auto', fontSize: 'unset', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', alignItems: 'flex-start'}}>
+                  <h4 style={{color: '#fff', textAlign: 'left'}}>
+                  Scale Your Factory’s Production Worldwide via Shopiva
+                  </h4>
+                  <small style={{color: '#fff', fontSize: 'small', textAlign: 'left'}}>For factories looking to expand their reach, Shopiva offers a streamlined platform to connect with global distributors, retailers, and partners. With Shopiva, your factory can showcase its products to a diverse audience, unlocking new growth opportunities and scaling production to meet international demand.</small>
+                </div>  
+              </li>
+
+              <li className='globe-list' style={{padding: '5px'}}>
+                <div style={{height: 'auto', fontSize: 'unset', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', alignItems: 'flex-start'}}>
+                  <h4 style={{color: '#fff', textAlign: 'left'}}>
+                  Transform Your Brand’s Reach with Shopiva
+                  </h4>
+                  <small style={{color: '#fff', fontSize: 'small', textAlign: 'left'}}>Elevate your Brand by connecting with millions of sellers and retailers across the world. Whether you specialize in boutique fashion or mass-produced apparel, Shopiva’s global marketplace allows your brand to stand out and attract customers, wholesalers, and merchants from all corners of the world.</small>
+                </div>  
+              </li>
+            </ul>
+
+
+          </section>
+
+          <div style={{height: 'auto', fontSize: 'unset', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', alignItems: 'flex-start'}}>
+            <h2 style={{color: '#fff'}}>
+            Expand your business potential by connecting with millions of merchants worldwide through Shopiva. 
+            </h2>
+            <small style={{color: '#fff', fontSize: 'small'}}>Shopiva enables sellers of all sizes to reach a global audience of millions of merchants. The platform offers user-friendly tools that allow entrepreneurs to easily manage their stores and connect with buyers worldwide. By using Shopiva, sellers can expand their business horizons, gain international exposure, and scale up effectively in the competitive e-commerce space.</small>
+          </div>
+
+          
+        </div>
+
+        <br />
+        <br />
+
+
         <div>
           <section id='section' style={{display: 'flex', justifyContent: 'space-between', width: '100%', flexDirection: 'row', alignItems: 'flex-end', fontWeight: '100'}}>
             <h2 style={{fontSize: '9vh', fontWeight: 'lighter', zIndex: '2000', color: '#fff'}}>
@@ -139,70 +204,9 @@ export default function Dashboard() {
             </button>
           </section>
         </div>
-        
+
         <br />
         <br />
-
-        <div>
-          <section id='section' style={{display: 'flex', justifyContent: 'space-between', width: '100%', flexDirection: 'row', alignItems: 'flex-end', fontWeight: '100'}}>
-            <h2 style={{fontSize: '9vh', fontWeight: 'lighter', zIndex: '2000', color: '#fff'}}>
-            Sell here, there, 
-            <br />
-            and everywhere
-            </h2>
-            {/* <small style={{color: '#fff'}}>
-            
-            Get a stunning store that’s made to sell—whether you build from scratch or start fast with pre-built themes.
-            </small> */}
-          </section>
-
-
-          <section id='globe-section' style={{background: '#000'}}>
-            <ul>
-              <div className='globe-sale-cnt' style={{height: '80vh', width: '100%', borderRadius: '10px'}}>
-                <div style={{height: 'auto', fontSize: 'unset', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', alignItems: 'flex-start'}}>
-                  <h2 style={{color: '#fff'}}>
-                  Expand your business potential by connecting with millions of merchants worldwide through Shopiva. 
-                  </h2>
-                  <small style={{color: '#fff', fontSize: 'small'}}>Shopiva enables sellers of all sizes to reach a global audience of millions of merchants. The platform offers user-friendly tools that allow entrepreneurs to easily manage their stores and connect with buyers worldwide. By using Shopiva, sellers can expand their business horizons, gain international exposure, and scale up effectively in the competitive e-commerce space.</small>
-                </div>
-              
-              </div>
-            </ul>
-            <ul className='globe-list-cnt'>
-              
-              <li className='globe-list' style={{padding: '5px'}}>
-                
-                <div style={{height: 'auto', fontSize: 'unset', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', alignItems: 'flex-start'}}>
-                  <h4 style={{color: '#fff', textAlign: 'left'}}>
-                  Unveil Your Products to a Global Audience with Shopiva
-                  </h4>
-                  <small style={{color: '#fff', fontSize: 'small', textAlign: 'left'}}>Whether you’re launching the latest model or showcasing your luxury products, Shopiva helps your product unveiling company connect with millions of merchants globally. Reach potential partners and buyers in the automotive industry, and grow your brand with ease through a powerful, user-friendly platform.</small>
-                </div>  
-              </li>
-
-              <li className='globe-list' style={{padding: '5px'}}>
-                <div style={{height: 'auto', fontSize: 'unset', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', alignItems: 'flex-start'}}>
-                  <h4 style={{color: '#fff', textAlign: 'left'}}>
-                  Scale Your Factory’s Production Worldwide via Shopiva
-                  </h4>
-                  <small style={{color: '#fff', fontSize: 'small', textAlign: 'left'}}>For factories looking to expand their reach, Shopiva offers a streamlined platform to connect with global distributors, retailers, and partners. With Shopiva, your factory can showcase its products to a diverse audience, unlocking new growth opportunities and scaling production to meet international demand.</small>
-                </div>  
-              </li>
-
-              <li className='globe-list' style={{padding: '5px'}}>
-                <div style={{height: 'auto', fontSize: 'unset', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', alignItems: 'flex-start'}}>
-                  <h4 style={{color: '#fff', textAlign: 'left'}}>
-                  Transform Your Brand’s Reach with Shopiva
-                  </h4>
-                  <small style={{color: '#fff', fontSize: 'small', textAlign: 'left'}}>Elevate your Brand by connecting with millions of sellers and retailers across the world. Whether you specialize in boutique fashion or mass-produced apparel, Shopiva’s global marketplace allows your brand to stand out and attract customers, wholesalers, and merchants from all corners of the world.</small>
-                </div>  
-              </li>
-            </ul>
-          </section>
-
-          
-        </div>
 
 
         <div className='crypto-bg' style={{
@@ -273,7 +277,7 @@ export default function Dashboard() {
              
           </section>
 
-          <div style={{padding: '50px', display: 'flex', justifyContent: 'space-between',}}>
+          <div id='conclude-cnt' style={{display: 'flex', justifyContent: 'space-between',}}>
             <div className='conclude-lg-img' style={{height: '500px', width: '100%'}}>
 
               <div>

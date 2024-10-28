@@ -3,7 +3,9 @@
     #section{
         padding: 20px;
     }
-    
+    #conclude-cnt{
+        padding: 20px;
+    }
     #header-logoo-cnt{
         margin-left: 8px;
     }
@@ -317,6 +319,7 @@
         display: flex;
         justify-content: flex-end;
         align-items: flex-end;
+        flex-direction: column;
         padding: 10px;
     }
     
@@ -568,11 +571,11 @@
 
     .globe-list-cnt{
         overflow: hidden;
-        flex-direction: column;
+        flex-direction: row;
         padding: 0;
     }
     .globe-list-cnt .globe-list{
-        margin: 10px 0px;
+        margin: 0px 10px;
         width: 100%;
     }
 
