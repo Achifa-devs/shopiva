@@ -31,9 +31,17 @@ export default function App({session,children}) {
            {
             role === 0
             ? 
-            <Customer children={children}/>
+            <Customer>
+              {
+                children
+              }
+            </Customer>
             :
-            <Entrepreneur children={children}/>
+            <Entrepreneur>
+              {
+                children
+              }
+            </Entrepreneur>
            }
           
           </Provider>

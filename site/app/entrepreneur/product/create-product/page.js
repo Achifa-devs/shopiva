@@ -13,7 +13,7 @@ import './styles/xxl.css'
 
 import CategoryFloater from '../../../../components/floaters.js/Category'
 
-export default function page() {
+export default function CreateProduct() {
 
   let [product_id, set_product_id] = useState('');
   let [shop_id, set_shop_id] = useState('');

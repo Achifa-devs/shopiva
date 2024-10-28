@@ -330,7 +330,7 @@ export default function Pricing() {
                         <img src={summary_1_svg.src} alt="" />
                     </div>
 
-                    <h5 style={{textAlign: 'left', paddingLeft: '5px', width: '100%'}}>World's best checkout</h5>
+                    <h5 style={{textAlign: 'left', paddingLeft: '5px', width: '100%'}}>World&apos;s best checkout</h5>
                     <div style={{marginBottom: '10px'}}>Shopiva checkout converts 15% better on average than other commerce platforms.</div>
                     
                 </li>
