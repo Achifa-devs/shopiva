@@ -81,7 +81,7 @@ export default function Dashboard() {
         
         <div className='globe-sale-cnt'>
           <section id='section' style={{display: 'flex', justifyContent: 'space-between', width: '100%', flexDirection: 'row', alignItems: 'flex-end', fontWeight: '100'}}>
-            <h2 style={{fontSize: '9vh', fontWeight: 'lighter', zIndex: '2000', color: '#fff'}}>
+            <h2 id='headline' style={{ fontWeight: 'lighter', zIndex: '2000', color: '#fff'}}>
             Sell here, there, 
             <br />
             and everywhere
@@ -130,7 +130,7 @@ export default function Dashboard() {
           </section>
 {/* 
           <div style={{height: 'auto', fontSize: 'unset', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', alignItems: 'flex-start'}}>
-            <h2 style={{color: '#fff'}}>
+            <h2 id='headline' style={{color: '#fff'}}>
             Expand your business potential by connecting with millions of merchants worldwide through Shopiva. 
             </h2>
             <small style={{color: '#fff', fontSize: 'small'}}>Shopiva enables sellers of all sizes to reach a global audience of millions of merchants. The platform offers user-friendly tools that allow entrepreneurs to easily manage their stores and connect with buyers worldwide. By using Shopiva, sellers can expand their business horizons, gain international exposure, and scale up effectively in the competitive e-commerce space.</small>
@@ -145,7 +145,7 @@ export default function Dashboard() {
 
         <div>
           <section id='section' style={{display: 'flex', justifyContent: 'space-between', width: '100%', flexDirection: 'row', alignItems: 'flex-end', fontWeight: '100'}}>
-            <h2 style={{fontSize: '9vh', fontWeight: 'lighter', zIndex: '2000', color: '#fff'}}>
+            <h2 id='headline' style={{ fontWeight: 'lighter', zIndex: '2000', color: '#fff'}}>
             For everyone from
             <br />
             entrepreneurs to enterprise
@@ -216,7 +216,7 @@ export default function Dashboard() {
         }}>
 
           <section className='crypto-cnt'>
-            <h2 style={{fontSize: '9vh', fontWeight: 'lighter', zIndex: '2000', color: '#fff', }}>
+            <h2 id='headline' style={{ fontWeight: 'lighter', zIndex: '2000', color: '#fff', }}>
             Get Payments In
             <br />
             Any Crypto Currency
@@ -229,7 +229,7 @@ export default function Dashboard() {
             <ul className='crypto-list-cnt' style={{background: 'transparent', padding: '0'}}>
               <li id='crypto-list' style={{  alignItems: 'flex-start', textAlign: 'left', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', color: '#fff'}}>
                 <div style={{pointerEvents: 'none'}}>
-                  <h2 style={{color: '#fff'}}>Ensure Global Accessibility</h2>
+                  <h2 id='headline' style={{color: '#fff'}}>Ensure Global Accessibility</h2>
                 </div>
                 <div style={{pointerEvents: 'none'}}>
                   <p style={{color: '#fff'}}>Accepting payments in cryptocurrency allows businesses to reach a broader, global audience. Since cryptocurrencies operate without the need for traditional banking systems, customers from regions with limited banking access can easily participate in transactions, increasing market reach.</p>
@@ -245,7 +245,7 @@ export default function Dashboard() {
 
               <li id='crypto-list' style={{  alignItems: 'flex-start', textAlign: 'left', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', color: '#fff'}}>
                 <div style={{pointerEvents: 'none'}}>
-                  <h2 style={{color: '#fff'}}>Reduced Transaction Fees</h2>
+                  <h2 id='headline' style={{color: '#fff'}}>Reduced Transaction Fees</h2>
                 </div>
                 <div style={{pointerEvents: 'none'}}>
                   <p style={{color: '#fff'}}>Cryptocurrencies often offer lower transaction fees compared to traditional payment methods, especially for cross-border transactions. This makes them a cost-effective option for businesses dealing with international customers or handling high-volume transactions.</p>
@@ -267,7 +267,7 @@ export default function Dashboard() {
 
         <div>
           <section id='section'  style={{display: 'flex', justifyContent: 'space-between', width: '100%', flexDirection: 'row', alignItems: 'flex-end', fontWeight: '100'}}>
-              <h2 style={{fontSize: '9vh', fontWeight: 'lighter', zIndex: '2000', color: '#fff'}}>
+              <h2 id='headline' style={{ fontWeight: 'lighter', zIndex: '2000', color: '#fff'}}>
               There Is No Better
               <br />
               Place To 
@@ -281,7 +281,7 @@ export default function Dashboard() {
             <div className='conclude-lg-img' style={{height: '500px', width: '100%'}}>
 
               <div>
-                <h2 style={{color: '#fff'}}>Get a stunning store that’s made to sell—whether you build from scratch or start fast with pre-built themes.</h2>
+                <h2 id='headline' style={{color: '#fff'}}>Get a stunning store that’s made to sell—whether you build from scratch or start fast with pre-built themes.</h2>
 
                 <br />
 
@@ -296,7 +296,7 @@ export default function Dashboard() {
 
         <div>
           <section id='section' style={{display: 'flex', justifyContent: 'center', width: '100%', flexDirection: 'row', alignItems: 'flex-end', fontWeight: '100'}}>
-            <h2 style={{fontSize: '9vh', fontWeight: 'lighter', zIndex: '2000', color: '#fff'}}>
+            <h2 id='headline' style={{ fontWeight: 'lighter', zIndex: '2000', color: '#fff'}}>
               It&apos;s easy to start selling
             </h2>
           </section>

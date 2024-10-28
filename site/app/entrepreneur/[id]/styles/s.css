@@ -1,5 +1,7 @@
 @media screen and (max-width: 480px) {
-
+    #headline{
+        font-size: 5vh;
+    }
     #section{
         padding: 20px;
     }

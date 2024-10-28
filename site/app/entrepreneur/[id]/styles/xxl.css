@@ -1,4 +1,7 @@
 @media screen and (min-width: 1200px) {
+    #headline{
+        font-size: 9vh;
+    }
     #section{
         padding: 20px 55px;
     }
