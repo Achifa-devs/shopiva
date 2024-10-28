@@ -255,18 +255,23 @@ export default function EntrepreneurFreeLayout({children}) {
             </ul>
           </div>
 
+
+          <div>
+            <h6>Others</h6>
+            <ul>
+              <li  onClick={e=> window.location.href='/entrepreneur/ng/terms-of-use'}>Terms Of Service</li>
+              <li  onClick={e=> window.location.href='/entrepreneur/ng/privacy-policy'}>Privacy Policy</li>
+              <li  onClick={e=> window.location.href='/entrepreneur/ng/sitemap'}>Sitemap</li>
+            </ul>
+          </div>
+
         </section>
 
         <hr />
 
         <section className='copywright'>
           <div style={{height: '100%'}}>
-            <ul>
-             
-              <li  onClick={e=> window.location.href='/entrepreneur/ng/terms-of-use'}>Terms Of Service</li>
-              <li  onClick={e=> window.location.href='/entrepreneur/ng/privacy-policy'}>Privacy Policy</li>
-              <li  onClick={e=> window.location.href='/entrepreneur/ng/sitemap'}>Sitemap</li>
-            </ul>
+            
           </div>
 
 
