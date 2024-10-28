@@ -270,7 +270,7 @@ export default function EntrepreneurFreeLayout({children}) {
         <hr />
 
         <section className='copywright'>
-          <div style={{height: '100%'}}>
+          <div style={{height: '50px', alignItems: 'center'}}>
             <small>Shopiva Copywright 2024</small>
           </div>
 
