@@ -116,13 +116,13 @@ export default function EntrepreneurFreeLayout({children}) {
           ?
           <div className="dashboard-head" style={{position: 'absolute', top: '0', left: '0'}}>
 
-          <video style={{height: '100vh', width: '100%', objectFit: 'cover', zIndex: '1000'}} src={'/VideoMerge_13-10-2024_224733.mp4'} 
+          {/* <video style={{height: '100vh', width: '100%', objectFit: 'cover', zIndex: '1000'}} src={'/VideoMerge_13-10-2024_224733.mp4'} 
           autoPlay
           loop
           muted
           playsInline >
               <source src={'/VideoMerge_13-10-2024_224733.mp4'} autoPlay type="video/mp4" />
-          </video>
+          </video> */}
 
           <div style={{zIndex: '500', position: 'absolute', top: '100px', left: '30px', color: '#fff', height: 'auto', maxWidth: '50%', padding: '10px', borderRadius: '10px'}}>
 
