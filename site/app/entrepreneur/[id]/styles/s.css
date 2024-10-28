@@ -252,11 +252,13 @@
         padding: 10px 10px;
         align-items: center;
         flex-wrap: wrap;
+        flex-direction: column;
         justify-content: space-between;
     }
+
     
     .dashboard-summary ul li{
-          height: 400px;
+          height: auto;
           background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
           backdrop-filter: blur(10px); /* Frosted glass effect */
           border-radius: 15px; /* Rounded corners */
@@ -269,7 +271,7 @@
           font-size: 1.5rem;
           font-family: Arial, sans-serif;
           text-align: center;
-        width: calc(50% - 5px);
+        width: calc(100% - 0px);
     
     
     }
