@@ -281,7 +281,7 @@ export default function Dashboard() {
             <div className='conclude-lg-img' style={{height: '500px', width: '100%'}}>
 
               <div>
-                <h5 id='headline' style={{color: '#fff'}}>Get a stunning store that&apos;s made to sell—whether you build from scratch or start fast with pre-built themes.</h5>
+                <h4 style={{color: '#fff'}}>Get a stunning store that&apos;s made to sell—whether you build from scratch or start fast with pre-built themes.</h4>
 
                 <br />
 
