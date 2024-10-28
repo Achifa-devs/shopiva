@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react'
 import '../../app/entrepreneur/[id]/global.css'
 import '../../app/entrepreneur/[id]/styles/xxl.css'
 
+import menu_img from '../../svgs/menu-alt-2-svgrepo-com.svg'
 import logo_img from '../../images/462832894_122104672550563288_120709183929923776_n.jpg'
 import Solution from '../../components/floaters.js/Solution'
 import Resources from '../../components/floaters.js/Resources'
@@ -54,7 +55,10 @@ export default function EntrepreneurFreeLayout({children}) {
 
     return () => clearInterval(intervalId); // Cleanup on component unmount
   }, [list.length]);
-
+  let [screenWidth, setScreenWidth] = useState(0)
+  useEffect(() => {
+    setScreenWidth(window.innerWidth)
+  }, [])
 
   useEffect(() => {
     document.body.style.background='#000'
@@ -77,24 +81,32 @@ export default function EntrepreneurFreeLayout({children}) {
             <h2>Shopiva</h2>
           </div>
            */}
-          <section>
-              <ul>
-                  <li onClick={e => {
-                    set_resources_menu(false)
-                    set_solution_menu(!solution_menu)
-                  }}>Solutions</li>
-                  
-                  <li onClick={e => {
-                    set_solution_menu(false)
-                    set_resources_menu(!resources_menu)
-                  }}>Resources</li>
+          {
+            screenWidth > 480
+            ?
+            <>
+              <section>
+                <ul>
+                    <li onClick={e => {
+                      set_resources_menu(false)
+                      set_solution_menu(!solution_menu)
+                    }}>Solutions</li>
+                    
+                    <li onClick={e => {
+                      set_solution_menu(false)
+                      set_resources_menu(!resources_menu)
+                    }}>Resources</li>
 
-                  <li onClick={e => {
-                    window.open('/entrepreneur/ng/pricing')
-                  }}>Pricing</li>
-                 
-              </ul>
-          </section>
+                    <li onClick={e => {
+                      window.open('/entrepreneur/ng/pricing')
+                    }}>Pricing</li>
+                  
+                </ul>
+              </section>
+            </>
+            :
+            ''
+          }
           <section>
               <ul>
                  {
@@ -109,6 +121,18 @@ export default function EntrepreneurFreeLayout({children}) {
                   }}>Start Free Trial</li>
               </ul>
           </section>
+
+          {
+            screenWidth < 480
+            ?
+            <>
+              <section style={{marginRight: '10px'}}>
+                <img src={menu_img.src} style={{height: '35px', width: '35px', borderRadius: '10px'}} alt="" />
+              </section>
+            </>
+            :
+            ''
+          }
         </div>
 
         {
