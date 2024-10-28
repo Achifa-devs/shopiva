@@ -150,7 +150,7 @@ export default function EntrepreneurFreeLayout({children}) {
 
           <div style={{zIndex: '500', position: 'absolute', top: '100px', left: '30px', color: '#fff', height: 'auto', maxWidth: '50%', padding: '10px', borderRadius: '10px'}}>
 
-            <h2 style={{fontSize: '11vh', fontWeight: 'lighter', zIndex: '2000', opacity: '1'}}>{list[index]}</h2>
+            <h4 id='interval-text' style={{fontWeight: 'lighter', zIndex: '2000', opacity: '1'}}>{list[index]}</h4>
 
           </div>
 

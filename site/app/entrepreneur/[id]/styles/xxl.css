@@ -2,6 +2,9 @@
     #headline{
         font-size: 9vh;
     }
+    #interval-text{
+        font-size: 5vh;
+    }
     #section{
         padding: 20px 55px;
     }
