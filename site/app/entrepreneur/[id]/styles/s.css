@@ -271,7 +271,7 @@
     .dashboard-summary ul{
         list-style-type: none;
         display: flex;
-        padding: 10px 10px;
+        padding: 10px 1px;
         align-items: center;
         flex-wrap: wrap;
         flex-direction: row;
@@ -281,7 +281,7 @@
 
     
     .dashboard-summary ul li{
-          height: 400px;
+          height: 450px;
           background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
           backdrop-filter: blur(10px); /* Frosted glass effect */
           border-radius: 15px; /* Rounded corners */
@@ -295,7 +295,7 @@
           font-family: Arial, sans-serif;
           text-align: center;
           margin-bottom: 10px;
-        width: calc(48% - 0px);
+        width: calc(49% - 0px);
     
     
     }
@@ -591,7 +591,7 @@
     #crypto-list{
         width: calc(100% - 0px);
         padding: 5px 5px;
-        height: 280px;
+        height: auto;
         margin: 10px 0px;
 
 
