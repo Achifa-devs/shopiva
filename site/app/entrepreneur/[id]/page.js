@@ -23,7 +23,7 @@ export default function Dashboard() {
   return (
     <>
 
-      <div className="dashboard-summary" style={{position: 'relative', zIndex: '1000', height: 'auto', background: '#000'}}>
+      <div className="dashboard-summary" style={{position: 'relative', zIndex: '1000', height: 'auto', background: '#000', borderRadius: '10px 10px 0px 0px'}}>
 
         <ul>
           <li style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-between', aligItems: 'flex-start', paddingTop: '10px'}}>
@@ -77,7 +77,7 @@ export default function Dashboard() {
 
       </div>
 
-      <div className="dashboard-body">
+      <div className="dashboard-body" style={{background: '#000', borderRadius: '0px'}}>
         
         <div className='globe-sale-cnt'>
           <section id='section' style={{display: 'flex', justifyContent: 'space-between', width: '100%', flexDirection: 'row', alignItems: 'flex-end', fontWeight: '100'}}>
