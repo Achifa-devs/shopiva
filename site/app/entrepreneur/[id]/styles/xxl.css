@@ -575,7 +575,10 @@
         padding: 20px 20px;
     }
 
-    
+    .conclude-list{
+        font-size: 8vh; 
+    }
+
     
 
     footer{

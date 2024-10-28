@@ -93,7 +93,7 @@ export default function Dashboard() {
           </section>
 
 
-          <section id='globe-section' style={{background: 'transparent'}}>
+          <section id='globe-section' style={{background: 'transparent', padding: '0'}}>
            
             <ul style={{background: 'transparent'}} className='globe-list-cnt'>
               
@@ -103,14 +103,14 @@ export default function Dashboard() {
                   <h4 style={{color: '#fff', textAlign: 'left'}}>
                   Unveil Your Products to a Global Audience with Shopiva
                   </h4>
-                  <small style={{color: '#fff', fontSize: 'small', textAlign: 'left'}}>Whether you’re launching the latest model or showcasing your luxury products, Shopiva helps your product unveiling company connect with millions of merchants globally. Reach potential partners and buyers in the automotive industry, and grow your brand with ease through a powerful, user-friendly platform.</small>
+                  <small style={{color: '#fff', fontSize: 'small', textAlign: 'left'}}>Whether you&apos;re launching the latest model or showcasing your luxury products, Shopiva helps your product unveiling company connect with millions of merchants globally. Reach potential partners and buyers in the automotive industry, and grow your brand with ease through a powerful, user-friendly platform.</small>
                 </div>  
               </li>
 
               <li className='globe-list' style={{padding: '5px'}}>
                 <div style={{height: 'auto', fontSize: 'unset', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', alignItems: 'flex-start'}}>
                   <h4 style={{color: '#fff', textAlign: 'left'}}>
-                  Scale Your Factory’s Production Worldwide via Shopiva
+                  Scale Your Factory&apos;s Production Worldwide via Shopiva
                   </h4>
                   <small style={{color: '#fff', fontSize: 'small', textAlign: 'left'}}>For factories looking to expand their reach, Shopiva offers a streamlined platform to connect with global distributors, retailers, and partners. With Shopiva, your factory can showcase its products to a diverse audience, unlocking new growth opportunities and scaling production to meet international demand.</small>
                 </div>  
@@ -119,9 +119,9 @@ export default function Dashboard() {
               <li className='globe-list' style={{padding: '5px'}}>
                 <div style={{height: 'auto', fontSize: 'unset', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', alignItems: 'flex-start'}}>
                   <h4 style={{color: '#fff', textAlign: 'left'}}>
-                  Transform Your Brand’s Reach with Shopiva
+                  Transform Your Brand&apos;s Reach with Shopiva
                   </h4>
-                  <small style={{color: '#fff', fontSize: 'small', textAlign: 'left'}}>Elevate your Brand by connecting with millions of sellers and retailers across the world. Whether you specialize in boutique fashion or mass-produced apparel, Shopiva’s global marketplace allows your brand to stand out and attract customers, wholesalers, and merchants from all corners of the world.</small>
+                  <small style={{color: '#fff', fontSize: 'small', textAlign: 'left'}}>Elevate your Brand by connecting with millions of sellers and retailers across the world. Whether you specialize in boutique fashion or mass-produced apparel, Shopiva&apos;s global marketplace allows your brand to stand out and attract customers, wholesalers, and merchants from all corners of the world.</small>
                 </div>  
               </li>
             </ul>
@@ -281,12 +281,12 @@ export default function Dashboard() {
             <div className='conclude-lg-img' style={{height: '500px', width: '100%'}}>
 
               <div>
-                <h5 id='headline' style={{color: '#fff'}}>Get a stunning store that’s made to sell—whether you build from scratch or start fast with pre-built themes.</h5>
+                <h5 id='headline' style={{color: '#fff'}}>Get a stunning store that&apos;s made to sell—whether you build from scratch or start fast with pre-built themes.</h5>
 
                 <br />
 
                 <small style={{color: '#fff'}}>
-                Create a visually captivating and professional online store that’s optimized for sales, whether you’re building from scratch or using pre-built themes for a quick start. Our platform offers customizable templates that suit your brand’s unique style, ensuring your store not only looks great but is also designed to convert visitors into customers. With flexible options and seamless functionality, you can launch your store quickly while maintaining full control over its appearance and performance.
+                Create a visually captivating and professional online store that&apos;s optimized for sales, whether you&apos;re building from scratch or using pre-built themes for a quick start. Our platform offers customizable templates that suit your brand&apos;s unique style, ensuring your store not only looks great but is also designed to convert visitors into customers. With flexible options and seamless functionality, you can launch your store quickly while maintaining full control over its appearance and performance.
                 </small>
               </div>
 
@@ -306,9 +306,9 @@ export default function Dashboard() {
             <div style={{height: '100%', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'left'}}>
 
               <ol>
-                <li onMouseOver={e=>handle_set_up('first')} style={{fontSize: '8vh', cursor: 'pointer', marginBottom: '20px', color: '#fff', fontWeight: '100', borderBottom: '1px solid #fff', padding: '5px 0px'}}>Add your first product</li>
-                <li onMouseOver={e=>handle_set_up('second')} style={{fontSize: '8vh', cursor: 'pointer', marginBottom: '20px', color: '#fff', fontWeight: '100', borderBottom: '1px solid #fff', padding: '5px 0px'}}>Customize your store</li>
-                <li onMouseOver={e=>handle_set_up('third')} style={{fontSize: '8vh', cursor: 'pointer', marginBottom: '20px', color: '#fff', fontWeight: '100', borderBottom: '1px solid #fff', padding: '5px 0px'}}>Set up payments</li>
+                <li className='conclude-list' onMouseOver={e=>handle_set_up('first')} style={{cursor: 'pointer', marginBottom: '20px', color: '#fff', fontWeight: '100', borderBottom: '1px solid #fff', padding: '5px 0px'}}>Add your first product</li>
+                <li className='conclude-list' onMouseOver={e=>handle_set_up('second')} style={{cursor: 'pointer', marginBottom: '20px', color: '#fff', fontWeight: '100', borderBottom: '1px solid #fff', padding: '5px 0px'}}>Customize your store</li>
+                <li className='conclude-list' onMouseOver={e=>handle_set_up('third')} style={{cursor: 'pointer', marginBottom: '20px', color: '#fff', fontWeight: '100', borderBottom: '1px solid #fff', padding: '5px 0px'}}>Set up payments</li>
 
                 <br />
                 <br />

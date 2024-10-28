@@ -580,7 +580,7 @@
     }
     .globe-list-cnt .globe-list{
         margin: 0px 10px;
-        width: 100%;
+        width: 80%;
     }
 
     .crypto-list-cnt{
@@ -597,6 +597,9 @@
 
     }
 
+    .conclude-list{
+        font-size: 4vh; 
+    }
 
 
 
