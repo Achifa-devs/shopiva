@@ -17,7 +17,7 @@ export default function UserProfile() {
    
     useEffect(() => {
         // if (entrepreneur_id !== null) {
-            fetch(`http://localhost:3456/entrepreneur/user-profile`)
+            fetch(`https://shopiva-server.onrender.com/entrepreneur/user-profile`)
             .then(async(result) => {
                 let response = await result.json()
                 console.log(response)
@@ -110,7 +110,7 @@ function Genenral({profile}) {
 
     useEffect(() => {
         if (entrepreneur_id !== null) {
-            fetch(`http://localhost:3456/entrepreneur/profile?entrepreneur_id=${entrepreneur_id}`)
+            fetch(`https://shopiva-server.onrender.com/entrepreneur/profile?entrepreneur_id=${entrepreneur_id}`)
             .then(async(result) => {
                 let response = await result.json()
                 if(response.bool){
@@ -127,7 +127,7 @@ function Genenral({profile}) {
 
     useEffect(() => {
         // if (entrepreneur_id !== null) {
-            fetch(`http://localhost:3456/entrepreneur/lang`)
+            fetch(`https://shopiva-server.onrender.com/entrepreneur/lang`)
             .then(async(result) => {
                 let response = await result.json()
                 if(response.bool){
@@ -144,7 +144,7 @@ function Genenral({profile}) {
 
     useEffect(() => {
         // if (entrepreneur_id !== null) {
-            fetch(`http://localhost:3456/entrepreneur/timezones`)
+            fetch(`https://shopiva-server.onrender.com/entrepreneur/timezones`)
             .then(async(result) => {
                 let response = await result.json()
                 if(response.bool){

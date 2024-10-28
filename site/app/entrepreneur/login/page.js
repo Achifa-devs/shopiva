@@ -103,7 +103,7 @@ export default function Signup() {
                 entrepreneur_overlay_setup(true, 'One Moment Please...')
                
                 e.target.disabled = true;
-                fetch('http://localhost:3456/entrepreneur/login', {
+                fetch('https://shopiva-server.onrender.com/entrepreneur/login', {
                     method: 'post',
                     headers: {
                         "Content-Type": "Application/json"
@@ -245,7 +245,7 @@ export default function Signup() {
         // console.log(session)
         if(session.status==='authenticated'){
 
-            fetch('http://localhost:3456/entrepreneur/login', {
+            fetch('https://shopiva-server.onrender.com/entrepreneur/login', {
                 method: 'post',
                 headers: {
                     "Content-Type": "Application/json"

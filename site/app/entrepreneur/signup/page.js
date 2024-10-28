@@ -133,7 +133,7 @@ export default function Signup() {
                
                 // if (pwd === confirm_pwd) {
                     // e.target.disabled = true;
-                    fetch('http://localhost:3456/entrepreneur/registration', {
+                    fetch('https://shopiva-server.onrender.com/entrepreneur/registration', {
                         method: 'post',
                         headers: {
                             "Content-Type": "Application/json"
@@ -294,7 +294,7 @@ export default function Signup() {
         // console.log(session)
         if(session.status==='authenticated'){
 
-            fetch('http://localhost:3456/entrepreneur/registration', {
+            fetch('https://shopiva-server.onrender.com/entrepreneur/registration', {
                 method: 'post',
                 headers: {
                     "Content-Type": "Application/json"
