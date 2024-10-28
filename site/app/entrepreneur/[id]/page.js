@@ -23,7 +23,7 @@ export default function Dashboard() {
   return (
     <>
 
-      <div className="dashboard-summary" style={{position: 'relative', zIndex: '1000', height: 'auto', padding: '40px', background: '#000'}}>
+      <div className="dashboard-summary" style={{position: 'relative', zIndex: '1000', height: 'auto', background: '#000'}}>
 
         <ul>
           <li style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-between', aligItems: 'flex-start', paddingTop: '10px'}}>
@@ -79,7 +79,7 @@ export default function Dashboard() {
 
       <div className="dashboard-body">
         <div>
-          <section style={{display: 'flex', justifyContent: 'space-between', width: '100%', flexDirection: 'row', alignItems: 'flex-end', padding: '20px 55px', fontWeight: '100'}}>
+          <section style={{display: 'flex', justifyContent: 'space-between', width: '100%', flexDirection: 'row', alignItems: 'flex-end', fontWeight: '100'}}>
             <h2 style={{fontSize: '9vh', fontWeight: 'lighter', zIndex: '2000', color: '#fff'}}>
             For everyone from
             <br />
@@ -89,7 +89,7 @@ export default function Dashboard() {
           </section>
           <section>
             <ul>
-              <li style={{width: 'calc(33% - 20px)', padding: '10px'}}>
+              <li style={{padding: '10px'}}>
                 <div>
                   <img src={shop_img1.src} style={{height: '160px', width: '100%', borderRadius: '10px'}} alt="" />
 
@@ -103,7 +103,7 @@ export default function Dashboard() {
                   </div>
                 </div>
               </li>
-              <li style={{width: 'calc(33% - 20px)', padding: '10px'}}>
+              <li style={{padding: '10px'}}>
                 <div>
                   <img src={shop_img2.src} style={{height: '160px', width: '100%', borderRadius: '10px'}} alt="" />
 
@@ -117,7 +117,7 @@ export default function Dashboard() {
                   </div>
                 </div>
               </li>
-              <li style={{width: 'calc(33% - 20px)', padding: '10px'}}>
+              <li style={{padding: '10px'}}>
                 <div>
                   <img src={shop_img3.src} style={{height: '160px', width: '100%', borderRadius: '10px'}} alt="" />
 
@@ -169,9 +169,9 @@ export default function Dashboard() {
               
               </div>
             </ul>
-            <ul>
+            <ul className='globe-list-cnt'>
               
-              <li className='globe-list' style={{width: 'calc(33% - 20px)', padding: '5px'}}>
+              <li className='globe-list' style={{padding: '5px'}}>
                 
                 <div style={{height: 'auto', fontSize: 'unset', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', alignItems: 'flex-start'}}>
                   <h4 style={{color: '#fff', textAlign: 'left'}}>
@@ -181,7 +181,7 @@ export default function Dashboard() {
                 </div>  
               </li>
 
-              <li className='globe-list' style={{width: 'calc(33% - 20px)', padding: '5px'}}>
+              <li className='globe-list' style={{padding: '5px'}}>
                 <div style={{height: 'auto', fontSize: 'unset', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', alignItems: 'flex-start'}}>
                   <h4 style={{color: '#fff', textAlign: 'left'}}>
                   Scale Your Factory’s Production Worldwide via Shopiva
@@ -190,7 +190,7 @@ export default function Dashboard() {
                 </div>  
               </li>
 
-              <li className='globe-list' style={{width: 'calc(33% - 20px)', padding: '5px'}}>
+              <li className='globe-list' style={{padding: '5px'}}>
                 <div style={{height: 'auto', fontSize: 'unset', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', alignItems: 'flex-start'}}>
                   <h4 style={{color: '#fff', textAlign: 'left'}}>
                   Transform Your Brand’s Reach with Shopiva
@@ -222,8 +222,8 @@ export default function Dashboard() {
             <br />
             <br />
 
-            <ul style={{background: 'transparent', padding: '0'}}>
-              <li style={{width: '46%', height: 'auto', padding: '20px 20px', alignItems: 'flex-start', textAlign: 'left', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', color: '#fff'}}>
+            <ul className='crypto-list-cnt' style={{background: 'transparent', padding: '0'}}>
+              <li id='crypto-list' style={{  alignItems: 'flex-start', textAlign: 'left', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', color: '#fff'}}>
                 <div style={{pointerEvents: 'none'}}>
                   <h2 style={{color: '#fff'}}>Ensure Global Accessibility</h2>
                 </div>
@@ -239,7 +239,7 @@ export default function Dashboard() {
                 </div>
               </li>
 
-              <li style={{width: '46%', height: 'auto', padding: '20px 20px', alignItems: 'flex-start', textAlign: 'left', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', color: '#fff'}}>
+              <li id='crypto-list' style={{  alignItems: 'flex-start', textAlign: 'left', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', color: '#fff'}}>
                 <div style={{pointerEvents: 'none'}}>
                   <h2 style={{color: '#fff'}}>Reduced Transaction Fees</h2>
                 </div>
