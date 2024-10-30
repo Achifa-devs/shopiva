@@ -823,7 +823,7 @@ export default function Pricing() {
 
             <br />
 
-            <small>Try Shopiva free, no credit card required. By entering your email, you agree to receive marketing emails from Shopiva.</small>
+            <small style={{textAlign: 'center'}}>Try Shopiva free, no credit card required. By entering your email, you agree to receive marketing emails from Shopiva.</small>
             
         </section>
         
