@@ -1,5 +1,6 @@
 "use client"
 import React, { useEffect } from 'react'
+import './styles/s.css'
 import './styles/xxl.css'
 
 import ui_svg from '../../../../svgs/complete-ok-accept-good-tick-svgrepo-com.svg'

@@ -5,9 +5,11 @@ import '../../app/entrepreneur/[id]/global.css'
 import '../../app/entrepreneur/[id]/styles/xxl.css'
 
 import menu_img from '../../svgs/menu-alt-2-svgrepo-com.svg'
+import close_img from '../../svgs/close-square-svgrepo-com.svg'
 import logo_img from '../../images/462832894_122104672550563288_120709183929923776_n.jpg'
 import Solution from '../../components/floaters.js/Solution'
 import Resources from '../../components/floaters.js/Resources'
+import MenuComp from '../../components/floaters.js/Menu'
 import { 
   usePathname 
 } from 'next/navigation'
@@ -16,7 +18,8 @@ import { useSelector } from 'react-redux'
 export default function EntrepreneurFreeLayout({children}) {
 
   let [count, set_count]  =useState(0);
-  let [logged_in, set_logged_in] = useState(false)
+  let [logged_in, set_logged_in] = useState(false);
+  let [menu_active, set_menu_active] = useState(false)
 
   let {
     entrepreneur_id
@@ -65,12 +68,36 @@ export default function EntrepreneurFreeLayout({children}) {
     document.body.querySelector('main').style.background='#000'
     // document.querySelector('header').style.height='70px'
   }, [])
+
+  
+  function handleMenu(){
+    if(solution_menu){
+      set_solution_menu(!solution_menu)
+
+    }else if(resources_menu){
+      set_resources_menu(!resources_menu)
+
+    }else{
+      set_menu_active(!menu_active);
+
+    }
+  }
+
+  function updateClickOpt(data) {
+    if(data === 'solutions'){
+      set_resources_menu(false)
+      set_solution_menu(!solution_menu)
+    }else{
+      set_solution_menu(false)
+      set_resources_menu(!resources_menu)
+    }
+  }
   return (
     <>
 
       
 
-      <header >
+      <header>
         <div className='header' style={{position: 'sticky', top: '0', left: '0', zIndex: '10000'}}>
           <section id='header-logoo-cnt' style={{flexDirection: 'row', display: 'flex', alignItems: 'flex-end'}}>
             <img src={logo_img.src} style={{ borderRadius: '10px'}} alt="" />
@@ -82,7 +109,7 @@ export default function EntrepreneurFreeLayout({children}) {
           </div>
            */}
           {
-            screenWidth > 480
+            screenWidth > 560
             ?
             <>
               <section>
@@ -126,8 +153,12 @@ export default function EntrepreneurFreeLayout({children}) {
             screenWidth < 480
             ?
             <>
-              <section style={{marginRight: '10px'}}>
-                <img src={menu_img.src} style={{height: '35px', width: '35px', borderRadius: '10px'}} alt="" />
+              <section style={{marginRight: '10px'}} onClick={e => {
+                handleMenu(e)
+              }}>
+                <img src={
+                  menu_active ? close_img.src : menu_img.src
+                } style={{height: '35px', width: '35px', borderRadius: '10px'}} alt="" />
               </section>
             </>
             :
@@ -183,6 +214,12 @@ export default function EntrepreneurFreeLayout({children}) {
         resources_menu
         &&
         <Resources />
+      }
+
+      {
+        menu_active
+        &&
+        <MenuComp logged_in={logged_in} updateClickOpt={updateClickOpt} />
       }
 
       <main style={{overflow: 'auto', height: 'auto', position: 'relative'}}>
