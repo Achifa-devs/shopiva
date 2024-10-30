@@ -341,6 +341,11 @@
         align-items: flex-start;
     }
 
+
+    .faq-svg{
+        height: 45px;
+        width: 45px;
+    }
   
 }
 

@@ -375,7 +375,11 @@
         justify-content: space-between;
         align-items: flex-start;
     }
-
+    
+    .faq-svg{
+        height: 25px;
+        width: 25px;
+    }
   
 }
 

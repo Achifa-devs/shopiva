@@ -510,10 +510,10 @@ export default function Pricing() {
                     <ul className='faq-sub-list'>
                         <li id='faq-sub-list-title'>
                         
-                            <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500'}}>
-                                <span style={{color: '#fff'}}>What is Shopiva and how does it work?</span>
+                            <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500', textAlign: 'left'}}>
+                                <span style={{color: '#fff', width: '90%'}}>What is Shopiva and how does it work?</span>
                                 <span>
-                                    <img src={plus_svg.src} style={{height: '45px', width: '45px'}} alt="" />
+                                    <img src={plus_svg.src} className='faq-svg' alt="" />
                                 </span>
                             </div>
                             <hr/>
@@ -524,10 +524,10 @@ export default function Pricing() {
                         </li>
                         <li id='faq-sub-list-title'>
                         
-                            <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500'}}>
-                                <span style={{color: '#fff'}}>How much does Shopiva cost?</span>
+                            <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500', textAlign: 'left'}}>
+                                <span style={{color: '#fff', width: '90%'}}>How much does Shopiva cost?</span>
                                 <span>
-                                    <img src={plus_svg.src} style={{height: '45px', width: '45px'}} alt="" />
+                                    <img src={plus_svg.src} className='faq-svg' alt="" />
                                 </span>
                             </div>
                             <hr/>
@@ -538,10 +538,10 @@ export default function Pricing() {
                         </li>
                         <li id='faq-sub-list-title'>
                         
-                            <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500'}}>
-                                <span style={{color: '#fff'}}>How long are your contracts?</span>
+                            <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500', textAlign: 'left'}}>
+                                <span style={{color: '#fff', width: '90%'}}>How long are your contracts?</span>
                                 <span>
-                                    <img src={plus_svg.src} style={{height: '45px', width: '45px'}} alt="" />
+                                    <img src={plus_svg.src} className='faq-svg' alt="" />
                                 </span>
                             </div>
                             <hr/>
@@ -552,10 +552,10 @@ export default function Pricing() {
                         </li>
                         <li id='faq-sub-list-title'>
                         
-                            <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500'}}>
-                                <span style={{color: '#fff'}}>Can I cancel my account at any time?</span>
+                            <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500', textAlign: 'left'}}>
+                                <span style={{color: '#fff', width: '90%'}}>Can I cancel my account at any time?</span>
                                 <span>
-                                    <img src={plus_svg.src} style={{height: '45px', width: '45px'}} alt="" />
+                                    <img src={plus_svg.src} className='faq-svg' alt="" />
                                 </span>
                             </div>
                             <hr/>
@@ -566,10 +566,10 @@ export default function Pricing() {
                         </li>
                         <li id='faq-sub-list-title'>
                         
-                            <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500'}}>
-                                <span style={{color: '#fff'}}>Can I change my plan later on?</span>
+                            <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500', textAlign: 'left'}}>
+                                <span style={{color: '#fff', width: '90%'}}>Can I change my plan later on?</span>
                                 <span>
-                                    <img src={plus_svg.src} style={{height: '45px', width: '45px'}} alt="" />
+                                    <img src={plus_svg.src} className='faq-svg' alt="" />
                                 </span>
                             </div>
                             <hr/>
@@ -580,10 +580,10 @@ export default function Pricing() {
                         </li>
                         <li id='faq-sub-list-title'>
                         
-                            <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500'}}>
-                                <span style={{color: '#fff'}}>Do you offer any discounts?</span>
+                            <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500', textAlign: 'left'}}>
+                                <span style={{color: '#fff', width: '90%'}}>Do you offer any discounts?</span>
                                 <span>
-                                    <img src={plus_svg.src} style={{height: '45px', width: '45px'}} alt="" />
+                                    <img src={plus_svg.src} className='faq-svg' alt="" />
                                 </span>
                             </div>
                             <hr/>
@@ -594,10 +594,10 @@ export default function Pricing() {
                         </li>
                         <li id='faq-sub-list-title'>
                         
-                            <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500'}}>
-                                <span style={{color: '#fff'}}>In what countries can I use Shopiva?</span>
+                            <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500', textAlign: 'left'}}>
+                                <span style={{color: '#fff', width: '90%'}}>In what countries can I use Shopiva?</span>
                                 <span>
-                                    <img src={plus_svg.src} style={{height: '45px', width: '45px'}} alt="" />
+                                    <img src={plus_svg.src} className='faq-svg' alt="" />
                                 </span>
                             </div>
                             <hr/>
@@ -608,10 +608,10 @@ export default function Pricing() {
                         </li>
                         <li id='faq-sub-list-title'>
                         
-                            <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500'}}>
-                                <span style={{color: '#fff'}}>Is Shopiva PCI Compliant or PCI Certified?</span>
+                            <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500', textAlign: 'left'}}>
+                                <span style={{color: '#fff', width: '90%'}}>Is Shopiva PCI Compliant or PCI Certified?</span>
                                 <span>
-                                    <img src={plus_svg.src} style={{height: '45px', width: '45px'}} alt="" />
+                                    <img src={plus_svg.src} className='faq-svg' alt="" />
                                 </span>
                             </div>
                             <hr/>
@@ -630,10 +630,10 @@ export default function Pricing() {
 
                         <li id='faq-sub-list-title'>
                         
-                            <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500'}}>
-                                <span style={{color: '#fff'}}>Are there third-party transaction fees?</span>
+                            <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500', textAlign: 'left'}}>
+                                <span style={{color: '#fff', width: '90%'}}>Are there third-party transaction fees?</span>
                                 <span>
-                                    <img src={plus_svg.src} style={{height: '45px', width: '45px'}} alt="" />
+                                    <img src={plus_svg.src} className='faq-svg' alt="" />
                                 </span>
                             </div>
                             <hr/>
@@ -644,10 +644,10 @@ export default function Pricing() {
                         </li>
                         <li id='faq-sub-list-title'>
                         
-                            <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500'}}>
-                                <span style={{color: '#fff'}}>What is a third-party payment provider?</span>
+                            <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500', textAlign: 'left'}}>
+                                <span style={{color: '#fff', width: '90%'}}>What is a third-party payment provider?</span>
                                 <span>
-                                    <img src={plus_svg.src} style={{height: '45px', width: '45px'}} alt="" />
+                                    <img src={plus_svg.src} className='faq-svg' alt="" />
                                 </span>
                             </div>
                             <hr/>
@@ -658,10 +658,10 @@ export default function Pricing() {
                         </li>
                         <li id='faq-sub-list-title'>
                         
-                            <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500'}}>
-                                <span style={{color: '#fff'}}>Are there any credit card fees?</span>
+                            <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500', textAlign: 'left'}}>
+                                <span style={{color: '#fff', width: '90%'}}>Are there any credit card fees?</span>
                                 <span>
-                                    <img src={plus_svg.src} style={{height: '45px', width: '45px'}} alt="" />
+                                    <img src={plus_svg.src} className='faq-svg' alt="" />
                                 </span>
                             </div>
                             <hr/>
@@ -681,10 +681,10 @@ export default function Pricing() {
                     
                         <li id='faq-sub-list-title'>
                         
-                            <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500'}}>
-                                <span style={{color: '#fff'}}>Is there a setup fee?</span>
+                            <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500', textAlign: 'left'}}>
+                                <span style={{color: '#fff', width: '90%'}}>Is there a setup fee?</span>
                                 <span>
-                                    <img src={plus_svg.src} style={{height: '45px', width: '45px'}} alt="" />
+                                    <img src={plus_svg.src} className='faq-svg' alt="" />
                                 </span>
                             </div>
                             <hr/>
@@ -695,10 +695,10 @@ export default function Pricing() {
                         </li>
                         <li id='faq-sub-list-title'>
                         
-                            <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500'}}>
-                                <span style={{color: '#fff'}}>I&apos;m looking to switch to Shopiva. How do I get my data over?</span>
+                            <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500', textAlign: 'left'}}>
+                                <span style={{color: '#fff', width: '90%'}}>I&apos;m looking to switch to Shopiva. How do I get my data over?</span>
                                 <span>
-                                    <img src={plus_svg.src} style={{height: '45px', width: '45px'}} alt="" />
+                                    <img src={plus_svg.src} className='faq-svg' alt="" />
                                 </span>
                             </div>
                             <hr/>
@@ -709,10 +709,10 @@ export default function Pricing() {
                         </li>
                         <li id='faq-sub-list-title'>
                         
-                            <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500'}}>
-                                <span style={{color: '#fff'}}>Can I use my own domain name with Shopiva?</span>
+                            <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500', textAlign: 'left'}}>
+                                <span style={{color: '#fff', width: '90%'}}>Can I use my own domain name with Shopiva?</span>
                                 <span>
-                                    <img src={plus_svg.src} style={{height: '45px', width: '45px'}} alt="" />
+                                    <img src={plus_svg.src} className='faq-svg' alt="" />
                                 </span>
                             </div>
                             <hr/>
@@ -723,10 +723,10 @@ export default function Pricing() {
                         </li>
                         <li id='faq-sub-list-title'>
                         
-                            <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500'}}>
-                                <span style={{color: '#fff'}}>Do I get free web hosting when I open an online store?</span>
+                            <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500', textAlign: 'left'}}>
+                                <span style={{color: '#fff', width: '90%'}}>Do I get free web hosting when I open an online store?</span>
                                 <span>
-                                    <img src={plus_svg.src} style={{height: '45px', width: '45px'}} alt="" />
+                                    <img src={plus_svg.src} className='faq-svg' alt="" />
                                 </span>
                             </div>
                             <hr/>
@@ -737,10 +737,10 @@ export default function Pricing() {
                         </li>
                         <li id='faq-sub-list-title'>
                         
-                            <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500'}}>
-                                <span style={{color: '#fff'}}>What are your bandwidth fees?</span>
+                            <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500', textAlign: 'left'}}>
+                                <span style={{color: '#fff', width: '90%'}}>What are your bandwidth fees?</span>
                                 <span>
-                                    <img src={plus_svg.src} style={{height: '45px', width: '45px'}} alt="" />
+                                    <img src={plus_svg.src} className='faq-svg' alt="" />
                                 </span>
                             </div>
                             <hr/>
@@ -759,10 +759,10 @@ export default function Pricing() {
                     <ul className='faq-sub-list'>
                         <li id='faq-sub-list-title'>
                         
-                            <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500'}}>
-                                <span style={{color: '#fff'}}>What is Shopiva POS?</span>
+                            <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500', textAlign: 'left'}}>
+                                <span style={{color: '#fff', width: '90%'}}>What is Shopiva POS?</span>
                                 <span>
-                                    <img src={plus_svg.src} style={{height: '45px', width: '45px'}} alt="" />
+                                    <img src={plus_svg.src} className='faq-svg' alt="" />
                                 </span>
                             </div>
                             <hr/>
@@ -773,10 +773,10 @@ export default function Pricing() {
                         </li>
                         <li id='faq-sub-list-title'>
                         
-                            <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500'}}>
-                                <span style={{color: '#fff'}}>What kinds of businesses use Shopiva POS?</span>
+                            <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500', textAlign: 'left'}}>
+                                <span style={{color: '#fff', width: '90%'}}>What kinds of businesses use Shopiva POS?</span>
                                 <span>
-                                    <img src={plus_svg.src} style={{height: '45px', width: '45px'}} alt="" />
+                                    <img src={plus_svg.src} className='faq-svg' alt="" />
                                 </span>
                             </div>
                             <hr/>
@@ -787,10 +787,10 @@ export default function Pricing() {
                         </li>
                         <li id='faq-sub-list-title'>
                         
-                            <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500'}}>
-                                <span style={{color: '#fff'}}>Does my online store integrate with Shopiva POS?</span>
+                            <div style={{height: 'auto', width: '100%', fontSize: 'large', fontWeight: '500', textAlign: 'left'}}>
+                                <span style={{color: '#fff', width: '90%'}}>Does my online store integrate with Shopiva POS?</span>
                                 <span>
-                                    <img src={plus_svg.src} style={{height: '45px', width: '45px'}} alt="" />
+                                    <img src={plus_svg.src} className='faq-svg' alt="" />
                                 </span>
                             </div>
                             <hr/>
