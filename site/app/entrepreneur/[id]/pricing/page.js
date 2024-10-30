@@ -3,6 +3,14 @@ import React, { useEffect } from 'react'
 import './styles/s.css'
 import './styles/xxl.css'
 
+
+import '../styles/s.css'
+import '../styles/m.css'
+import '../styles/l.css'
+import '../styles/xl.css'
+import '../styles/xxl.css'
+
+
 import ui_svg from '../../../../svgs/complete-ok-accept-good-tick-svgrepo-com.svg'
 import plus_svg from '../../../../svgs/plus-circle-svgrepo-com.svg'
 
@@ -34,7 +42,7 @@ export default function Pricing() {
 
             <div className="input-cnt">
                 <input placeholder='Enter your email address' type="search" name="" id="" />
-                <button>Start free trial</button>
+                <button style={{textAlign: 'center'}}>Start free trial</button>
             </div>
 
             <br />

@@ -98,9 +98,11 @@ export default function EntrepreneurFreeLayout({children}) {
       
 
       <header>
-        <div className='header' style={{position: 'sticky', top: '0', left: '0', zIndex: '10000'}}>
-          <section id='header-logoo-cnt' style={{flexDirection: 'row', display: 'flex', alignItems: 'flex-end'}}>
+        <div className='header' style={{position: 'sticky', top: '0', left: '0', zIndex: '10000', display: 'flex', alignItems: 'center', justifyContent
+        : 'space-between'}}>
+          <section id='header-logoo-cnt' style={{flexDirection: 'row', width: 'fit-content', display: 'flex', alignItems: 'flex-end'}}>
             <img src={logo_img.src} style={{ borderRadius: '10px'}} alt="" />
+            &nbsp;
             <h3 style={{color: '#00926e'}}>Shopiva</h3>
           </section>
           {/* <div style={{flexDirection: 'row', display: 'flex', alignItems: 'flex-end'}}>
