@@ -268,7 +268,7 @@ export default function EntrepreneurFreeLayout({children}) {
             <ul>
               {/* <li onClick={e=> window.location.href='/entrepreneur/ng/merchant-support'} style={{fontSize: 'small'}}>Merchant Support</li> */}
               <li onClick={e=> window.location.href='/entrepreneur/ng/'} style={{fontSize: 'small'}}>Help Center</li>
-              <li onClick={e=> window.location.href='/entrepreneur/ng/help-center'} style={{fontSize: 'small'}}>Hire a Partner</li>
+              {/* <li onClick={e=> window.location.href='/entrepreneur/ng/help-center'} style={{fontSize: 'small'}}>Hire a Partner</li> */}
               <li onClick={e=> window.location.href='/entrepreneur/ng/shopiva-academy'} style={{fontSize: 'small'}}>Shopiva Academy</li>
               <li onClick={e=> window.location.href='/entrepreneur/ng/shopiva-community'} style={{fontSize: 'small'}}>Shopiva Community</li>
             </ul>
@@ -290,7 +290,7 @@ export default function EntrepreneurFreeLayout({children}) {
               <li onClick={e=> window.location.href='/entrepreneur/ng/shop'} style={{fontSize: 'small'}}>Shop</li>
               <li onClick={e=> window.location.href='/entrepreneur/ng/shopiva-plus'} style={{fontSize: 'small'}}>Shopiva Plus</li>
               
-              <li onClick={e=> window.location.href='/entrepreneur/ng/shopiva-for-enterprise'} style={{fontSize: 'small'}}>Shopiva for Enterprise</li>
+              {/* <li onClick={e=> window.location.href='/entrepreneur/ng/shopiva-for-enterprise'} style={{fontSize: 'small'}}>Shopiva for Enterprise</li> */}
             </ul>
           </div>
 
@@ -298,9 +298,9 @@ export default function EntrepreneurFreeLayout({children}) {
           <div>
             <h6>Others</h6>
             <ul>
-              <li  onClick={e=> window.location.href='/entrepreneur/ng/terms-of-use'}>Terms Of Service</li>
-              <li  onClick={e=> window.location.href='/entrepreneur/ng/privacy-policy'}>Privacy Policy</li>
-              <li  onClick={e=> window.location.href='/entrepreneur/ng/sitemap'}>Sitemap</li>
+              <li  onClick={e=> window.location.href='/entrepreneur/ng/terms-of-use'} style={{fontSize: 'small'}}>Terms Of Service</li>
+              <li  onClick={e=> window.location.href='/entrepreneur/ng/privacy-policy'} style={{fontSize: 'small'}}>Privacy Policy</li>
+              <li  onClick={e=> window.location.href='/entrepreneur/ng/sitemap'} style={{fontSize: 'small'}}>Sitemap</li>
             </ul>
           </div>
 
