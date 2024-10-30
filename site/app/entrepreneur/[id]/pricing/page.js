@@ -331,8 +331,6 @@ export default function Pricing() {
         <section>
             <h2>What every plan gets you</h2>
 
-            <br />
-
             <ul>
                 <li className='shadow' style={{justifyContent: 'flex-start'}}>
                     <div>
