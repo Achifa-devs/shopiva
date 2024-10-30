@@ -397,8 +397,6 @@ export default function Pricing() {
         <section>
             <h2>Alternative solutions for your business</h2>
 
-            <br />
-
             <ul>
                 <li className='shadow'>
                     <div>
