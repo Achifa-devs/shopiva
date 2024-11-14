@@ -58,7 +58,7 @@ export default function Sitemap() {
                         'Multi-Store Pos',
                         'Omnichannel',
                         'Retail pos system'
-                    ].map((item) => <div className='sitemap-list'>{item}</div>)
+                    ].map((item, index) => <div key={index} className='sitemap-list'>{item}</div>)
                 }
             </div>
         
@@ -72,7 +72,7 @@ export default function Sitemap() {
                         'Google Performance Max',
                         'Nurture customers',
                         'Chat with customers'
-                    ].map((item) => <div className='sitemap-list'>{item}</div>)
+                    ].map((item, index) => <div key={index} className='sitemap-list'>{item}</div>)
                 }
             </div>
             <div id='sitemap-list-cnt'>
@@ -84,7 +84,7 @@ export default function Sitemap() {
                         'Manage your stock & orders',
                         'Measure your performance',
                         'Automate your business'
-                    ].map((item) => <div className='sitemap-list'>{item}</div>)
+                    ].map((item, index) => <div key={index} className='sitemap-list'>{item}</div>)
                 }
             </div>
             <div id='sitemap-list-cnt'>
@@ -105,7 +105,7 @@ export default function Sitemap() {
                         'Print on Demand',
                         'Stay Open',
                         'Shopiva store examples'
-                    ].map((item) => <div className='sitemap-list'>{item}</div>)
+                    ].map((item, index) => <div key={index} className='sitemap-list'>{item}</div>)
 
                 }
             </div>
@@ -123,7 +123,7 @@ export default function Sitemap() {
                         'Affiliate program',
                         'App developers',
                         'Investors'
-                    ].map((item) => <div className='sitemap-list'>{item}</div>)
+                    ].map((item, index) => <div key={index} className='sitemap-list'>{item}</div>)
                 }
             </div>
 
@@ -136,7 +136,7 @@ export default function Sitemap() {
                         'Overview',
                         'Starter plan',
                         'Enterprise'
-                    ].map((item) => <div className='sitemap-list'>{item}</div>)
+                    ].map((item, index) => <div key={index} className='sitemap-list'>{item}</div>)
                 }
             </div>
 
@@ -149,7 +149,7 @@ export default function Sitemap() {
                         'Contact Shopiva',
                         'API documentation',
                         'Theme support'
-                    ].map((item) => <div className='sitemap-list'>{item}</div>)
+                    ].map((item, index) => <div key={index} className='sitemap-list'>{item}</div>)
                 }
             </div>
 
@@ -159,7 +159,7 @@ export default function Sitemap() {
                 {
                     [
                         'Online payment solution'
-                    ].map((item) => <div className='sitemap-list'>{item}</div>)
+                    ].map((item, index) => <div key={index} className='sitemap-list'>{item}</div>)
                 }
             </div>
 
@@ -179,7 +179,7 @@ export default function Sitemap() {
                         'Marketing automation tools',
                         'Subscriptions',
                         'Tax-Platform'
-                    ].map((item) => <div className='sitemap-list'>{item}</div>)
+                    ].map((item, index) => <div key={index} className='sitemap-list'>{item}</div>)
                 }
             </div>
         </section>
@@ -198,7 +198,7 @@ export default function Sitemap() {
                         'Ecommerce Blog',
                         'Mobile',
                         'FAQ'
-                    ].map((item) => <div className='sitemap-list'>{item}</div>)
+                    ].map((item, index) => <div key={index} className='sitemap-list'>{item}</div>)
                 }
             </div>
             <div id='sitemap-list-cnt'>
@@ -208,7 +208,7 @@ export default function Sitemap() {
                     [
                         'POS Hardware',
                         'iPad POS'
-                    ].map((item) => <div className='sitemap-list'>{item}</div>)
+                    ].map((item, index) => <div key={index} className='sitemap-list'>{item}</div>)
                 }
             </div>
             <div id='sitemap-list-cnt'>
@@ -222,7 +222,7 @@ export default function Sitemap() {
                         'Ecommerce hosting',
                         'PCI Compliant',
                         'Online Store'
-                    ].map((item) => <div className='sitemap-list'>{item}</div>)
+                    ].map((item, index) => <div key={index} className='sitemap-list'>{item}</div>)
 
                 }
             </div>
@@ -240,7 +240,7 @@ export default function Sitemap() {
                         'Shopiva VS Udalla',
                         'Shopiva VS Omnibiz Retail',
                         'Shopiva VS Q-Shop'
-                    ].map((item) => <div className='sitemap-list'>{item}</div>)
+                    ].map((item, index) => <div key={index} className='sitemap-list'>{item}</div>)
                 }
             </div>
 
@@ -251,7 +251,7 @@ export default function Sitemap() {
                 {
                     [
                         'Open Source Projects'
-                    ].map((item) => <div className='sitemap-list'>{item}</div>)
+                    ].map((item, index) => <div key={index} className='sitemap-list'>{item}</div>)
                 }
             </div>
             <div id='sitemap-list-cnt'>
@@ -261,7 +261,7 @@ export default function Sitemap() {
                     [
                         'POS Hardware',
                         'iPad POS'
-                    ].map((item) => <div className='sitemap-list'>{item}</div>)
+                    ].map((item, index) => <div key={index} className='sitemap-list'>{item}</div>)
                 }
             </div>
             <div id='sitemap-list-cnt'>
@@ -274,7 +274,7 @@ export default function Sitemap() {
                         'Twitter',
                         'YouTube',
                         'LinkedIn'
-                    ].map((item) => <div className='sitemap-list'>{item}</div>)
+                    ].map((item, index) => <div key={index} className='sitemap-list'>{item}</div>)
 
                 }
             </div>
@@ -291,7 +291,7 @@ export default function Sitemap() {
                         'Zimbabwe',
                         'Senegal',
                         'South Africa'
-                    ].map((item) => <div className='sitemap-list'>{item}</div>)
+                    ].map((item, index) => <div key={index} className='sitemap-list'>{item}</div>)
                 }
             </div>
 
@@ -302,7 +302,7 @@ export default function Sitemap() {
                 {
                     [
                         'Ecommerce Entrepreneurship'
-                    ].map((item) => <div className='sitemap-list'>{item}</div>)
+                    ].map((item, index) => <div key={index} className='sitemap-list'>{item}</div>)
                 }
             </div>
             <div id='sitemap-list-cnt'>
@@ -319,7 +319,7 @@ export default function Sitemap() {
                         'Dropshipping Business',
                         'Accept Apple Pay',
                         'Accept Google Pay'
-                    ].map((item) => <div className='sitemap-list'>{item}</div>)
+                    ].map((item, index) => <div key={index} className='sitemap-list'>{item}</div>)
 
                 }
             </div>
