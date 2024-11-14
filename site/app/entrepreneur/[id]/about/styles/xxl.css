@@ -1,5 +1,5 @@
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 761px) {
    
     
 
@@ -8,6 +8,8 @@
         height: 100%;
         width: 100%;
         display: block;
+        background-color: #00b688; 
+
     }
 
     .pricing-cnt section:nth-child(1){
@@ -19,6 +21,7 @@
         background-color: #00b688;
         padding: 10px;
     }
+    
 
     .pricing-cnt section:nth-child(1) div{
         height: 100%;
@@ -75,33 +78,51 @@
 
     /* Mission */
 
-    .pricing-cnt section:nth-child(3){
-        height: fit-content;
+    .mission-statement{
+        
         width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        background-color: #fff;
-        color: #000;
-        padding: 10px;
+        margin: 10px 0px;
     }
 
     .shopiva-story-cnt{
         display: flex;
         height: auto;
     }
-
-
-    .shopiva-story-cnt div{
-        height: 100%;
-        width: 50%;
-        padding: 40px 40px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+    .shopiva-story-img-cnt img{
+        width: 80%;
     }
+
+
+    #commitment-cnt{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+        padding: 60px 10px;
+        background-color: #fff;
+        height: 100%;
+    }
+
+    #commitment-cnt div{
+        padding: 20px 20px;
+        width: 100%;
+    }
+    #commitment-cnt div img{
+        width: 100%;
+    }
+    #commitment-cnt-textarea{
+        width: 70%;
+    }
+
+
+    .shopiva-story-text-cnt{
+        width: 100%;
+    }
+
     /* Mission */
    
+    .commitment-txt{
+        line-height: 30px;
+    }
   
 }
 

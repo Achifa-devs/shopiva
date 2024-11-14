@@ -4,7 +4,7 @@ import ui_image from '../../../images/about-hero-small-2a2faf4cb65f77ff8a7957d0f
 export default function Head() {
   return (
     <>
-        <section>
+        <section id='shopiva-about-head'>
             <div>
 
               <h3 style={{fontWeight: '400'}}>About Shopiva</h3>

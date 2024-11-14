@@ -252,8 +252,9 @@ export default function EntrepreneurFreeLayout({children}) {
             <h6>Shopiva</h6>
             <ul>
               <li onClick={e=> window.location.href='/entrepreneur/ng/about'} style={{fontSize: 'small'}}>About</li>
+              
               {/* <li onClick={e=> window.location.href='/entrepreneur/ng/careers'} style={{fontSize: 'small'}}>Careers</li> */}
-              {/* <li onClick={e=> window.location.href='/entrepreneur/ng/investors'} style={{fontSize: 'small'}}>Investors</li> */}
+              <li onClick={e=> window.location.href='/entrepreneur/ng/investors'} style={{fontSize: 'small'}}>Investors</li>
               
               {/* <li onClick={e=> window.location.href='/entrepreneur/ng/partners'} style={{fontSize: 'small'}}>Partners</li> */}
               <li onClick={e=> window.location.href='/entrepreneur/ng/affiliates'} style={{fontSize: 'small'}}>Affiliates</li>
@@ -294,16 +295,19 @@ export default function EntrepreneurFreeLayout({children}) {
             </ul>
           </div>
 
-
           <div>
             <h6>Others</h6>
             <ul>
+              <li  onClick={e=> window.location.href='/entrepreneur/ng/sitemap'} style={{fontSize: 'small'}}>Sitemap</li>
+
               <li  onClick={e=> window.location.href='/entrepreneur/ng/terms-of-use'} style={{fontSize: 'small'}}>Terms Of Service</li>
               <li  onClick={e=> window.location.href='/entrepreneur/ng/privacy-policy'} style={{fontSize: 'small'}}>Privacy Policy</li>
-              <li  onClick={e=> window.location.href='/entrepreneur/ng/sitemap'} style={{fontSize: 'small'}}>Sitemap</li>
+              {/* <li onClick={e=> window.location.href='/entrepreneur/ng/shopiva-for-enterprise'} style={{fontSize: 'small'}}>Shopiva for Enterprise</li> */}
             </ul>
           </div>
 
+
+         
         </section>
 
         <hr />
@@ -316,16 +320,18 @@ export default function EntrepreneurFreeLayout({children}) {
 
           <div style={{height: '50px'}}>
             <ul style={{height: '100%', margin: '0', padding: '0'}}>
-             <li>
+             <li onClick={e => window.open('https://www.facebook.com/profile.php?id=61566898641430')}>
                 <i style={{display: 'flex', height: '100%', position: 'relative', alignItems: 'center'}} class="fa-brands fa-facebook fa-lg"></i>
               </li>
-              <li>
+              <li onClick={e => window.open('https://x.com/Shopiva_shop?t=NgevY7O7ygFe_AW0C-OgSg&s=09')}>
                 <i style={{display: 'flex', height: '100%', position: 'relative', alignItems: 'center'}} class="fa-brands fa-twitter fa-lg"></i>
               </li>
-              <li>
+              <li onClick={e => { 
+                window.open('https://whatsapp.com/channel/0029VacobY6LY6d7M19cx90O')
+              }}>
                 <i style={{display: 'flex', height: '100%', position: 'relative', alignItems: 'center'}} class="fa-brands fa-whatsapp fa-lg"></i>
               </li>
-              <li>
+              <li onClick={e => window.open('https://youtube.com/@shopiva?si=Euobslo-XoWD0Kqc')}>
                 <i style={{display: 'flex', height: '100%', position: 'relative', alignItems: 'center'}} class="fa-brands fa-youtube fa-lg"></i>
               </li>
             </ul>

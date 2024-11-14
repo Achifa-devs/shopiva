@@ -9,16 +9,16 @@ export default function Story() {
 
             <h2 style={{fontWeight: '400'}}>Shopiva story</h2>
 
-            <br />
+            {/* <br /> */}
 
             <div className='shopiva-story-cnt' style={{height: 'auto'}}>
 
-                <div style={{width: '50%', padding: '10px 40px'}}>
-                    <img src={plus_image.src}  style={{height: '100%', width: '80%', borderRadius: '10px'}} alt="" />
+                <div className='shopiva-story-img-cnt' style={{}}>
+                    <img src={plus_image.src}  style={{height: '100%', borderRadius: '10px'}} alt="" />
                 </div>
 
-                <div style={{width: '50%', padding: '10px 40px', textAlign: 'left', color: '#000', height: 'auto', justifyContent: 'flex-start'}}>
-                    <div style={{width: '70%', height: 'auto', padding: '0'}}>
+                <div style={{textAlign: 'left', color: '#000', height: 'auto', justifyContent: 'flex-start'}}>
+                    <div className='shopiva-story-text-cnt' style={{height: 'auto', padding: '0'}}>
                         {/* <br /> */}
                         <h3 style={{marginBottom: '20px', fontWeight: '400'}}>Shopiva was created in SE Nigeria.</h3>
                         {/* <br /> */}

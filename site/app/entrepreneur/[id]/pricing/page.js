@@ -516,10 +516,11 @@ export default function Pricing() {
                                     <img src={plus_svg.src} className='faq-svg' alt="" />
                                 </span>
                             </div>
-                            <hr/>
-                            <div>
-
+                            <div style={{color: '#fff', textAlign: 'left'}}>
+                                Shopiva is an E-commerce platform created to improve the E-commerce eco-system 
                             </div>
+                            <hr/>
+                            
                         
                         </li>
                         <li id='faq-sub-list-title'>

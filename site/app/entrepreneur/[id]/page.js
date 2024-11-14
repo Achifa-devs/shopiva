@@ -229,7 +229,7 @@ export default function Dashboard() {
             <ul className='crypto-list-cnt' style={{background: 'transparent', padding: '0'}}>
               <li id='crypto-list' style={{  alignItems: 'flex-start', textAlign: 'left', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', color: '#fff'}}>
                 <div style={{pointerEvents: 'none'}}>
-                  <h2 id='headline' style={{color: '#fff'}}>Ensure Global Accessibility</h2>
+                  <h2 id='' style={{color: '#fff'}}>Ensure Global Accessibility</h2>
                 </div>
                 <div style={{pointerEvents: 'none'}}>
                   <p style={{color: '#fff'}}>Accepting payments in cryptocurrency allows businesses to reach a broader, global audience. Since cryptocurrencies operate without the need for traditional banking systems, customers from regions with limited banking access can easily participate in transactions, increasing market reach.</p>
@@ -245,7 +245,7 @@ export default function Dashboard() {
 
               <li id='crypto-list' style={{  alignItems: 'flex-start', textAlign: 'left', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', color: '#fff'}}>
                 <div style={{pointerEvents: 'none'}}>
-                  <h2 id='headline' style={{color: '#fff'}}>Reduced Transaction Fees</h2>
+                  <h2 id='' style={{color: '#fff'}}>Reduced Transaction Fees</h2>
                 </div>
                 <div style={{pointerEvents: 'none'}}>
                   <p style={{color: '#fff'}}>Cryptocurrencies often offer lower transaction fees compared to traditional payment methods, especially for cross-border transactions. This makes them a cost-effective option for businesses dealing with international customers or handling high-volume transactions.</p>
