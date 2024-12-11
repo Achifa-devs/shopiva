@@ -11,6 +11,7 @@ export default function TermOfUse() {
     useEffect(() => {
         document.body.style.background='#fff'
         document.querySelector('header').style.position='sticky'
+        document.querySelector('header').style.background='#000'
         document.querySelector('header').style.top='0px'
         document.querySelector('header').style.height='70px'
     }, [])

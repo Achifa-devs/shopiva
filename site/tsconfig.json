@@ -32,7 +32,7 @@
     "**/*.ts",
     "**/*.tsx",
     "src", "api"
-  ],
+, "middleware.ts"  ],
   "exclude": [
     "node_modules"
   ]

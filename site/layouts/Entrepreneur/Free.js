@@ -258,7 +258,7 @@ export default function EntrepreneurFreeLayout({children}) {
               
               {/* <li onClick={e=> window.location.href='/entrepreneur/ng/partners'} style={{fontSize: 'small'}}>Partners</li> */}
               <li onClick={e=> window.location.href='/entrepreneur/ng/affiliates'} style={{fontSize: 'small'}}>Affiliates</li>
-              <li onClick={e=> window.location.href='/entrepreneur/ng/legal'} style={{fontSize: 'small'}}>Legal</li>
+              {/* <li onClick={e=> window.location.href='/entrepreneur/ng/legal'} style={{fontSize: 'small'}}>Legal</li> */}
               {/* <li onClick={e=> window.location.href='/entrepreneur/ng/service-status'} style={{fontSize: 'small'}}>Service Status</li> */}
             </ul>
           </div>
