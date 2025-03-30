@@ -55,7 +55,7 @@ export default function EntrepreneurRestrictedLayout({children}) {
       // const myCookie = getCookie('entrepreneur_secret');
       
       const myCookie = getCookie('entrepreneur_secret');
-      fetch('https://shopiva-server.onrender.com/entrepreneur/authorization',
+      fetch('http://localhost:3456/entrepreneur/authorization',
       {
           method: 'POST',
           // credentials: 'include',

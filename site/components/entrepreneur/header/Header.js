@@ -10,6 +10,7 @@ export default function Header() {
   let dispatch = useDispatch()
   useEffect(() => {
     setScreenWidth(window.innerWidth)
+    document.body.querySelector('header').style.height='100%'
   }, [])
    
   let {
@@ -18,7 +19,7 @@ export default function Header() {
 
   return (
     <>
-      <header>
+      <header style={{display: 'flex', alignItems: 'center', padding: '0px 10px'}}>
         {
           screenWidth > 760
           ?

@@ -103,7 +103,7 @@ export default function Signup() {
                 entrepreneur_overlay_setup(true, 'One Moment Please...')
                
                 e.target.disabled = true;
-                fetch('https://shopiva-server.onrender.com/entrepreneur/login', {
+                fetch('http://localhost:3456/entrepreneur/login', {
                     method: 'post',
                     headers: {
                         "Content-Type": "Application/json"
@@ -318,13 +318,13 @@ export default function Signup() {
 
                 <section style={{height: 'auto'}}>
                     <div style={{width: '100%'}}>
-                        <div className="input-cnt">
+                        <div className="input-cnt" style={{display: 'flex', flexDirection: 'column'}}>
                             <label htmlFor="">Email</label>
-                            <input style={{color: '#000'}} onInput={e=> setEmail(e.target.value)} type="text" placeholder='Email' name="email" id="" />
+                            <input style={{color: '#000', width: '100%'}} onInput={e=> setEmail(e.target.value)} type="text" placeholder='Email' name="email" id="" />
                         </div>
-                        <div className="input-cnt">
+                        <div className="input-cnt" style={{display: 'flex', flexDirection: 'column'}}>
                             <label htmlFor="">Password</label>
-                            <input style={{color: '#000'}} onInput={e=> setPwd(e.target.value)} type="password" placeholder='Password' className='pwd' name="password" id="" />
+                            <input style={{color: '#000', width: '100%'}} onInput={e=> setPwd(e.target.value)} type="password" placeholder='Password' className='pwd' name="password" id="" />
                         </div>
 
                         <div className="input-cnt">

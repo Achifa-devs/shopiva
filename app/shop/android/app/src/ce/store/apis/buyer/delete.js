@@ -2,7 +2,7 @@ import axios from 'axios'
 // import {IP} from '@env'
 
 let uri_1 = 'https://ce-server.vercel.app'
-let uri_2 = 'https://ce-server.vercel.app'
+let uri_2 = 'http://localhost:2222'
 let IP = uri_1
 
 

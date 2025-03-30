@@ -133,7 +133,7 @@ export default function Signup() {
                
                 // if (pwd === confirm_pwd) {
                     // e.target.disabled = true;
-                    fetch('https://shopiva-server.onrender.com/entrepreneur/registration', {
+                    fetch('http://localhost:3456/entrepreneur/registration', {
                         method: 'post',
                         headers: {
                             "Content-Type": "Application/json"
@@ -294,7 +294,7 @@ export default function Signup() {
         // console.log(session)
         if(session.status==='authenticated'){
 
-            fetch('https://shopiva-server.onrender.com/entrepreneur/registration', {
+            fetch('http://localhost:3456/entrepreneur/registration', {
                 method: 'post',
                 headers: {
                     "Content-Type": "Application/json"
@@ -376,20 +376,20 @@ export default function Signup() {
                     <h6 className='err-mssg'>{duplicate_err}</h6>
                     <div style={{width: '100%'}}>
                         <section style={{display: 'flex', justifyContent: 'space-between'}}>
-                            <div style={{width: '48%'}} className="input-cnt">
+                            <div style={{width: '48%', display: 'flex', flexDirection: 'column'}} className="input-cnt">
                                 <label htmlFor="">First name</label>
-                                <input style={{color: '#000'}} onInput={e=> setFname(e.target.value)} type="text" placeholder='First name' name="fname" id="" />
+                                <input style={{color: '#000', width: '100%'}} onInput={e=> setFname(e.target.value)} type="text" placeholder='First name' name="fname" id="" />
                             </div>
-                            <div style={{width: '48%'}} className="input-cnt">
+                            <div style={{width: '48%', display: 'flex', flexDirection: 'column'}} className="input-cnt">
                                 <label htmlFor="">Last name</label>
-                                <input style={{color: '#000'}} onInput={e=> setLname(e.target.value)} type="text" placeholder='Last name' name="lname" id="" />
+                                <input style={{color: '#000', width: '100%'}} onInput={e=> setLname(e.target.value)} type="text" placeholder='Last name' name="lname" id="" />
                             </div>
                         </section>
-                        <div className="input-cnt">
+                        <div className="input-cnt" style={{display: 'flex', flexDirection: 'column'}}>
                             <label htmlFor="">Email</label>
-                            <input style={{color: '#000'}} onInput={e=> setEmail(e.target.value)} type="text" placeholder='Email' name="email" id="" />
+                            <input style={{color: '#000', width: '100%'}} onInput={e=> setEmail(e.target.value)} type="text" placeholder='Email' name="email" id="" />
                         </div>
-                        <div className="input-cnt">
+                        <div className="input-cnt" style={{display: 'flex', flexDirection: 'column'}}>
                             <label htmlFor="">Phone</label>
                             <div style={{display: 'flex', justifyContent: 'space-between'}}>
                                 <span>
@@ -441,22 +441,24 @@ export default function Signup() {
                                     </div>
                                 </span>
                                 <span style={{width: 'calc(100% - 100px)'}}>
-                                    <input style={{color: '#000'}} onInput={e=> setPhone_number(`+234${e.target.value}`)} type="tel" maxLength={11} name="phone" defaultValue={''} id="" />
+                                    <input style={{color: '#000', width: '100%'}} onInput={e=> setPhone_number(`+234${e.target.value}`)} type="tel" maxLength={11} name="phone" defaultValue={''} id="" />
                                 </span>
                             </div>
                         </div> 
 
-                        <div className="input-cnt">
+                        <div className="input-cnt" style={{display: 'flex', flexDirection: 'column'}}>
                             <label htmlFor="">Password</label>
-                            <input style={{color: '#000'}} onInput={e=> setPwd(e.target.value)} type="password" autoComplete='false' placeholder='Password' name="password" id="" />
+                            <input style={{color: '#000', width: '100%'}} onInput={e=> setPwd(e.target.value)} type="password" autoComplete='false' placeholder='Password' name="password" id="" />
                         </div>
 
-                        <div className="input-cnt">
+                        <div className="input-cnt" style={{display: 'flex', flexDirection: 'column'}}>
                             <label htmlFor="">Confirm Password</label>
-                            <input style={{color: '#000'}} onInput={e=> set_confirm_pwd(e.target.value)} type="password" placeholder='Confirm Password' name="confirm-password" id="" />
+                            <input style={{color: '#000', width: '100%'}} onInput={e=> set_confirm_pwd(e.target.value)} type="password" placeholder='Confirm Password' name="confirm-password" id="" />
                         </div>
+                          
+                        {/* <br /> */}
 
-                        <div className="input-cnt">
+                        <div className="input-cnt" style={{display: 'flex', flexDirection: 'column', marginTop: '20px'}}>
                             <button style={{borderRadius: '8px'}} onClick={e => {
                                 setProvider('local')
                                 Registration(e)

@@ -24,7 +24,7 @@ export default function CreateProduct() {
   }, [])
 
   function upload_data(data) {
-    axios.post('https://shopiva-server.onrender.com/', {
+    axios.post('http://localhost:3456/', {
       name: data.name, 
       value: data.value, 
       product_id, 

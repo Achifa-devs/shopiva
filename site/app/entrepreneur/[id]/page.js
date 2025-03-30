@@ -23,10 +23,10 @@ export default function Dashboard() {
   return (
     <>
 
-      <div className="dashboard-summary" style={{position: 'relative', zIndex: '1000', height: 'auto', background: '#000', borderRadius: '10px 10px 0px 0px'}}>
+      <div className="dashboard-summary" style={{position: 'relative', zIndex: '1000', height: 'auto', background: '#000', borderRadius: '10px 10px 0px 0px', overflow: 'auto', backgroundColor: '#000'}}>
 
-        <ul>
-          <li style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-between', aligItems: 'flex-start', paddingTop: '10px'}}>
+        <ul style={{width: '100%', overflow: 'auto', flexWrap: 'nowrap'}}>
+          <li style={{display: 'flex', margin: '0px 10px', flexShrink: '0', width: '250px', flexDirection: 'column', justifyContent: 'space-between', aligItems: 'flex-start', paddingTop: '10px'}}>
             <div style={{background: 'rgba(255, 255, 255, 0.1)', marginLeft: '5px', boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)', width: 'auto', borderRadius: '8px'}}>
               <img src={connect_svg.src} style={{height: '50px', width: '50px', borderRadius: '10px'}} alt="" />
             </div>
@@ -38,7 +38,7 @@ export default function Dashboard() {
             </div>
           </li>
 
-          <li style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-between', aligItems: 'flex-start', paddingTop: '10px'}}>
+          <li style={{display: 'flex', margin: '0px 10px', flexShrink: '0', width: '250px', flexDirection: 'column', justifyContent: 'space-between', aligItems: 'flex-start', paddingTop: '10px'}}>
             <div style={{background: 'rgba(255, 255, 255, 0.1)', marginLeft: '5px', boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)', width: 'auto', borderRadius: '8px'}}>
               <img src={bitcoin_svg.src} style={{height: '50px', width: '50px', borderRadius: '10px'}} alt="" />
             </div>
@@ -50,7 +50,7 @@ export default function Dashboard() {
             </div>
           </li>
 
-          <li style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-between', aligItems: 'flex-start', paddingTop: '10px'}}>
+          <li style={{display: 'flex', margin: '0px 10px', flexShrink: '0', width: '250px', flexDirection: 'column', justifyContent: 'space-between', aligItems: 'flex-start', paddingTop: '10px'}}>
             <div style={{background: 'rgba(255, 255, 255, 0.1)', marginLeft: '5px', boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)', width: 'auto', borderRadius: '8px'}}>
               <img src={globe_svg.src} style={{height: '50px', width: '50px', borderRadius: '10px'}} alt="" />
             </div>
@@ -62,7 +62,7 @@ export default function Dashboard() {
             </div>  
           </li>
 
-          <li style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-between', aligItems: 'flex-start', paddingTop: '10px'}}>
+          <li style={{display: 'flex', margin: '0px 10px', flexShrink: '0', width: '250px', flexDirection: 'column', justifyContent: 'space-between', aligItems: 'flex-start', paddingTop: '10px'}}>
             <div style={{background: 'rgba(255, 255, 255, 0.1)', marginLeft: '5px', boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)', width: 'auto', borderRadius: '8px'}}>
               <img src={ui_svg.src} style={{height: '50px', width: '50px', borderRadius: '10px'}} alt="" />
             </div>
@@ -77,7 +77,7 @@ export default function Dashboard() {
 
       </div>
 
-      <div className="dashboard-body" style={{background: '#000', borderRadius: '0px'}}>
+      <div className="dashboard-body" style={{background: '#000', borderRadius: '0px', padding: '0'}}>
         
         <div className='globe-sale-cnt'>
           <section id='section' style={{display: 'flex', justifyContent: 'space-between', width: '100%', flexDirection: 'row', alignItems: 'flex-end', fontWeight: '100'}}>
@@ -99,7 +99,7 @@ export default function Dashboard() {
               
               <li className='globe-list' style={{padding: '5px'}}>
                 
-                <div style={{height: 'auto', fontSize: 'unset', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', alignItems: 'flex-start'}}>
+                <div style={{height: 'auto',background: 'rgb(0,0,0,.5)', fontSize: 'unset', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', alignItems: 'flex-start'}}>
                   <h4 style={{color: '#fff', textAlign: 'left'}}>
                   Unveil Your Products to a Global Audience with Shopiva
                   </h4>
@@ -108,7 +108,7 @@ export default function Dashboard() {
               </li>
 
               <li className='globe-list' style={{padding: '5px'}}>
-                <div style={{height: 'auto', fontSize: 'unset', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', alignItems: 'flex-start'}}>
+                <div style={{height: 'auto',background: 'rgb(0,0,0,.5)', fontSize: 'unset', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', alignItems: 'flex-start'}}>
                   <h4 style={{color: '#fff', textAlign: 'left'}}>
                   Scale Your Factory&apos;s Production Worldwide via Shopiva
                   </h4>
@@ -117,7 +117,7 @@ export default function Dashboard() {
               </li>
 
               <li className='globe-list' style={{padding: '5px'}}>
-                <div style={{height: 'auto', fontSize: 'unset', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', alignItems: 'flex-start'}}>
+                <div style={{height: 'auto',background: 'rgb(0,0,0,.5)', fontSize: 'unset', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', alignItems: 'flex-start'}}>
                   <h4 style={{color: '#fff', textAlign: 'left'}}>
                   Transform Your Brand&apos;s Reach with Shopiva
                   </h4>
